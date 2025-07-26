@@ -1,72 +1,154 @@
-Bulk Interview Emailer Web App
-This application provides a simple web interface to send bulk interview emails using a Zoho account.
+# Dazzlo Bulk Emailer - Professional Email Automation
 
-How to Set Up and Run
-Follow these steps to get the application running on your computer. You only need to do the setup once.
+A modern, professional web application for sending bulk emails using Zoho SMTP with beautiful templates and enhanced user experience.
 
-Step 1: Create a Project Folder
-Create a new folder on your computer where you will store the application files. Let's call it BulkEmailer.
+## ✨ Features
 
-Inside the BulkEmailer folder, create another folder named templates.
+- **📧 Dual Email Templates**: Choose between Interview Notifications and Congratulations emails
+- **🎨 Professional Design**: Modern blue + cream color theme with glass morphism effects
+- **📱 Mobile Responsive**: Optimized for all devices and screen sizes
+- **🖼️ Logo Integration**: Upload and embed company logos in emails
+- **📊 Detailed Reporting**: Comprehensive email sending reports with success rates
+- **🔐 Secure**: Zoho SMTP integration with app-specific password support
+- **📁 Drag & Drop**: Easy file upload with drag and drop functionality
+- **📥 Export Reports**: Download detailed email campaign reports
 
-Place all the files I provided into the correct locations:
+## 🚀 Quick Start
 
-app.py -> inside the BulkEmailer folder.
+### Prerequisites
+- Python 3.7 or higher
+- Zoho email account with SMTP access
 
-requirements.txt -> inside the BulkEmailer folder.
+### Installation
 
-index.html -> inside the templates folder.
+1. **Clone or Download** the project files to your computer
+2. **Install Dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. **Run the Application**:
+   ```bash
+   python app.py
+   ```
+4. **Access the Web Interface**:
+   Open your browser and go to: `http://127.0.0.1:5000`
 
-results.html -> inside the templates folder.
+## 📧 Email Templates
 
-Your folder structure should look like this:
+### 1. Interview Notification Template
+- **Purpose**: Send interview scheduling emails to shortlisted candidates
+- **CSV Columns Required**: `email`, `name`, `role`, `slot`
+- **Features**: Professional letterhead, interview instructions, company branding
 
-BulkEmailer/
-├── app.py
-├── requirements.txt
-└── templates/
-    ├── index.html
-    └── results.html
+### 2. Congratulations Template
+- **Purpose**: Send selection congratulations with offer details
+- **CSV Columns Required**: `email`, `name`, `role`
+- **Features**: Celebration design, next steps, offer letter references
 
-Step 2: Install Python
-If you don't have Python installed, download and install it from the official website: python.org
+## 📋 CSV File Format
 
-Step 3: Install Required Packages
-Open your computer's command prompt or terminal.
+### For Interview Notifications:
+```csv
+email,name,role,slot
+john@example.com,John Doe,Software Engineer,2025-01-15 10:00 AM
+jane@example.com,Jane Smith,Product Manager,2025-01-16 2:00 PM
+```
 
-Navigate into your BulkEmailer folder using the cd command. For example:
+### For Congratulations:
+```csv
+email,name,role
+john@example.com,John Doe,Software Engineer
+jane@example.com,Jane Smith,Product Manager
+```
 
-cd path/to/your/BulkEmailer
+## 🎨 UI/UX Features
 
-Run the following command to install the necessary Python libraries:
+- **Modern Design**: Blue + cream color scheme with gradient backgrounds
+- **Glass Morphism**: Translucent effects with backdrop blur
+- **Interactive Elements**: Hover effects, smooth transitions, and animations
+- **Mobile-First**: Responsive design that works on all devices
+- **Accessibility**: High contrast, readable fonts, and clear navigation
+- **Visual Feedback**: Loading states, success/error indicators
 
-pip install -r requirements.txt
+## 🔧 Configuration
 
-Step 4: Run the Web Application
-Make sure you are still in the BulkEmailer folder in your command prompt or terminal.
+### Zoho Email Setup
+1. **Enable SMTP** in your Zoho account settings
+2. **Generate App Password** if you have 2FA enabled
+3. **Use App Password** instead of regular password for security
 
-Run the following command to start the web server:
+### Logo Upload
+- **Supported Formats**: PNG, JPEG
+- **Recommended Size**: 200x200 pixels or larger
+- **Placement**: Automatically embedded in email letterhead
 
+## 📊 Reporting Features
+
+- **Real-time Statistics**: Success/failure counts with visual indicators
+- **Success Rate Calculation**: Percentage of successfully sent emails
+- **Detailed Logs**: Individual email status with error messages
+- **Export Functionality**: Download campaign reports as text files
+- **Visual Progress Bars**: Campaign performance visualization
+
+## 🛠️ Technical Details
+
+### Backend
+- **Framework**: Flask (Python)
+- **Email**: Zoho SMTP with SSL/TLS
+- **File Handling**: Secure file uploads with validation
+- **Error Handling**: Comprehensive error catching and user feedback
+
+### Frontend
+- **Styling**: Tailwind CSS with custom gradients
+- **Fonts**: Inter font family for modern typography
+- **JavaScript**: Vanilla JS for interactions and animations
+- **Responsive**: Mobile-first design approach
+
+### Security
+- **File Validation**: Secure filename handling
+- **Input Sanitization**: Protection against malicious inputs
+- **Temporary Files**: Automatic cleanup of uploaded files
+- **HTTPS Ready**: Configured for secure deployments
+
+## 🚀 Deployment
+
+### Local Development
+```bash
 python app.py
+```
 
-You will see some output in the terminal, including a line that looks like this:
-* Running on http://127.0.0.1:5000/
+### Production Deployment
+The application includes `nixpacks.toml` for easy deployment to cloud platforms:
+- **Port**: 8000
+- **Server**: Gunicorn
+- **Environment**: Production-ready configuration
 
-Step 5: Use the Application
-Open your web browser (like Chrome, Firefox, or Edge).
+## 📱 Mobile Experience
 
-Go to the address: http://127.0.0.1:5000/
+- **Touch-Friendly**: Large buttons and touch targets
+- **Responsive Layout**: Adapts to different screen sizes
+- **Fast Loading**: Optimized for mobile networks
+- **Easy Navigation**: Intuitive mobile interface
 
-You will see the web form. Fill it out:
+## 🔄 Template Customization
 
-Your Zoho Email: Your full Zoho email address.
+Both email templates maintain consistent Dazzlo branding:
+- **Company Information**: Hardcoded to Dazzlo Enterprises Pvt Ltd
+- **Contact Details**: Phone, email, and location
+- **Professional Styling**: Consistent with brand guidelines
+- **Logo Integration**: Automatic logo embedding when provided
 
-Your Zoho App Password: If you have Two-Factor Authentication (2FA) enabled, you must generate and use an "App-Specific Password" from your Zoho account security settings. Otherwise, you can use your regular password.
+## 📈 Performance
 
-Recipients CSV File: Upload the .csv file containing the candidate data.
+- **Bulk Processing**: Efficient handling of large email lists
+- **Memory Management**: Optimized file handling and cleanup
+- **Error Recovery**: Graceful handling of SMTP failures
+- **User Feedback**: Real-time progress and status updates
 
-Company Logo: Optionally, upload your company's logo (.png file).
+## 🤝 Support
 
-Click "Send Emails". The application will process the file and show you a report of which emails were sent successfully and which failed.
+For technical support or feature requests, please contact the development team.
 
-To stop the server, go back to the command prompt/terminal window and press Ctrl + C.
+---
+
+**© 2025 Dazzlo Enterprises Pvt Ltd. All rights reserved.**

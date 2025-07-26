@@ -1,0 +1,16 @@
+{% extends "previews/preview_base.html" %}
+
+{% block content %}
+<p>Hello {{ name }},</p>
+<p>We are pleased to inform you that your application has been shortlisted by our Hiring Team for the role of <strong>{{ role }}</strong>.</p>
+<p>An Interview has been scheduled on <strong>{{ slot }}</strong>.</p>
+<p>Instructions for the Interview-</p>
+<div class="instructions">
+    <ul>
+        <li>Please ensure your phone is fully charged and reachable at the scheduled time.</li>
+        <li>Keep a copy of your updated resume handy for reference.</li>
+        <li>Be in a quiet environment to avoid any background disturbance.</li>
+    </ul>
+</div>
+<p>Best regards,<br>HR Team<br>DazzloHR</p>
+{% endblock %}

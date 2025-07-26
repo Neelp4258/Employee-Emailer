@@ -1,65 +1,148 @@
-<!-- templates/index.html -->
-<!-- The main user interface for sending emails. -->
+{% extends "layout.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bulk Interview Emailer</title>
-    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-    </style>
-</head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-    <div class="w-full max-w-lg bg-white p-8 rounded-xl shadow-lg">
-        <h1 class="text-3xl font-bold text-gray-800 mb-2 text-center">Bulk Interview Emailer</h1>
-        <p class="text-gray-500 mb-6 text-center">Send interview notifications easily.</p>
+{% block title %}Send Campaign - Dazzlo Bulk Emailer{% endblock %}
 
-        <!-- Flash messages display area -->
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                    <div class="p-4 mb-4 text-sm rounded-lg {{ 'bg-red-100 text-red-700' if category == 'danger' else 'bg-blue-100 text-blue-700' }}" role="alert">
-                        <span class="font-medium">{{ message }}</span>
+{% block head_extra %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index_styles.css') }}">
+{% endblock %}
+
+{% block content %}
+<form action="/send_emails" method="post" enctype="multipart/form-data" class="space-y-12">
+    
+    <div>
+        <h2 class="section-title text-3xl font-bold mb-2 text-center">Step 1: Choose & Preview Your Template</h2>
+        <p class="text-center text-gray-600 mb-8">Select a template to see a live preview of the email.</p>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            <div class="space-y-6">
+                <div class="template-card selected p-6" onclick="selectTemplate('interview')">
+                    <input type="radio" name="template_type" value="interview" id="interview" class="hidden" checked>
+                    <div class="flex items-center">
+                        <div class="template-icon interview-icon">📋</div>
+                        <div class="ml-4">
+                            <h3 class="text-xl font-bold text-gray-800">Interview Notification</h3>
+                            <p class="text-gray-600 text-sm">Required CSV: <code class="font-mono text-xs">email, name, role, slot</code></p>
+                        </div>
                     </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-
-        <form action="/send_emails" method="post" enctype="multipart/form-data" class="space-y-6">
-            <div>
-                <label for="email" class="block text-sm font-medium text-gray-700">Your Zoho Email</label>
-                <input type="email" name="email" id="email" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                </div>
+                
+                <div class="template-card p-6" onclick="selectTemplate('congratulations')">
+                    <input type="radio" name="template_type" value="congratulations" id="congratulations" class="hidden">
+                     <div class="flex items-center">
+                        <div class="template-icon congrats-icon">🎉</div>
+                        <div class="ml-4">
+                            <h3 class="text-xl font-bold text-gray-800">Congratulations / Selection</h3>
+                            <p class="text-gray-600 text-sm">Required CSV: <code class="font-mono text-xs">email, name, role, company</code></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="template-card p-6" onclick="selectTemplate('partnership')">
+                    <input type="radio" name="template_type" value="partnership" id="partnership" class="hidden">
+                     <div class="flex items-center">
+                        <div class="template-icon partnership-icon">🤝</div>
+                        <div class="ml-4">
+                            <h3 class="text-xl font-bold text-gray-800">Partnership Proposal</h3>
+                            <p class="text-gray-600 text-sm">Required CSV: <code class="font-mono text-xs">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div>
-                <label for="password" class="block text-sm font-medium text-gray-700">Your Zoho App Password</label>
-                <input type="password" name="password" id="password" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                <p class="text-xs text-gray-500 mt-1">Note: Use an app-specific password if you have 2FA enabled on your Zoho account.</p>
+            <div class="preview-container">
+                <div class="preview-header">
+                    <span class="font-semibold text-gray-700">Live Email Preview</span>
+                </div>
+                <iframe id="email-preview-frame" src="{{ url_for('preview_email', template_name='interview') }}" class="w-full h-[600px] border-0"></iframe>
             </div>
-
-            <div>
-                <label for="csv_file" class="block text-sm font-medium text-gray-700">Recipients CSV File</label>
-                <input type="file" name="csv_file" id="csv_file" required accept=".csv" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100">
-                <p class="text-xs text-gray-500 mt-1">Must contain columns: email, name, role, slot</p>
-            </div>
-
-            <div>
-                <label for="logo_file" class="block text-sm font-medium text-gray-700">Company Logo (Optional)</label>
-                <input type="file" name="logo_file" id="logo_file" accept="image/png" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-gray-50 file:text-gray-700 hover:file:bg-gray-100">
-            </div>
-
-            <div>
-                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    Send Emails
-                </button>
-            </div>
-        </form>
+        </div>
     </div>
-</body>
-</html>
+
+    <div class="form-section p-8">
+        <h2 class="section-title text-3xl font-bold mb-2 text-center">Step 2: Enter Email Credentials</h2>
+        <p class="text-center text-red-600 font-semibold mb-8">⚠️ Use an App-Specific Password for security.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+            <div>
+                <label for="email" class="block text-sm font-semibold text-gray-700 mb-3">📧 Your Zoho Email</label>
+                <input type="email" name="email" id="email" required 
+                       class="form-input w-full px-4 py-3" 
+                       placeholder="your-email@zoho.com">
+            </div>
+            <div>
+                <label for="password" class="block text-sm font-semibold text-gray-700 mb-3">🔑 Your Zoho App Password</label>
+                <input type="password" name="password" id="password" required 
+                       class="form-input w-full px-4 py-3" 
+                       placeholder="Enter your app password">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-section p-8" id="sender-info-section" style="display: none;">
+        <h2 class="section-title text-3xl font-bold mb-2 text-center">Step 2.5: Sender Information (Partnership Template)</h2>
+        <p class="text-center text-gray-600 mb-8">This information will appear in the email footer for partnership emails.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+            <div>
+                <label for="sender_name" class="block text-sm font-semibold text-gray-700 mb-3">👤 Your Name</label>
+                <input type="text" name="sender_name" id="sender_name" 
+                       class="form-input w-full px-4 py-3" 
+                       placeholder="Your full name">
+            </div>
+            <div>
+                <label for="sender_designation" class="block text-sm font-semibold text-gray-700 mb-3">💼 Your Designation</label>
+                <input type="text" name="sender_designation" id="sender_designation" 
+                       class="form-input w-full px-4 py-3" 
+                       placeholder="e.g., Founder & Managing Director">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-section p-8">
+        <h2 class="section-title text-3xl font-bold mb-2 text-center">Step 3: Upload Your Files</h2>
+        <p class="text-center text-gray-600 mb-8">Upload the recipient list and your company logo.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-3">📊 Recipients CSV File (Required)</label>
+                <div class="upload-area p-8 text-center" onclick="document.getElementById('csv_file').click()">
+                    <input type="file" name="csv_file" id="csv_file" required accept=".csv" class="hidden">
+                    <div class="text-4xl mb-4">📊</div>
+                    <p class="text-lg font-medium text-gray-700 mb-2" id="csv-label">Choose CSV file or drag here</p>
+                    <p class="text-xs text-blue-700 bg-blue-50 rounded px-2 py-1 mt-2 inline-block" id="csv-requirements">Required columns: <b>email, name, role, slot</b></p>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-3">🖼️ Company Logo (Optional)</label>
+                <div class="upload-area p-8 text-center" onclick="document.getElementById('logo_file').click()">
+                    <input type="file" name="logo_file" id="logo_file" accept="image/png,image/jpeg" class="hidden">
+                    <div class="text-4xl mb-4">🖼️</div>
+                    <p class="text-lg font-medium text-gray-700 mb-2" id="logo-label">Choose logo file or drag here</p>
+                </div>
+            </div>
+            
+            <div id="cv-upload-section" style="display: none;">
+                <label class="block text-sm font-semibold text-gray-700 mb-3">📄 CV/Resume Attachment (Optional)</label>
+                <div class="upload-area p-8 text-center" onclick="document.getElementById('cv_file').click()">
+                    <input type="file" name="cv_file" id="cv_file" accept=".pdf,.doc,.docx" class="hidden">
+                    <div class="text-4xl mb-4">📄</div>
+                    <p class="text-lg font-medium text-gray-700 mb-2" id="cv-label">Choose CV file or drag here</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center pt-6">
+        <button type="submit" class="submit-btn px-12 py-5 text-white shadow-lg">
+            <span class="mr-3 text-2xl">🚀</span>
+            Launch Email Campaign
+        </button>
+    </div>
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/index_script.js') }}"></script>
+{% endblock %}

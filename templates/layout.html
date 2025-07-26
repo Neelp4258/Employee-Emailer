@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Dazzlo Bulk Emailer{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .main-container {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .header-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .section-title {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .flash-message {
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            border: 1px solid #fecaca;
+            border-radius: 12px;
+            animation: slideIn 0.3s ease;
+        }
+        .flash-message.success {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-color: #bbf7d0;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+    {% block head_extra %}{% endblock %}
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+    <div class="w-full max-w-7xl">
+        <header class="text-center mb-8">
+            <div class="header-gradient rounded-3xl p-8 mb-6 shadow-2xl">
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-4">{% block header_title %}📧 Dazzlo Bulk Emailer{% endblock %}</h1>
+                <p class="text-xl md:text-2xl text-blue-100 font-medium">{% block header_subtitle %}Professional Email Automation for HR Teams{% endblock %}</p>
+            </div>
+        </header>
+
+        <main class="main-container p-8 md:p-12">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="flash-message {{ 'success' if category == 'success' else '' }} p-4 mb-6" role="alert">
+                            <div class="flex items-center">
+                                <span class="text-xl mr-3">{{ '✅' if category == 'success' else '❌' }}</span>
+                                <span class="font-medium text-gray-800">{{ message }}</span>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer class="text-center mt-8">
+            <p class="text-white text-sm opacity-80">© {{ now.year }} {{ config.COMPANY_NAME }}. All rights reserved.</p>
+        </footer>
+    </div>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

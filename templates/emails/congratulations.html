@@ -1,0 +1,32 @@
+{% extends "previews/preview_base.html" %}
+
+{% block content %}
+<div style="text-align: center; margin-bottom: 20px;">
+    <h2 style="font-size: 24px; font-weight: bold; color: #b8860b;">🎊 YOU'RE SELECTED! 🎊</h2>
+    <p style="font-size: 16px; color: #666;">
+        We are thrilled to offer you the position of<br>
+        <span style="background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%); color: white; padding: 8px 18px; border-radius: 25px; font-weight: bold; display: inline-block; margin-top: 10px;">{{ role }}</span>
+    </p>
+</div>
+
+<p><strong>Dear {{ name }},</strong></p>
+
+<p>Congratulations! 🎉 We are delighted to inform you that you have been <strong>selected</strong> for the 
+<strong>{{ role }}</strong> position at <strong>{{ company }}</strong>.</p>
+
+<p>Our team believes you are the perfect fit for this role. Your qualifications and enthusiasm impressed us greatly during the selection process.</p>
+
+<div style="background: #fff3e0; border-left: 4px solid #d4af37; padding: 20px; margin: 20px 0; border-radius: 8px;">
+    <h3 style="color: #b8860b; margin-top: 0;">📋 Next Steps:</h3>
+    <ul>
+        <li>Our HR team will contact you within 2-3 business days for further discussion.</li>
+        <li>Please keep your documents ready for the verification process.</li>
+    </ul>
+</div>
+
+<p>We are excited to welcome you to the <strong>{{ company }}</strong> family!</p>
+
+<p><strong>Warm Regards,</strong><br>
+<strong>The DazzloHR Solutions Team</strong><br>
+<em>Human Resources Department</em></p>
+{% endblock %}

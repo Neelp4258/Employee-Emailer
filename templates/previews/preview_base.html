@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Preview</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f9f9f9; }
+        .container { max-width: 700px; margin: 20px auto; background-color: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); }
+        .header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 20px; border-bottom: 2px solid #e0e0e0; margin-bottom: 20px; flex-wrap: wrap; }
+        .header-left { display: flex; align-items: center; }
+        .company-info { margin-left: 15px; }
+        .company-name { font-size: 24px; font-weight: bold; color: #222; margin: 0; }
+        .tagline { font-style: italic; font-size: 11px; color: #666; margin-top: 5px; }
+        .contact-info { text-align: right; font-size: 10px; color: #444; font-weight: bold; }
+        .contact-info p { margin: 2px 0; }
+        .golden-lines { border-bottom: 1.5px solid #D4AF37; padding-bottom: 4px; margin-bottom: 15px; }
+        .golden-lines::after { content: ''; display: block; border-bottom: 0.8px solid #D4AF37; margin-top: 4px; }
+        .content { font-size: 14px; }
+        .instructions ul { list-style-type: disc; margin-left: 20px; padding-left: 0; }
+        .footer { text-align: center; font-size: 10px; color: #666; margin-top: 30px; padding-top: 15px; border-top: 1px solid #e0e0e0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <img src="cid:{{ config.LOGO_CID }}" alt="Logo" style="width: 50px; height: 50px; border-radius: 8px;" onerror="this.style.display='none';">
+                <div class="company-info">
+                    <h1 class="company-name">{{ config.COMPANY_NAME }}</h1>
+                    <p class="tagline">{{ config.COMPANY_TAGLINE }}</p>
+                </div>
+            </div>
+            <div class="contact-info">
+                <p>Tel: {{ config.COMPANY_PHONE }}</p>
+                <p>Email: <a href="mailto:{{ config.COMPANY_EMAIL }}" style="color: #007bff;">{{ config.COMPANY_EMAIL }}</a></p>
+            </div>
+        </div>
+        <div class="golden-lines"></div>
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+        <div class="footer">
+            <p>&copy; {{ now.year }} {{ config.COMPANY_NAME }}. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

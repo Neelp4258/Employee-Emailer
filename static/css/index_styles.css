@@ -1,0 +1,50 @@
+/* static/css/index_styles.css */
+body {
+    background: linear-gradient(135deg, #f8fafc 0%, #e6ecf3 100%);
+}
+.template-card {
+    background: linear-gradient(135deg, #fffdfa 0%, #e6ecf3 100%);
+    border: 2px solid #bcd0ee; border-radius: 16px;
+    transition: all 0.3s ease; cursor: pointer;
+}
+.template-card:hover {
+    transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 60, 120, 0.08);
+    border-color: #3b82f6;
+}
+.template-card.selected {
+    border-color: #3b82f6; background: linear-gradient(135deg, #f0f4ff 0%, #e6f3ff 100%);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.15); transform: translateY(-2px);
+}
+.template-icon {
+    width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;
+    border-radius: 16px; font-size: 28px; color: white;
+}
+.interview-icon { background: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 100%); }
+.congrats-icon { background: linear-gradient(135deg, #fbbf24 0%, #3b82f6 100%); }
+.partnership-icon { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+.form-section {
+    background: linear-gradient(135deg, #fffdfa 0%, #f3f7fa 100%);
+    border-radius: 16px; border: 1px solid #e6ecf3;
+}
+.upload-area {
+    background: #fffdfa; border: 3px dashed #bcd0ee; border-radius: 16px;
+    transition: all 0.3s ease; cursor: pointer;
+}
+.upload-area:hover, .upload-area.dragover {
+    border-color: #3b82f6; background: #f0f6ff; transform: scale(1.02);
+}
+.submit-btn {
+    background: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 100%);
+    border-radius: 16px; font-weight: 600; font-size: 18px;
+    transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.18);
+}
+.submit-btn:hover {
+    transform: translateY(-3px); box-shadow: 0 15px 40px rgba(59, 130, 246, 0.25);
+}
+.preview-container {
+    border: 2px solid #bcd0ee; border-radius: 16px; overflow: hidden;
+    background: #fffdfa; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.preview-header {
+    padding: 12px 16px; background: #f8fafc; border-bottom: 2px solid #e6ecf3;
+}

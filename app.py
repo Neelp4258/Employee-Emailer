@@ -1,7 +1,7 @@
 # app.py
-# Main file for the DazzloGo Bulk Emailer web application.
+# Main file for the Flask web application.
 
-from flask import Flask, render_template, request, flash, redirect, url_for, send_from_directory
+from flask import Flask, render_template, request, flash, redirect, url_for
 import os
 import csv
 import smtplib
@@ -12,22 +12,22 @@ from werkzeug.utils import secure_filename
 
 # --- Flask App Configuration ---
 app = Flask(__name__)
-app.secret_key = 'a_very_secret_key_for_flash_messages' # Necessary for flashing messages
+app.secret_key = 'supersecretkey_for_flash_messages' # Necessary for flashing messages
 app.config['UPLOAD_FOLDER'] = 'uploads'
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 
-# --- Email Sending Logic ---
+# --- Email Sending Logic (Reverted to original branding) ---
 
-LOGO_CID = "dazzlogo_logo"
+LOGO_CID = "company_logo"
 
 def create_html_email_body(name, role, slot, has_logo=False):
     """
-    Generates a professional, mobile-friendly HTML body for the email.
+    Generates the full HTML body for the email, including the letterhead.
     The logo is referenced via Content-ID if available.
     """
     logo_src = f"cid:{LOGO_CID}" if has_logo else ""
-    logo_html = f'<img src="{logo_src}" alt="DazzloGo Logo" style="width: 50px; height: 50px; vertical-align: middle; border-radius: 8px;">' if has_logo else '<div style="width: 50px; height: 50px; background-color: #f0f0f0; border: 1px solid #ccc; display: inline-block; vertical-align: middle; text-align: center; line-height: 50px; font-size: 8px; color: #666; border-radius: 8px;">LOGO</div>'
+    logo_html = f'<img src="{logo_src}" alt="Company Logo" style="width: 50px; height: 50px; vertical-align: middle; border-radius: 8px;">' if has_logo else '<div style="width: 50px; height: 50px; background-color: #f0f0f0; border: 1px solid #ccc; display: inline-block; vertical-align: middle; text-align: center; line-height: 50px; font-size: 8px; color: #666; border-radius: 8px;">LOGO</div>'
 
     html_content = f"""
     <!DOCTYPE html>
@@ -35,66 +35,58 @@ def create_html_email_body(name, role, slot, has_logo=False):
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Interview Shortlisting - DazzloGo</title>
+        <title>Interview Shortlisting</title>
         <style>
-            body {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f7; }}
-            .email-container {{ max-width: 600px; margin: 20px auto; background-color: #ffffff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07); }}
-            .header {{ display: flex; align-items: center; justify-content: space-between; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0; margin-bottom: 20px; flex-wrap: wrap; gap: 15px; }}
+            body {{ font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 20px; background-color: #f9f9f9; }}
+            .container {{ max-width: 700px; margin: 20px auto; background-color: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); }}
+            .header {{ display: flex; align-items: center; justify-content: space-between; padding-bottom: 20px; border-bottom: 2px solid #e0e0e0; margin-bottom: 20px; flex-wrap: wrap; }}
             .header-left {{ display: flex; align-items: center; }}
             .company-info {{ margin-left: 15px; }}
-            .company-name {{ font-size: 22px; font-weight: 600; color: #1a202c; margin: 0; }}
-            .tagline {{ font-size: 12px; color: #718096; margin-top: 4px; }}
-            .contact-info {{ text-align: right; font-size: 11px; color: #4a5568; }}
+            .company-name {{ font-size: 24px; font-weight: bold; color: #222; margin: 0; }}
+            .tagline {{ font-style: italic; font-size: 11px; color: #666; margin-top: 5px; }}
+            .contact-info {{ text-align: right; font-size: 10px; color: #444; font-weight: bold; }}
             .contact-info p {{ margin: 2px 0; }}
-            .content {{ font-size: 15px; color: #2d3748; }}
-            .content p {{ margin-bottom: 15px; }}
-            .instructions ul {{ list-style-type: disc; margin-left: 20px; padding-left: 5px; color: #4a5568; }}
-            .instructions li {{ margin-bottom: 8px; }}
-            .footer {{ text-align: center; font-size: 12px; color: #a0aec0; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0; }}
-            strong {{ font-weight: 600; color: #2d3748; }}
-            a {{ color: #4299e1; text-decoration: none; }}
-            @media screen and (max-width: 600px) {{
-                .email-container {{ padding: 15px; }}
-                .header {{ flex-direction: column; align-items: flex-start; }}
-                .contact-info {{ text-align: left; margin-top: 15px; }}
-                .company-name {{ font-size: 20px; }}
-            }}
+            .golden-lines {{ border-bottom: 1.5px solid #D4AF37; padding-bottom: 4px; margin-bottom: 15px; }}
+            .golden-lines::after {{ content: ''; display: block; border-bottom: 0.8px solid #D4AF37; margin-top: 4px; }}
+            .content {{ font-size: 14px; }}
+            .instructions ul {{ list-style-type: disc; margin-left: 20px; padding-left: 0; }}
+            .footer {{ text-align: center; font-size: 10px; color: #666; margin-top: 30px; padding-top: 15px; border-top: 1px solid #e0e0e0; }}
+            strong {{ font-weight: bold; }}
         </style>
     </head>
     <body>
-        <div class="email-container">
+        <div class="container">
             <div class="header">
                 <div class="header-left">
                     {logo_html}
                     <div class="company-info">
-                        <h1 class="company-name">DazzloGo</h1>
-                        <p class="tagline">Innovate. Integrate. Inspire.</p>
+                        <h1 class="company-name">Dazzlo Enterprises Pvt Ltd</h1>
+                        <p class="tagline">Redefining lifestyle with Innovations and Dreams</p>
                     </div>
                 </div>
                 <div class="contact-info">
-                    <p>+91 9373015503</p>
-                    <p><a href="mailto:info@dazzlo.co.in">info@dazzlo.co.in</a></p>
+                    <p>Tel: +91 9373015503</p>
+                    <p>Email: <a href="mailto:info@dazzlo.co.in" style="color: #007bff; text-decoration: none;">info@dazzlo.co.in</a></p>
+                    <p>Location: Kalyan, Maharashtra 421301</p>
                 </div>
             </div>
+            <div class="golden-lines"></div>
             <div class="content">
                 <p>Hello {name},</p>
                 <p>We are pleased to inform you that your application has been shortlisted by our Hiring Team for the role of <strong>{role}</strong>.</p>
-                <p>A telephonic interview has been scheduled for you in the following time slot: <strong>{slot}</strong>.</p>
-                <p>Please be prepared for the interview and follow the instructions below:</p>
+                <p>An Interview has been scheduled on <strong>{slot}</strong>.</p>
+                <p>Instructions for the Interview-</p>
                 <div class="instructions">
                     <ul>
-                        <li>Ensure your phone is fully charged and you are in a quiet location.</li>
-                        <li>Have a copy of your updated resume ready for your reference.</li>
-                        <li>Our HR representative will call you during the scheduled time.</li>
+                        <li>Please ensure your phone is fully charged and reachable at the scheduled time.</li>
+                        <li>Keep a copy of your updated resume handy for reference.</li>
+                        <li>Be in a quiet environment to avoid any background disturbance.</li>
                     </ul>
                 </div>
-                <p>If you have any questions or need to reschedule, please reply to this email at your earliest convenience.</p>
-                <p>We look forward to speaking with you.</p>
-                <p>Best regards,<br><strong>The DazzloGo HR Team</strong></p>
+                <p>Best regards,<br>HR Team<br>DazzloHR</p>
             </div>
             <div class="footer">
-                <p>&copy; 2025 DazzloGo. All rights reserved.</p>
-                <p><a href="http://www.dazzlo.co.in">www.dazzlo.co.in</a></p>
+                <p>&copy; 2025 Dazzlo Enterprises Pvt Ltd. All rights reserved.</p>
             </div>
         </div>
     </body>
@@ -152,12 +144,11 @@ def send_emails_route():
     csv_path = os.path.join(app.config['UPLOAD_FOLDER'], csv_filename)
     csv_file.save(csv_path)
 
-    # Load logo data from the static folder
+    # Handle Logo file upload (optional)
     logo_data = None
-    logo_path = os.path.join('static', 'logo.png')
-    if os.path.exists(logo_path):
-        with open(logo_path, 'rb') as f:
-            logo_data = f.read()
+    logo_file = request.files.get('logo_file')
+    if logo_file and logo_file.filename != '':
+        logo_data = logo_file.read()
 
     # Process and send emails
     results = []
@@ -178,7 +169,7 @@ def send_emails_route():
                 role = row['role'].strip()
                 slot = row['slot'].strip()
                 
-                subject = f"Interview Invitation for {role} at DazzloGo"
+                subject = f"Interview Shortlisting - {role} - DazzloHR"
                 html_body = create_html_email_body(name, role, slot, has_logo=bool(logo_data))
                 
                 success, message = send_email_smtp(sender_email, sender_password, recipient_email, subject, html_body, logo_data)

@@ -1,0 +1,66 @@
+<!-- templates/index.html -->
+<!-- The main user interface for the DazzloGo Bulk Emailer. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DazzloGo Bulk Emailer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+    <div class="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg transform transition-all hover:shadow-2xl">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-800">DazzloGo Emailer</h1>
+            <p class="text-gray-500 mt-2">Streamline your interview notifications.</p>
+        </div>
+
+        <!-- Flash messages display area -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="p-4 mb-4 text-sm rounded-lg {{ 'bg-red-100 text-red-800' if category == 'danger' else 'bg-blue-100 text-blue-800' }}" role="alert">
+                        <span class="font-medium">{{ message }}</span>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form action="/send_emails" method="post" enctype="multipart/form-data" class="space-y-6">
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Your Zoho Email</label>
+                <input type="email" name="email" id="email" required class="mt-1 block w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+            </div>
+
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Your Zoho App Password</label>
+                <input type="password" name="password" id="password" required class="mt-1 block w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+                <p class="text-xs text-gray-500 mt-2">Note: For security, use an app-specific password if 2FA is enabled on your Zoho account.</p>
+            </div>
+
+            <div>
+                <label for="csv_file" class="block text-sm font-medium text-gray-700 mb-1">Recipients CSV File</label>
+                <input type="file" name="csv_file" id="csv_file" required accept=".csv" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 cursor-pointer">
+                <p class="text-xs text-gray-500 mt-2">Required columns: `email`, `name`, `role`, `slot`</p>
+            </div>
+
+            <div>
+                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform transform hover:scale-105">
+                    Send Emails
+                </button>
+            </div>
+        </form>
+        <p class="text-center text-xs text-gray-400 mt-6">DazzloGo &copy; 2025</p>
+    </div>
+</body>
+</html>

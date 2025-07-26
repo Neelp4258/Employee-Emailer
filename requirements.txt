@@ -1,4 +1,2 @@
-requirements.txt
-Lists the Python packages needed to run the web app.
 Flask
-Werkzeug
+gunicorn

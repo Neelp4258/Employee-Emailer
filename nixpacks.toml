@@ -1,0 +1,10 @@
+# nixpacks.toml
+
+[phases.setup]
+# This tells the build system to install the 'python3-venv' package,
+# which is required to create virtual environments.
+aptPkgs = ["python3-venv"]
+
+[start]
+# This sets the production start command.
+command = "gunicorn --bind 0.0.0.0:8000 app:app"

@@ -1,3 +1,146 @@
+// CSV Input Toggle functionality
+function toggleCsvInput(type) {
+    const fileToggle = document.getElementById('csv-file-toggle');
+    const notepadToggle = document.getElementById('csv-notepad-toggle');
+    const fileSection = document.getElementById('csv-file-section');
+    const notepadSection = document.getElementById('csv-notepad-section');
+    const csvFile = document.getElementById('csv_file');
+    const csvNotepad = document.getElementById('csv_notepad');
+    
+    if (type === 'file') {
+        fileToggle.classList.add('active');
+        notepadToggle.classList.remove('active');
+        fileSection.style.display = 'block';
+        notepadSection.style.display = 'none';
+        csvFile.required = true;
+        csvNotepad.required = false;
+        csvNotepad.name = '';
+        csvFile.name = 'csv_file';
+    } else {
+        notepadToggle.classList.add('active');
+        fileToggle.classList.remove('active');
+        notepadSection.style.display = 'block';
+        fileSection.style.display = 'none';
+        csvNotepad.required = true;
+        csvFile.required = false;
+        csvFile.name = '';
+        csvNotepad.name = 'csv_notepad';
+    }
+    
+    // Update requirements text for both sections
+    updateCsvRequirements();
+}
+
+// Generate sample CSV data
+function generateSampleCsv() {
+    const templateType = document.querySelector('input[name="template_type"]:checked').value;
+    const notepad = document.getElementById('csv_notepad');
+    
+    const samples = {
+        'interview': `email,name,role,slot
+john.doe@example.com,John Doe,Software Engineer,October 25, 2025 at 11:00 AM
+jane.smith@example.com,Jane Smith,Product Manager,October 26, 2025 at 2:00 PM
+mike.wilson@example.com,Mike Wilson,UI/UX Designer,October 27, 2025 at 10:00 AM`,
+        'congratulations': `email,name,role,company
+john.doe@example.com,John Doe,Software Engineer,TechCorp Inc
+jane.smith@example.com,Jane Smith,Product Manager,InnovateLabs
+mike.wilson@example.com,Mike Wilson,UI/UX Designer,DesignStudio`,
+        'partnership_enterprises': `email,company
+ceo@techcorp.com,TechCorp Inc
+director@innovatelabs.com,InnovateLabs
+manager@designstudio.com,DesignStudio`,
+        'partnership_hr': `email,company
+hr@techcorp.com,TechCorp Inc
+hr@innovatelabs.com,InnovateLabs
+hr@designstudio.com,DesignStudio`
+    };
+    
+    notepad.value = samples[templateType] || samples['interview'];
+}
+
+// Update CSV requirements text
+function updateCsvRequirements() {
+    const templateType = document.querySelector('input[name="template_type"]:checked').value;
+    const requirements = {
+        'interview': 'email, name, role, slot',
+        'congratulations': 'email, name, role, company',
+        'partnership_enterprises': 'email, company',
+        'partnership_hr': 'email, company'
+    };
+    
+    const requirementsText = `Required columns: <b>${requirements[templateType]}</b>`;
+    
+    // Update both requirement elements
+    const csvRequirements = document.getElementById('csv-requirements');
+    const notepadRequirements = document.getElementById('notepad-requirements');
+    
+    if (csvRequirements) {
+        csvRequirements.innerHTML = requirementsText;
+    }
+    if (notepadRequirements) {
+        notepadRequirements.innerHTML = requirementsText;
+    }
+}
+
+// Email validation functionality
+async function validateEmailCredentials() {
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const validateBtn = document.getElementById('validate-btn');
+    const validationResult = document.getElementById('validation-result');
+    
+    if (!email || !password) {
+        showValidationResult('Please enter both email and password', 'error');
+        return;
+    }
+    
+    // Show loading state
+    validateBtn.disabled = true;
+    validateBtn.innerHTML = '<span class="loading-spinner"></span> Validating...';
+    showValidationResult('Validating credentials...', 'loading');
+    
+    try {
+        const response = await fetch('/validate_credentials', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: email,
+                password: password
+            })
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            showValidationResult('✅ Credentials are valid!', 'success');
+        } else {
+            showValidationResult(`❌ ${data.message}`, 'error');
+        }
+    } catch (error) {
+        showValidationResult('❌ Network error. Please try again.', 'error');
+    } finally {
+        // Reset button state
+        validateBtn.disabled = false;
+        validateBtn.textContent = 'Validate';
+    }
+}
+
+function showValidationResult(message, type) {
+    const validationResult = document.getElementById('validation-result');
+    validationResult.textContent = message;
+    validationResult.className = `mt-2 text-sm ${type}`;
+    validationResult.classList.remove('hidden');
+    
+    // Auto-hide success messages after 5 seconds
+    if (type === 'success') {
+        setTimeout(() => {
+            validationResult.classList.add('hidden');
+        }, 5000);
+    }
+}
+
 // Template selection and preview functionality
 function selectTemplate(templateType) {
     // Remove selected class from all cards
@@ -24,25 +167,26 @@ function selectTemplate(templateType) {
     }
     
     // Update CSV requirements text
+    updateCsvRequirements();
+    
+    // Add note for partnership template
     const requirementsElement = document.getElementById('csv-requirements');
-    if (requirementsElement) {
-        const requirements = {
-            'interview': 'email, name, role, slot',
-            'congratulations': 'email, name, role, company',
-            'partnership': 'email, company'
-        };
-        requirementsElement.innerHTML = `Required columns: <b>${requirements[templateType]}</b>`;
-        
-        // Add note for partnership template
-        if (templateType === 'partnership') {
-            requirementsElement.innerHTML += '<br><span class="text-orange-600 text-xs">Note: You\'ll also need to provide your name and designation below</span>';
+    const notepadRequirements = document.getElementById('notepad-requirements');
+    const partnershipNote = '<br><span class="text-orange-600 text-xs">Note: You\'ll also need to provide your name and designation below</span>';
+    
+    if (templateType === 'partnership_enterprises' || templateType === 'partnership_hr') {
+        if (requirementsElement) {
+            requirementsElement.innerHTML += partnershipNote;
+        }
+        if (notepadRequirements) {
+            notepadRequirements.innerHTML += partnershipNote;
         }
     }
     
     // Show/hide CV upload section
     const cvSection = document.getElementById('cv-upload-section');
     if (cvSection) {
-        if (templateType === 'partnership') {
+        if (templateType === 'partnership_enterprises' || templateType === 'partnership_hr') {
             cvSection.style.display = 'block';
         } else {
             cvSection.style.display = 'none';
@@ -52,7 +196,7 @@ function selectTemplate(templateType) {
     // Show/hide sender info section
     const senderInfoSection = document.getElementById('sender-info-section');
     if (senderInfoSection) {
-        if (templateType === 'partnership') {
+        if (templateType === 'partnership_enterprises' || templateType === 'partnership_hr') {
             senderInfoSection.style.display = 'block';
         } else {
             senderInfoSection.style.display = 'none';
@@ -90,6 +234,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // CV file upload
+    const cvFile = document.getElementById('cv_file');
+    const cvLabel = document.getElementById('cv-label');
+    
+    if (cvFile) {
+        cvFile.addEventListener('change', function() {
+            if (this.files.length > 0) {
+                const file = this.files[0];
+                const fileSize = (file.size / 1024 / 1024).toFixed(2); // Convert to MB
+                cvLabel.textContent = `📄 ${file.name} (${fileSize} MB)`;
+                
+                // Check file size (max 10MB)
+                if (file.size > 10 * 1024 * 1024) {
+                    alert('File size must be less than 10MB');
+                    this.value = '';
+                    cvLabel.textContent = 'Choose file or drag here';
+                }
+            } else {
+                cvLabel.textContent = 'Choose file or drag here';
+            }
+        });
+    }
+    
     // Drag and drop functionality
     const uploadAreas = document.querySelectorAll('.upload-area');
     
@@ -118,6 +285,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
+    // Add event listener for validate button
+    const validateBtn = document.getElementById('validate-btn');
+    if (validateBtn) {
+        validateBtn.addEventListener('click', validateEmailCredentials);
+    }
 });
 
 // Form validation
@@ -127,13 +300,23 @@ document.addEventListener('DOMContentLoaded', function() {
     if (form) {
         form.addEventListener('submit', function(e) {
             const csvFile = document.getElementById('csv_file');
+            const csvNotepad = document.getElementById('csv_notepad');
             const email = document.getElementById('email');
             const password = document.getElementById('password');
             
-            // Check if CSV file is selected
-            if (!csvFile || !csvFile.files.length) {
+            // Check if either CSV file is selected or notepad has content
+            const isFileMode = csvFile.name === 'csv_file';
+            const isNotepadMode = csvNotepad.name === 'csv_notepad';
+            
+            if (isFileMode && (!csvFile || !csvFile.files.length)) {
                 e.preventDefault();
                 alert('Please select a CSV file.');
+                return;
+            }
+            
+            if (isNotepadMode && (!csvNotepad || !csvNotepad.value.trim())) {
+                e.preventDefault();
+                alert('Please enter CSV data in the notepad.');
                 return;
             }
             
@@ -151,9 +334,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Check sender information for partnership template
+            // Check sender information for partnership templates
             const templateType = document.querySelector('input[name="template_type"]:checked').value;
-            if (templateType === 'partnership') {
+            if (templateType === 'partnership_enterprises' || templateType === 'partnership_hr') {
                 const senderName = document.getElementById('sender_name');
                 const senderDesignation = document.getElementById('sender_designation');
                 

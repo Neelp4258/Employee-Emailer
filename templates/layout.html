@@ -11,30 +11,30 @@
     <style>
         body { 
             font-family: 'Inter', sans-serif; 
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #fafafa 0%, #f5f5f0 100%);
             min-height: 100vh;
             overflow-x: hidden;
         }
         .main-container {
-            background: rgba(255, 255, 255, 0.98);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
-            border-radius: 24px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.8);
         }
         .header-gradient {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f8f6f0 0%, #e8e4d8 100%);
+            border: 1px solid #e2e8f0;
         }
         .section-title {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #2d3748;
+            font-weight: 700;
+            letter-spacing: -0.025em;
         }
         .flash-message {
             background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
             border: 1px solid #fecaca;
-            border-radius: 12px;
+            border-radius: 8px;
             animation: slideIn 0.3s ease;
         }
         .flash-message.success {
@@ -51,13 +51,13 @@
 <body class="flex items-center justify-center min-h-screen p-4">
     <div class="w-full max-w-7xl">
         <header class="text-center mb-8">
-            <div class="header-gradient rounded-3xl p-8 mb-6 shadow-2xl">
-                <h1 class="text-5xl md:text-6xl font-bold text-white mb-4">{% block header_title %}📧 Dazzlo Bulk Emailer{% endblock %}</h1>
-                <p class="text-xl md:text-2xl text-blue-100 font-medium">{% block header_subtitle %}Professional Email Automation for HR Teams{% endblock %}</p>
+            <div class="header-gradient rounded-2xl p-8 mb-6 shadow-lg">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">{% block header_title %}📧 Dazzlo Bulk Emailer{% endblock %}</h1>
+                <p class="text-lg md:text-xl text-gray-600 font-medium">{% block header_subtitle %}Professional Email Automation for HR Teams{% endblock %}</p>
             </div>
         </header>
 
-        <main class="main-container p-8 md:p-12">
+        <main class="main-container p-6 md:p-8">
             {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
                     {% for category, message in messages %}
@@ -75,7 +75,7 @@
         </main>
 
         <footer class="text-center mt-8">
-            <p class="text-white text-sm opacity-80">© {{ now.year }} {{ config.COMPANY_NAME }}. All rights reserved.</p>
+            <p class="text-gray-600 text-sm opacity-80">© {{ now.year }} {{ config.COMPANY_NAME }}. All rights reserved.</p>
         </footer>
     </div>
     {% block scripts %}{% endblock %}

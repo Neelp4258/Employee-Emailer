@@ -37,12 +37,23 @@
                     </div>
                 </div>
                 
-                <div class="template-card p-6" onclick="selectTemplate('partnership')">
-                    <input type="radio" name="template_type" value="partnership" id="partnership" class="hidden">
+                <div class="template-card p-6" onclick="selectTemplate('partnership_enterprises')">
+                    <input type="radio" name="template_type" value="partnership_enterprises" id="partnership_enterprises" class="hidden">
+                     <div class="flex items-center">
+                        <div class="template-icon partnership-icon">🏢</div>
+                        <div class="ml-4">
+                            <h3 class="text-xl font-bold text-gray-800">Dazzlo Enterprises Partnership</h3>
+                            <p class="text-gray-600 text-sm">Required CSV: <code class="font-mono text-xs">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="template-card p-6" onclick="selectTemplate('partnership_hr')">
+                    <input type="radio" name="template_type" value="partnership_hr" id="partnership_hr" class="hidden">
                      <div class="flex items-center">
                         <div class="template-icon partnership-icon">🤝</div>
                         <div class="ml-4">
-                            <h3 class="text-xl font-bold text-gray-800">Partnership Proposal</h3>
+                            <h3 class="text-xl font-bold text-gray-800">DazzloHR Solutions Partnership</h3>
                             <p class="text-gray-600 text-sm">Required CSV: <code class="font-mono text-xs">email, company</code></p>
                         </div>
                     </div>
@@ -71,15 +82,22 @@
             </div>
             <div>
                 <label for="password" class="block text-sm font-semibold text-gray-700 mb-3">🔑 Your Zoho App Password</label>
-                <input type="password" name="password" id="password" required 
-                       class="form-input w-full px-4 py-3" 
-                       placeholder="Enter your app password">
+                <div class="relative">
+                    <input type="password" name="password" id="password" required 
+                           class="form-input w-full px-4 py-3 pr-12" 
+                           placeholder="Enter your app password">
+                    <button type="button" id="validate-btn" 
+                            class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700 transition-colors">
+                        Validate
+                    </button>
+                </div>
+                <div id="validation-result" class="mt-2 text-sm hidden"></div>
             </div>
         </div>
     </div>
 
     <div class="form-section p-8" id="sender-info-section" style="display: none;">
-        <h2 class="section-title text-3xl font-bold mb-2 text-center">Step 2.5: Sender Information (Partnership Template)</h2>
+        <h2 class="section-title text-3xl font-bold mb-2 text-center">Step 2.5: Sender Information (Partnership Templates)</h2>
         <p class="text-center text-gray-600 mb-8">This information will appear in the email footer for partnership emails.</p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
@@ -98,19 +116,49 @@
         </div>
     </div>
 
-
     <div class="form-section p-8">
-        <h2 class="section-title text-3xl font-bold mb-2 text-center">Step 3: Upload Your Files</h2>
-        <p class="text-center text-gray-600 mb-8">Upload the recipient list and your company logo.</p>
+        <h2 class="section-title text-3xl font-bold mb-2 text-center">Step 3: Add Recipients</h2>
+        <p class="text-center text-gray-600 mb-8">Upload a CSV file or use the quick notepad for mobile users.</p>
+        
+        <!-- CSV Input Toggle -->
+        <div class="text-center mb-6">
+            <div class="inline-flex bg-gray-100 rounded-lg p-1">
+                <button type="button" id="csv-file-toggle" class="toggle-btn active px-4 py-2 rounded-md text-sm font-medium transition-all" onclick="toggleCsvInput('file')">
+                    📁 Upload CSV File
+                </button>
+                <button type="button" id="csv-notepad-toggle" class="toggle-btn px-4 py-2 rounded-md text-sm font-medium transition-all" onclick="toggleCsvInput('notepad')">
+                    📝 Quick Notepad (Mobile)
+                </button>
+            </div>
+        </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-3">📊 Recipients CSV File (Required)</label>
+            <!-- CSV File Upload Section -->
+            <div id="csv-file-section">
+                <label class="block text-sm font-semibold text-gray-700 mb-3">📊 Recipients CSV File</label>
                 <div class="upload-area p-8 text-center" onclick="document.getElementById('csv_file').click()">
-                    <input type="file" name="csv_file" id="csv_file" required accept=".csv" class="hidden">
+                    <input type="file" name="csv_file" id="csv_file" accept=".csv" class="hidden">
                     <div class="text-4xl mb-4">📊</div>
                     <p class="text-lg font-medium text-gray-700 mb-2" id="csv-label">Choose CSV file or drag here</p>
                     <p class="text-xs text-blue-700 bg-blue-50 rounded px-2 py-1 mt-2 inline-block" id="csv-requirements">Required columns: <b>email, name, role, slot</b></p>
+                </div>
+            </div>
+            
+            <!-- CSV Notepad Section -->
+            <div id="csv-notepad-section" style="display: none;">
+                <label class="block text-sm font-semibold text-gray-700 mb-3">📝 Quick CSV Notepad</label>
+                <div class="notepad-container">
+                    <textarea name="csv_notepad" id="csv_notepad" rows="12" 
+                              class="w-full p-4 border-2 border-gray-300 rounded-lg font-mono text-sm resize-none focus:border-blue-500 focus:outline-none"
+                              placeholder="Enter your CSV data here...
+Example format:
+email,name,role,slot
+john@example.com,John Doe,Software Engineer,October 25, 2025 at 11:00 AM
+jane@example.com,Jane Smith,Product Manager,October 26, 2025 at 2:00 PM"></textarea>
+                    <div class="mt-3">
+                        <p class="text-xs text-blue-700 bg-blue-50 rounded px-2 py-1 inline-block" id="notepad-requirements">Required columns: <b>email, name, role, slot</b></p>
+                        <button type="button" onclick="generateSampleCsv()" class="ml-2 text-xs text-green-600 hover:text-green-800 underline">📋 Generate Sample</button>
+                    </div>
                 </div>
             </div>
 
@@ -124,11 +172,12 @@
             </div>
             
             <div id="cv-upload-section" style="display: none;">
-                <label class="block text-sm font-semibold text-gray-700 mb-3">📄 CV/Resume Attachment (Optional)</label>
+                <label class="block text-sm font-semibold text-gray-700 mb-3">📄 Company Profile Attachment (Optional)</label>
                 <div class="upload-area p-8 text-center" onclick="document.getElementById('cv_file').click()">
                     <input type="file" name="cv_file" id="cv_file" accept=".pdf,.doc,.docx" class="hidden">
                     <div class="text-4xl mb-4">📄</div>
-                    <p class="text-lg font-medium text-gray-700 mb-2" id="cv-label">Choose CV file or drag here</p>
+                    <p class="text-lg font-medium text-gray-700 mb-2" id="cv-label">Choose file or drag here</p>
+                    <p class="text-xs text-gray-500 mt-2">Supported: PDF, DOC, DOCX</p>
                 </div>
             </div>
         </div>

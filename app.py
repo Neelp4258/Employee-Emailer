@@ -3,6 +3,8 @@ import os
 import csv
 import smtplib
 import logging
+import time
+import json
 from datetime import datetime, timezone
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -11,7 +13,7 @@ from email.mime.base import MIMEBase
 from email import encoders
 
 from flask import (Flask, render_template, request, flash, redirect, url_for,
-                   g, abort)
+                   g, abort, jsonify)
 from werkzeug.utils import secure_filename
 
 # Configure logging
@@ -41,8 +43,30 @@ def allowed_file(filename, file_type):
         return '.' in filename and filename.rsplit('.', 1)[1].lower() == 'csv'
     elif file_type == 'document':
         return '.' in filename and filename.rsplit('.', 1)[1].lower() in ['pdf', 'doc', 'docx']
+    elif file_type == 'image':
+        return '.' in filename and filename.rsplit('.', 1)[1].lower() in ['png', 'jpg', 'jpeg']
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
+
+def format_date_for_email():
+    """Formats the current date for email templates."""
+    now = datetime.now()
+    day = now.day
+    suffix = 'th' if 11 <= day <= 13 else {1: 'st', 2: 'nd', 3: 'rd'}.get(day % 10, 'th')
+    return now.strftime(f"%d{suffix} %B %Y")
+
+def validate_email_credentials(email, password):
+    """Validates email credentials by attempting to connect to Zoho SMTP."""
+    try:
+        with smtplib.SMTP_SSL("smtp.zoho.in", 465, timeout=10) as server:
+            server.login(email, password)
+        return True, "Credentials are valid"
+    except smtplib.SMTPAuthenticationError:
+        return False, "Invalid email or app password"
+    except smtplib.SMTPException as e:
+        return False, f"SMTP error: {str(e)}"
+    except Exception as e:
+        return False, f"Connection error: {str(e)}"
 
 # --- MODIFIED: This function now accepts credentials as arguments ---
 def send_email_smtp(sender_email, sender_password, recipient_email, subject, html_body, logo_data=None, cv_data=None, cv_filename=None):
@@ -63,7 +87,7 @@ def send_email_smtp(sender_email, sender_password, recipient_email, subject, htm
             img.add_header('Content-ID', f"<{app.config['LOGO_CID']}>")
             msg.attach(img)
 
-        if cv_data:
+        if cv_data and cv_filename:
             part = MIMEBase('application', 'octet-stream')
             part.set_payload(cv_data)
             encoders.encode_base64(part)
@@ -95,17 +119,18 @@ def index():
 
 @app.route('/preview/<template_name>')
 def preview_email(template_name):
-    if template_name not in ['interview', 'congratulations', 'partnership']:
+    if template_name not in ['interview', 'congratulations', 'partnership_enterprises', 'partnership_hr']:
         abort(404)
     preview_data = {
         'name': "Alex Doe",
         'role': "Lead Product Designer",
         'slot': "October 25, 2025, at 11:00 AM",
-        'company': "Sample Company Ltd"
+        'company': "Sample Company Ltd",
+        'current_date': format_date_for_email()
     }
     
-    # Add sample sender information for partnership template
-    if template_name == 'partnership':
+    # Add sample sender information for partnership templates
+    if template_name in ['partnership_enterprises', 'partnership_hr']:
         preview_data.update({
             'sender_name': "John Smith",
             'sender_designation': "Senior Business Development Manager",
@@ -113,6 +138,24 @@ def preview_email(template_name):
         })
     
     return render_template(f"emails/{template_name}.html", **preview_data)
+
+@app.route('/validate_credentials', methods=['POST'])
+def validate_credentials():
+    """Validates email credentials without sending any emails."""
+    try:
+        data = request.get_json()
+        email = data.get('email', '').strip()
+        password = data.get('password', '').strip()
+        
+        if not email or not password:
+            return jsonify({'success': False, 'message': 'Email and password are required'})
+        
+        success, message = validate_email_credentials(email, password)
+        return jsonify({'success': success, 'message': message})
+        
+    except Exception as e:
+        logging.error(f"Error validating credentials: {e}")
+        return jsonify({'success': False, 'message': 'An error occurred during validation'})
 
 @app.route('/send_emails', methods=['POST'])
 def send_emails_route():
@@ -131,35 +174,54 @@ def send_emails_route():
         flash('Email and App Password are required.', 'danger')
         return redirect(url_for('index'))
 
-    # --- File Handling & Validation ---
-    if 'csv_file' not in request.files:
-        flash('No CSV file part in the request.', 'danger')
-        return redirect(url_for('index'))
+    # --- CSV Data Handling & Validation ---
+    csv_data = None
+    csv_path = None
     
-    csv_file = request.files['csv_file']
-    if csv_file.filename == '':
-        flash('No CSV file selected.', 'danger')
+    # Check if CSV file was uploaded
+    if 'csv_file' in request.files and request.files['csv_file'].filename != '':
+        csv_file = request.files['csv_file']
+        if not allowed_file(csv_file.filename, 'csv'):
+            flash('Invalid file type. Please upload a .csv file.', 'danger')
+            return redirect(url_for('index'))
+        
+        csv_filename = secure_filename(csv_file.filename)
+        csv_path = os.path.join(app.config['UPLOAD_FOLDER'], csv_filename)
+        csv_file.save(csv_path)
+    
+    # Check if CSV data was entered in notepad
+    elif 'csv_notepad' in request.form and request.form['csv_notepad'].strip():
+        csv_data = request.form['csv_notepad'].strip()
+        # Create a temporary file from notepad data
+        csv_filename = f"notepad_data_{int(time.time())}.csv"
+        csv_path = os.path.join(app.config['UPLOAD_FOLDER'], csv_filename)
+        
+        try:
+            with open(csv_path, 'w', newline='', encoding='utf-8') as file:
+                file.write(csv_data)
+        except Exception as e:
+            flash(f'Error creating CSV file from notepad data: {e}', 'danger')
+            return redirect(url_for('index'))
+    
+    else:
+        flash('Please either upload a CSV file or enter data in the notepad.', 'danger')
         return redirect(url_for('index'))
 
-    if not (csv_file and allowed_file(csv_file.filename, 'csv')):
-        flash('Invalid file type. Please upload a .csv file.', 'danger')
-        return redirect(url_for('index'))
-
-    csv_filename = secure_filename(csv_file.filename)
-    csv_path = os.path.join(app.config['UPLOAD_FOLDER'], csv_filename)
-    csv_file.save(csv_path)
-
+    # Handle logo file
     logo_data = None
     logo_file = request.files.get('logo_file')
     if logo_file and logo_file.filename != '' and allowed_file(logo_file.filename, 'image'):
         logo_data = logo_file.read()
+        logging.info(f"Logo file attached: {logo_file.filename}")
 
+    # Handle CV/attachment file
     cv_data = None
     cv_filename = None
     cv_file = request.files.get('cv_file')
     if cv_file and cv_file.filename != '' and allowed_file(cv_file.filename, 'document'):
         cv_data = cv_file.read()
         cv_filename = secure_filename(cv_file.filename)
+        logging.info(f"CV file attached: {cv_filename}")
 
     # --- CSV Processing & Email Sending ---
     results = []
@@ -172,7 +234,8 @@ def send_emails_route():
             required_columns = {
                 'interview': ['email', 'name', 'role', 'slot'],
                 'congratulations': ['email', 'name', 'role', 'company'],
-                'partnership': ['email', 'company']
+                'partnership_enterprises': ['email', 'company'],
+                'partnership_hr': ['email', 'company']
             }.get(template_type)
 
             if not all(col in reader.fieldnames for col in required_columns):
@@ -186,15 +249,18 @@ def send_emails_route():
 
                 email_data = {key: row.get(key, '').strip() for key in required_columns}
 
-                subject = f"🎉 Congratulations! You're Selected for the {email_data['role']} Role at {email_data['company']}" if template_type == 'congratulations' else f"Strategic Partnership Opportunity - DazzloHR Solutions" if template_type == 'partnership' else f"Interview for {email_data['role']} at {app.config['COMPANY_NAME']}"
+                subject = f"🎉 Congratulations! You're Selected for the {email_data['role']} Role at {email_data['company']}" if template_type == 'congratulations' else f"Strategic Partnership Opportunity - Dazzlo Enterprises Pvt Ltd" if template_type == 'partnership_enterprises' else f"Strategic Partnership Opportunity - DazzloHR Solutions" if template_type == 'partnership_hr' else f"Interview for {email_data['role']} at {app.config['COMPANY_NAME']}"
                 
-                # Add sender information for partnership template
-                if template_type == 'partnership':
+                # Add sender information for partnership templates
+                if template_type in ['partnership_enterprises', 'partnership_hr']:
                     email_data.update({
                         'sender_name': sender_name,
                         'sender_designation': sender_designation,
                         'sender_email': sender_email
                     })
+                
+                # Add current date to all templates
+                email_data['current_date'] = format_date_for_email()
                 
                 html_body = render_template(f"emails/{template_type}.html", **email_data)
 

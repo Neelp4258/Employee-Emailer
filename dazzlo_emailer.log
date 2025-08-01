@@ -198,3 +198,126 @@
 2025-07-26 17:39:37,998 - INFO -  * Restarting with stat
 2025-07-26 17:39:38,808 - WARNING -  * Debugger is active!
 2025-07-26 17:39:38,814 - INFO -  * Debugger PIN: 880-162-557
+2025-08-01 09:27:48,774 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+2025-08-01 09:27:48,775 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-01 09:27:48,779 - INFO -  * Restarting with stat
+2025-08-01 09:27:49,334 - WARNING -  * Debugger is active!
+2025-08-01 09:27:49,341 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 09:28:41,458 - INFO - 127.0.0.1 - - [01/Aug/2025 09:28:41] "GET / HTTP/1.1" 200 -
+2025-08-01 09:28:41,683 - INFO - 127.0.0.1 - - [01/Aug/2025 09:28:41] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-01 09:28:41,685 - INFO - 127.0.0.1 - - [01/Aug/2025 09:28:41] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-01 09:28:41,759 - INFO - 127.0.0.1 - - [01/Aug/2025 09:28:41] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-01 09:28:42,224 - INFO - 127.0.0.1 - - [01/Aug/2025 09:28:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-01 09:28:44,188 - INFO - 127.0.0.1 - - [01/Aug/2025 09:28:44] "GET /preview/partnership HTTP/1.1" 200 -
+2025-08-01 09:29:44,177 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\app.py', reloading
+2025-08-01 09:29:44,352 - INFO -  * Restarting with stat
+2025-08-01 09:29:45,395 - WARNING -  * Debugger is active!
+2025-08-01 09:29:45,399 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 09:29:51,470 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\app.py', reloading
+2025-08-01 09:29:51,535 - INFO -  * Restarting with stat
+2025-08-01 09:29:52,059 - WARNING -  * Debugger is active!
+2025-08-01 09:29:52,062 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 09:30:04,800 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+2025-08-01 09:30:04,800 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-01 09:30:04,802 - INFO -  * Restarting with stat
+2025-08-01 09:30:05,438 - WARNING -  * Debugger is active!
+2025-08-01 09:30:05,441 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 09:30:15,389 - INFO - 127.0.0.1 - - [01/Aug/2025 09:30:15] "GET / HTTP/1.1" 200 -
+2025-08-01 09:30:15,490 - INFO - 127.0.0.1 - - [01/Aug/2025 09:30:15] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-01 09:30:15,494 - INFO - 127.0.0.1 - - [01/Aug/2025 09:30:15] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-01 09:30:15,548 - INFO - 127.0.0.1 - - [01/Aug/2025 09:30:15] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-01 09:30:15,718 - INFO - 127.0.0.1 - - [01/Aug/2025 09:30:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-01 09:30:34,296 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+2025-08-01 09:30:34,297 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-01 09:30:34,299 - INFO -  * Restarting with stat
+2025-08-01 09:30:34,942 - WARNING -  * Debugger is active!
+2025-08-01 09:30:34,946 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 09:30:39,609 - INFO - 127.0.0.1 - - [01/Aug/2025 09:30:39] "GET / HTTP/1.1" 200 -
+2025-08-01 09:30:39,697 - INFO - 127.0.0.1 - - [01/Aug/2025 09:30:39] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-01 09:30:39,701 - INFO - 127.0.0.1 - - [01/Aug/2025 09:30:39] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-01 09:30:39,874 - INFO - 127.0.0.1 - - [01/Aug/2025 09:30:39] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-01 09:30:40,037 - INFO - 127.0.0.1 - - [01/Aug/2025 09:30:40] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-01 09:30:43,688 - INFO - 127.0.0.1 - - [01/Aug/2025 09:30:43] "GET /preview/partnership HTTP/1.1" 200 -
+2025-08-01 09:33:07,166 - INFO - Email sent successfully to sidsur23@gmail.com
+2025-08-01 09:33:07,173 - INFO - 127.0.0.1 - - [01/Aug/2025 09:33:07] "POST /send_emails HTTP/1.1" 200 -
+2025-08-01 09:33:07,203 - INFO - 127.0.0.1 - - [01/Aug/2025 09:33:07] "[33mGET /static/css/results_styles.css HTTP/1.1[0m" 404 -
+2025-08-01 09:33:07,204 - INFO - 127.0.0.1 - - [01/Aug/2025 09:33:07] "[33mGET /static/js/results_script.js HTTP/1.1[0m" 404 -
+2025-08-01 09:48:53,245 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\app.py', reloading
+2025-08-01 09:48:53,553 - INFO -  * Restarting with stat
+2025-08-01 09:48:54,403 - WARNING -  * Debugger is active!
+2025-08-01 09:48:54,409 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 09:49:01,473 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\app.py', reloading
+2025-08-01 09:49:01,651 - INFO -  * Restarting with stat
+2025-08-01 09:49:02,128 - WARNING -  * Debugger is active!
+2025-08-01 09:49:02,131 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 09:49:11,192 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\app.py', reloading
+2025-08-01 09:49:11,261 - INFO -  * Restarting with stat
+2025-08-01 09:49:11,725 - WARNING -  * Debugger is active!
+2025-08-01 09:49:11,729 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 09:49:20,789 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\app.py', reloading
+2025-08-01 09:49:20,859 - INFO -  * Restarting with stat
+2025-08-01 09:49:21,333 - WARNING -  * Debugger is active!
+2025-08-01 09:49:21,337 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 09:49:53,521 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\app.py', reloading
+2025-08-01 09:49:53,622 - INFO -  * Restarting with stat
+2025-08-01 09:49:54,378 - WARNING -  * Debugger is active!
+2025-08-01 09:49:54,382 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 09:50:00,645 - INFO - 127.0.0.1 - - [01/Aug/2025 09:50:00] "GET / HTTP/1.1" 200 -
+2025-08-01 09:50:00,754 - INFO - 127.0.0.1 - - [01/Aug/2025 09:50:00] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-01 09:50:00,757 - INFO - 127.0.0.1 - - [01/Aug/2025 09:50:00] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-01 09:50:00,874 - INFO - 127.0.0.1 - - [01/Aug/2025 09:50:00] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-01 09:50:01,047 - INFO - 127.0.0.1 - - [01/Aug/2025 09:50:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-01 09:50:06,943 - INFO - 127.0.0.1 - - [01/Aug/2025 09:50:06] "GET /preview/partnership_enterprises HTTP/1.1" 200 -
+2025-08-01 09:50:15,188 - INFO - 127.0.0.1 - - [01/Aug/2025 09:50:15] "GET /preview/partnership_hr HTTP/1.1" 200 -
+2025-08-01 09:55:15,944 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+2025-08-01 09:55:15,945 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-01 09:55:15,948 - INFO -  * Restarting with stat
+2025-08-01 09:55:16,533 - WARNING -  * Debugger is active!
+2025-08-01 09:55:16,537 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 09:55:20,435 - INFO - 127.0.0.1 - - [01/Aug/2025 09:55:20] "GET / HTTP/1.1" 200 -
+2025-08-01 09:55:20,570 - INFO - 127.0.0.1 - - [01/Aug/2025 09:55:20] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-01 09:55:20,573 - INFO - 127.0.0.1 - - [01/Aug/2025 09:55:20] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-01 09:55:20,622 - INFO - 127.0.0.1 - - [01/Aug/2025 09:55:20] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-01 09:55:27,596 - INFO - 127.0.0.1 - - [01/Aug/2025 09:55:27] "GET /preview/congratulations HTTP/1.1" 200 -
+2025-08-01 09:55:28,574 - INFO - 127.0.0.1 - - [01/Aug/2025 09:55:28] "GET /preview/partnership_enterprises HTTP/1.1" 200 -
+2025-08-01 09:55:29,726 - INFO - 127.0.0.1 - - [01/Aug/2025 09:55:29] "GET /preview/partnership_hr HTTP/1.1" 200 -
+2025-08-01 09:55:51,476 - INFO - 127.0.0.1 - - [01/Aug/2025 09:55:51] "POST /validate_credentials HTTP/1.1" 200 -
+2025-08-01 09:57:07,939 - INFO - Logo file attached: logo1.png
+2025-08-01 09:57:07,940 - INFO - CV file attached: Companyprofile.pdf
+2025-08-01 09:57:09,387 - INFO - Email sent successfully to sid55036124@gmail.com
+2025-08-01 09:57:09,401 - INFO - 127.0.0.1 - - [01/Aug/2025 09:57:09] "POST /send_emails HTTP/1.1" 200 -
+2025-08-01 09:57:09,426 - INFO - 127.0.0.1 - - [01/Aug/2025 09:57:09] "[33mGET /static/css/results_styles.css HTTP/1.1[0m" 404 -
+2025-08-01 09:57:09,434 - INFO - 127.0.0.1 - - [01/Aug/2025 09:57:09] "[33mGET /static/js/results_script.js HTTP/1.1[0m" 404 -
+2025-08-01 09:58:29,623 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\app.py', reloading
+2025-08-01 09:58:29,806 - INFO -  * Restarting with stat
+2025-08-01 09:58:30,315 - WARNING -  * Debugger is active!
+2025-08-01 09:58:30,318 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 10:00:24,332 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\app.py', reloading
+2025-08-01 10:00:24,527 - INFO -  * Restarting with stat
+2025-08-01 10:00:25,472 - WARNING -  * Debugger is active!
+2025-08-01 10:00:25,478 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 10:02:43,588 - INFO - Logo file attached: logo1.png
+2025-08-01 10:02:43,590 - INFO - CV file attached: Companyprofile.pdf
+2025-08-01 10:02:45,352 - INFO - Email sent successfully to sid55036124@gmail.com
+2025-08-01 10:02:45,368 - INFO - 127.0.0.1 - - [01/Aug/2025 10:02:45] "POST /send_emails HTTP/1.1" 200 -
+2025-08-01 10:02:45,389 - INFO - 127.0.0.1 - - [01/Aug/2025 10:02:45] "[33mGET /static/css/results_styles.css HTTP/1.1[0m" 404 -
+2025-08-01 10:02:45,390 - INFO - 127.0.0.1 - - [01/Aug/2025 10:02:45] "[33mGET /static/js/results_script.js HTTP/1.1[0m" 404 -
+2025-08-01 10:02:45,576 - INFO - 127.0.0.1 - - [01/Aug/2025 10:02:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-01 10:02:56,459 - INFO - 127.0.0.1 - - [01/Aug/2025 10:02:56] "GET /preview/partnership_enterprises HTTP/1.1" 200 -
+2025-08-01 10:02:57,624 - INFO - 127.0.0.1 - - [01/Aug/2025 10:02:57] "GET /preview/partnership_hr HTTP/1.1" 200 -
+2025-08-01 10:02:58,706 - INFO - 127.0.0.1 - - [01/Aug/2025 10:02:58] "GET /preview/congratulations HTTP/1.1" 200 -
+2025-08-01 10:02:59,693 - INFO - 127.0.0.1 - - [01/Aug/2025 10:02:59] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-01 10:03:01,390 - INFO - 127.0.0.1 - - [01/Aug/2025 10:03:01] "GET /preview/partnership_enterprises HTTP/1.1" 200 -
+2025-08-01 10:03:02,260 - INFO - 127.0.0.1 - - [01/Aug/2025 10:03:02] "GET /preview/partnership_hr HTTP/1.1" 200 -

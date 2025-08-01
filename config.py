@@ -6,7 +6,7 @@ import os
 # --- Flask App Configuration ---
 SECRET_KEY = os.urandom(24)
 UPLOAD_FOLDER = 'uploads'
-ALLOWED_EXTENSIONS = {'csv', 'png', 'jpg', 'jpeg'}
+ALLOWED_EXTENSIONS = {'csv', 'png', 'jpg', 'jpeg', 'pdf', 'doc', 'docx'}
 
 # --- Company Configuration ---
 # All company details are managed here for easy updates.

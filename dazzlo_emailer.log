@@ -321,3 +321,220 @@
 2025-08-01 10:02:59,693 - INFO - 127.0.0.1 - - [01/Aug/2025 10:02:59] "GET /preview/interview HTTP/1.1" 200 -
 2025-08-01 10:03:01,390 - INFO - 127.0.0.1 - - [01/Aug/2025 10:03:01] "GET /preview/partnership_enterprises HTTP/1.1" 200 -
 2025-08-01 10:03:02,260 - INFO - 127.0.0.1 - - [01/Aug/2025 10:03:02] "GET /preview/partnership_hr HTTP/1.1" 200 -
+2025-08-01 10:23:39,842 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+2025-08-01 10:23:39,843 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-01 10:23:39,852 - INFO -  * Restarting with stat
+2025-08-01 10:23:40,378 - WARNING -  * Debugger is active!
+2025-08-01 10:23:40,386 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 10:23:43,260 - INFO - 127.0.0.1 - - [01/Aug/2025 10:23:43] "GET / HTTP/1.1" 200 -
+2025-08-01 10:23:43,437 - INFO - 127.0.0.1 - - [01/Aug/2025 10:23:43] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-01 10:23:43,440 - INFO - 127.0.0.1 - - [01/Aug/2025 10:23:43] "[36mGET /static/css/index_styles.css HTTP/1.1[0m" 304 -
+2025-08-01 10:23:43,442 - INFO - 127.0.0.1 - - [01/Aug/2025 10:23:43] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-01 10:23:43,682 - INFO - 127.0.0.1 - - [01/Aug/2025 10:23:43] "GET /static/images/HR.png HTTP/1.1" 200 -
+2025-08-01 10:23:43,754 - INFO - 127.0.0.1 - - [01/Aug/2025 10:23:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-01 10:23:50,271 - INFO - 127.0.0.1 - - [01/Aug/2025 10:23:50] "GET /preview/congratulations HTTP/1.1" 200 -
+2025-08-01 10:23:50,290 - INFO - 127.0.0.1 - - [01/Aug/2025 10:23:50] "[36mGET /static/images/HR.png HTTP/1.1[0m" 304 -
+2025-08-01 10:23:52,764 - INFO - 127.0.0.1 - - [01/Aug/2025 10:23:52] "GET /preview/partnership_enterprises HTTP/1.1" 200 -
+2025-08-01 10:23:52,796 - INFO - 127.0.0.1 - - [01/Aug/2025 10:23:52] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-01 10:23:54,188 - INFO - 127.0.0.1 - - [01/Aug/2025 10:23:54] "GET /preview/partnership_hr HTTP/1.1" 200 -
+2025-08-01 10:23:54,203 - INFO - 127.0.0.1 - - [01/Aug/2025 10:23:54] "[36mGET /static/images/HR.png HTTP/1.1[0m" 304 -
+2025-08-01 10:24:02,519 - INFO - 127.0.0.1 - - [01/Aug/2025 10:24:02] "GET /preview/partnership_enterprises HTTP/1.1" 200 -
+2025-08-01 10:24:02,542 - INFO - 127.0.0.1 - - [01/Aug/2025 10:24:02] "[36mGET /static/images/Primary.png HTTP/1.1[0m" 304 -
+2025-08-01 10:24:27,783 - INFO - 127.0.0.1 - - [01/Aug/2025 10:24:27] "GET /preview/congratulations HTTP/1.1" 200 -
+2025-08-01 10:24:27,811 - INFO - 127.0.0.1 - - [01/Aug/2025 10:24:27] "[36mGET /static/images/HR.png HTTP/1.1[0m" 304 -
+2025-08-01 10:30:02,922 - INFO - 127.0.0.1 - - [01/Aug/2025 10:30:02] "GET / HTTP/1.1" 200 -
+2025-08-01 10:30:02,964 - INFO - 127.0.0.1 - - [01/Aug/2025 10:30:02] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-01 10:30:02,964 - INFO - 127.0.0.1 - - [01/Aug/2025 10:30:02] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-01 10:30:03,144 - INFO - 127.0.0.1 - - [01/Aug/2025 10:30:03] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-01 10:30:03,309 - INFO - 127.0.0.1 - - [01/Aug/2025 10:30:03] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-01 10:30:03,311 - INFO - 127.0.0.1 - - [01/Aug/2025 10:30:03] "GET /static/images/HR.png HTTP/1.1" 200 -
+2025-08-01 10:30:03,367 - INFO - 127.0.0.1 - - [01/Aug/2025 10:30:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-01 10:31:06,792 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\app.py', reloading
+2025-08-01 10:31:06,926 - INFO -  * Restarting with stat
+2025-08-01 10:31:07,600 - WARNING -  * Debugger is active!
+2025-08-01 10:31:07,603 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 10:31:11,514 - INFO - 127.0.0.1 - - [01/Aug/2025 10:31:11] "GET / HTTP/1.1" 200 -
+2025-08-01 10:31:11,620 - INFO - 127.0.0.1 - - [01/Aug/2025 10:31:11] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-01 10:31:11,623 - INFO - 127.0.0.1 - - [01/Aug/2025 10:31:11] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-01 10:31:11,694 - INFO - 127.0.0.1 - - [01/Aug/2025 10:31:11] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-01 10:31:11,829 - INFO - 127.0.0.1 - - [01/Aug/2025 10:31:11] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-01 10:31:11,895 - INFO - 127.0.0.1 - - [01/Aug/2025 10:31:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-01 10:31:15,679 - INFO - 127.0.0.1 - - [01/Aug/2025 10:31:15] "GET /preview/congratulations HTTP/1.1" 200 -
+2025-08-01 10:31:15,694 - INFO - 127.0.0.1 - - [01/Aug/2025 10:31:15] "[36mGET /static/images/Primary.png HTTP/1.1[0m" 304 -
+2025-08-01 10:31:16,603 - INFO - 127.0.0.1 - - [01/Aug/2025 10:31:16] "GET /preview/partnership_enterprises HTTP/1.1" 200 -
+2025-08-01 10:31:16,632 - INFO - 127.0.0.1 - - [01/Aug/2025 10:31:16] "[36mGET /static/images/Primary.png HTTP/1.1[0m" 304 -
+2025-08-01 10:31:17,596 - INFO - 127.0.0.1 - - [01/Aug/2025 10:31:17] "GET /preview/partnership_hr HTTP/1.1" 200 -
+2025-08-01 10:31:17,611 - INFO - 127.0.0.1 - - [01/Aug/2025 10:31:17] "[36mGET /static/images/Primary.png HTTP/1.1[0m" 304 -
+2025-08-01 10:31:25,495 - INFO - 127.0.0.1 - - [01/Aug/2025 10:31:25] "GET /preview/partnership_enterprises HTTP/1.1" 200 -
+2025-08-01 10:31:25,513 - INFO - 127.0.0.1 - - [01/Aug/2025 10:31:25] "[36mGET /static/images/Primary.png HTTP/1.1[0m" 304 -
+2025-08-01 10:31:26,997 - INFO - 127.0.0.1 - - [01/Aug/2025 10:31:26] "GET /preview/congratulations HTTP/1.1" 200 -
+2025-08-01 10:31:27,014 - INFO - 127.0.0.1 - - [01/Aug/2025 10:31:27] "[36mGET /static/images/Primary.png HTTP/1.1[0m" 304 -
+2025-08-01 10:31:28,003 - INFO - 127.0.0.1 - - [01/Aug/2025 10:31:28] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-01 10:31:28,020 - INFO - 127.0.0.1 - - [01/Aug/2025 10:31:28] "[36mGET /static/images/Primary.png HTTP/1.1[0m" 304 -
+2025-08-01 10:31:29,166 - INFO - 127.0.0.1 - - [01/Aug/2025 10:31:29] "GET /preview/partnership_hr HTTP/1.1" 200 -
+2025-08-01 10:31:29,181 - INFO - 127.0.0.1 - - [01/Aug/2025 10:31:29] "[36mGET /static/images/Primary.png HTTP/1.1[0m" 304 -
+2025-08-01 10:33:12,458 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\config.py', reloading
+2025-08-01 10:33:12,529 - INFO -  * Restarting with stat
+2025-08-01 10:33:13,004 - WARNING -  * Debugger is active!
+2025-08-01 10:33:13,007 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 10:35:35,810 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\app.py', reloading
+2025-08-01 10:35:35,878 - INFO -  * Restarting with stat
+2025-08-01 10:35:36,375 - WARNING -  * Debugger is active!
+2025-08-01 10:35:36,378 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 10:35:44,468 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\app.py', reloading
+2025-08-01 10:35:44,664 - INFO -  * Restarting with stat
+2025-08-01 10:35:45,169 - WARNING -  * Debugger is active!
+2025-08-01 10:35:45,172 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 10:37:17,701 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\config.py', reloading
+2025-08-01 10:37:17,863 - INFO -  * Restarting with stat
+2025-08-01 10:37:18,563 - WARNING -  * Debugger is active!
+2025-08-01 10:37:18,568 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 10:40:22,041 - INFO - 127.0.0.1 - - [01/Aug/2025 10:40:22] "GET / HTTP/1.1" 200 -
+2025-08-01 10:40:22,159 - INFO - 127.0.0.1 - - [01/Aug/2025 10:40:22] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-01 10:40:22,160 - INFO - 127.0.0.1 - - [01/Aug/2025 10:40:22] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-01 10:40:22,260 - INFO - 127.0.0.1 - - [01/Aug/2025 10:40:22] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-01 10:40:22,445 - INFO - 127.0.0.1 - - [01/Aug/2025 10:40:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-01 10:40:24,365 - INFO - 127.0.0.1 - - [01/Aug/2025 10:40:24] "GET /preview/congratulations HTTP/1.1" 200 -
+2025-08-01 10:40:25,291 - INFO - 127.0.0.1 - - [01/Aug/2025 10:40:25] "GET /preview/partnership_enterprises HTTP/1.1" 200 -
+2025-08-01 10:40:26,193 - INFO - 127.0.0.1 - - [01/Aug/2025 10:40:26] "GET /preview/partnership_hr HTTP/1.1" 200 -
+2025-08-01 10:41:06,712 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\app.py', reloading
+2025-08-01 10:41:06,783 - INFO -  * Restarting with stat
+2025-08-01 10:41:07,288 - WARNING -  * Debugger is active!
+2025-08-01 10:41:07,291 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 11:02:42,023 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+2025-08-01 11:02:42,024 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-01 11:02:42,028 - INFO -  * Restarting with stat
+2025-08-01 11:02:42,772 - WARNING -  * Debugger is active!
+2025-08-01 11:02:42,776 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 11:02:44,260 - INFO - 127.0.0.1 - - [01/Aug/2025 11:02:44] "GET / HTTP/1.1" 200 -
+2025-08-01 11:02:44,390 - INFO - 127.0.0.1 - - [01/Aug/2025 11:02:44] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-01 11:02:44,393 - INFO - 127.0.0.1 - - [01/Aug/2025 11:02:44] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-01 11:02:44,478 - INFO - 127.0.0.1 - - [01/Aug/2025 11:02:44] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-01 11:02:44,761 - INFO - 127.0.0.1 - - [01/Aug/2025 11:02:44] "GET /static/images/HR.png HTTP/1.1" 200 -
+2025-08-01 11:02:44,837 - INFO - 127.0.0.1 - - [01/Aug/2025 11:02:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-01 11:02:46,573 - INFO - 127.0.0.1 - - [01/Aug/2025 11:02:46] "GET /preview/congratulations HTTP/1.1" 200 -
+2025-08-01 11:02:46,592 - INFO - 127.0.0.1 - - [01/Aug/2025 11:02:46] "[36mGET /static/images/HR.png HTTP/1.1[0m" 304 -
+2025-08-01 11:02:47,109 - INFO - 127.0.0.1 - - [01/Aug/2025 11:02:47] "GET /preview/partnership_enterprises HTTP/1.1" 200 -
+2025-08-01 11:02:47,157 - INFO - 127.0.0.1 - - [01/Aug/2025 11:02:47] "[36mGET /static/images/Primary.png HTTP/1.1[0m" 304 -
+2025-08-01 11:02:49,212 - INFO - 127.0.0.1 - - [01/Aug/2025 11:02:49] "GET /preview/partnership_hr HTTP/1.1" 200 -
+2025-08-01 11:02:49,241 - INFO - 127.0.0.1 - - [01/Aug/2025 11:02:49] "[36mGET /static/images/HR.png HTTP/1.1[0m" 304 -
+2025-08-01 11:08:56,863 - INFO - 127.0.0.1 - - [01/Aug/2025 11:08:56] "GET / HTTP/1.1" 200 -
+2025-08-01 11:08:56,919 - INFO - 127.0.0.1 - - [01/Aug/2025 11:08:56] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-01 11:08:56,919 - INFO - 127.0.0.1 - - [01/Aug/2025 11:08:56] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-01 11:08:57,096 - INFO - 127.0.0.1 - - [01/Aug/2025 11:08:57] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-01 11:08:57,300 - INFO - 127.0.0.1 - - [01/Aug/2025 11:08:57] "GET /static/images/HR.png HTTP/1.1" 200 -
+2025-08-01 11:08:57,357 - INFO - 127.0.0.1 - - [01/Aug/2025 11:08:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-01 11:08:58,652 - INFO - 127.0.0.1 - - [01/Aug/2025 11:08:58] "GET /preview/partnership_enterprises HTTP/1.1" 200 -
+2025-08-01 11:08:58,702 - INFO - 127.0.0.1 - - [01/Aug/2025 11:08:58] "[36mGET /static/images/Primary.png HTTP/1.1[0m" 304 -
+2025-08-01 11:09:06,615 - INFO - 127.0.0.1 - - [01/Aug/2025 11:09:06] "GET /preview/partnership_hr HTTP/1.1" 200 -
+2025-08-01 11:09:06,641 - INFO - 127.0.0.1 - - [01/Aug/2025 11:09:06] "[36mGET /static/images/HR.png HTTP/1.1[0m" 304 -
+2025-08-01 11:09:32,146 - INFO - 127.0.0.1 - - [01/Aug/2025 11:09:32] "POST /validate_credentials HTTP/1.1" 200 -
+2025-08-01 11:10:01,725 - INFO - CV file attached: Companyprofile.pdf
+2025-08-01 11:10:01,751 - INFO - Attached logo for template: partnership_hr
+2025-08-01 11:10:03,681 - INFO - Email sent successfully to sidsur70@gmail.com
+2025-08-01 11:10:03,730 - INFO - 127.0.0.1 - - [01/Aug/2025 11:10:03] "POST /send_emails HTTP/1.1" 200 -
+2025-08-01 11:10:03,782 - INFO - 127.0.0.1 - - [01/Aug/2025 11:10:03] "[33mGET /static/css/results_styles.css HTTP/1.1[0m" 404 -
+2025-08-01 11:10:03,785 - INFO - 127.0.0.1 - - [01/Aug/2025 11:10:03] "[33mGET /static/js/results_script.js HTTP/1.1[0m" 404 -
+2025-08-01 11:10:24,117 - INFO - 127.0.0.1 - - [01/Aug/2025 11:10:24] "GET /preview/partnership_enterprises HTTP/1.1" 200 -
+2025-08-01 11:10:24,159 - INFO - 127.0.0.1 - - [01/Aug/2025 11:10:24] "[36mGET /static/images/Primary.png HTTP/1.1[0m" 304 -
+2025-08-01 11:10:31,575 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\app.py', reloading
+2025-08-01 11:10:31,701 - INFO -  * Restarting with stat
+2025-08-01 11:10:32,304 - WARNING -  * Debugger is active!
+2025-08-01 11:10:32,316 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 11:11:22,702 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\config.py', reloading
+2025-08-01 11:11:22,796 - INFO -  * Restarting with stat
+2025-08-01 11:11:23,458 - WARNING -  * Debugger is active!
+2025-08-01 11:11:23,462 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 11:12:13,057 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+2025-08-01 11:12:13,058 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-01 11:12:13,062 - INFO -  * Restarting with stat
+2025-08-01 11:12:13,846 - WARNING -  * Debugger is active!
+2025-08-01 11:12:13,851 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 11:12:16,633 - INFO - 127.0.0.1 - - [01/Aug/2025 11:12:16] "GET / HTTP/1.1" 200 -
+2025-08-01 11:12:16,774 - INFO - 127.0.0.1 - - [01/Aug/2025 11:12:16] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-01 11:12:16,777 - INFO - 127.0.0.1 - - [01/Aug/2025 11:12:16] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-01 11:12:16,790 - INFO - 127.0.0.1 - - [01/Aug/2025 11:12:16] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-01 11:12:16,933 - INFO - 127.0.0.1 - - [01/Aug/2025 11:12:16] "GET /static/images/HR.png HTTP/1.1" 200 -
+2025-08-01 11:12:16,989 - INFO - 127.0.0.1 - - [01/Aug/2025 11:12:16] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-01 11:12:20,830 - INFO - 127.0.0.1 - - [01/Aug/2025 11:12:20] "GET /preview/partnership_hr HTTP/1.1" 200 -
+2025-08-01 11:12:20,854 - INFO - 127.0.0.1 - - [01/Aug/2025 11:12:20] "[36mGET /static/images/HR.png HTTP/1.1[0m" 304 -
+2025-08-01 11:12:26,207 - INFO - 127.0.0.1 - - [01/Aug/2025 11:12:26] "GET /preview/partnership_enterprises HTTP/1.1" 200 -
+2025-08-01 11:12:26,246 - INFO - 127.0.0.1 - - [01/Aug/2025 11:12:26] "[36mGET /static/images/Primary.png HTTP/1.1[0m" 304 -
+2025-08-01 11:18:40,658 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+2025-08-01 11:18:40,659 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-01 11:18:40,662 - INFO -  * Restarting with stat
+2025-08-01 11:18:41,289 - WARNING -  * Debugger is active!
+2025-08-01 11:18:41,292 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 11:18:47,846 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+2025-08-01 11:18:47,846 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-01 11:18:47,850 - INFO -  * Restarting with stat
+2025-08-01 11:18:48,850 - WARNING -  * Debugger is active!
+2025-08-01 11:18:48,855 - INFO -  * Debugger PIN: 592-236-368
+2025-08-01 11:18:53,492 - INFO - 127.0.0.1 - - [01/Aug/2025 11:18:53] "GET / HTTP/1.1" 200 -
+2025-08-01 11:18:53,598 - INFO - 127.0.0.1 - - [01/Aug/2025 11:18:53] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-01 11:18:53,610 - INFO - 127.0.0.1 - - [01/Aug/2025 11:18:53] "[36mGET /static/js/index_script.js HTTP/1.1[0m" 304 -
+2025-08-01 11:18:53,645 - INFO - 127.0.0.1 - - [01/Aug/2025 11:18:53] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-01 11:18:53,913 - INFO - 127.0.0.1 - - [01/Aug/2025 11:18:53] "[36mGET /static/images/HR.png HTTP/1.1[0m" 304 -
+2025-08-01 11:21:19,898 - INFO - 127.0.0.1 - - [01/Aug/2025 11:21:19] "GET / HTTP/1.1" 200 -
+2025-08-01 11:21:19,938 - INFO - 127.0.0.1 - - [01/Aug/2025 11:21:19] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-01 11:21:19,942 - INFO - 127.0.0.1 - - [01/Aug/2025 11:21:19] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-01 11:21:20,108 - INFO - 127.0.0.1 - - [01/Aug/2025 11:21:20] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-01 11:21:20,279 - INFO - 127.0.0.1 - - [01/Aug/2025 11:21:20] "GET /static/images/HR.png HTTP/1.1" 200 -
+2025-08-01 11:21:20,370 - INFO - 127.0.0.1 - - [01/Aug/2025 11:21:20] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-01 11:21:24,903 - INFO - 127.0.0.1 - - [01/Aug/2025 11:21:24] "GET /preview/congratulations HTTP/1.1" 200 -
+2025-08-01 11:21:24,921 - INFO - 127.0.0.1 - - [01/Aug/2025 11:21:24] "[36mGET /static/images/HR.png HTTP/1.1[0m" 304 -
+2025-08-01 11:21:26,700 - INFO - 127.0.0.1 - - [01/Aug/2025 11:21:26] "GET /preview/partnership_hr HTTP/1.1" 200 -
+2025-08-01 11:21:26,760 - INFO - 127.0.0.1 - - [01/Aug/2025 11:21:26] "[36mGET /static/images/HR.png HTTP/1.1[0m" 304 -
+2025-08-01 11:24:10,572 - INFO - 127.0.0.1 - - [01/Aug/2025 11:24:10] "GET / HTTP/1.1" 200 -
+2025-08-01 11:24:10,631 - INFO - 127.0.0.1 - - [01/Aug/2025 11:24:10] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-01 11:24:10,632 - INFO - 127.0.0.1 - - [01/Aug/2025 11:24:10] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-01 11:24:10,777 - INFO - 127.0.0.1 - - [01/Aug/2025 11:24:10] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-01 11:24:10,971 - INFO - 127.0.0.1 - - [01/Aug/2025 11:24:10] "GET /static/images/HR.png HTTP/1.1" 200 -
+2025-08-01 11:24:11,077 - INFO - 127.0.0.1 - - [01/Aug/2025 11:24:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-01 11:25:20,625 - INFO - 127.0.0.1 - - [01/Aug/2025 11:25:20] "GET / HTTP/1.1" 200 -
+2025-08-01 11:25:20,667 - INFO - 127.0.0.1 - - [01/Aug/2025 11:25:20] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-01 11:25:20,670 - INFO - 127.0.0.1 - - [01/Aug/2025 11:25:20] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-01 11:25:20,798 - INFO - 127.0.0.1 - - [01/Aug/2025 11:25:20] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-01 11:25:20,964 - INFO - 127.0.0.1 - - [01/Aug/2025 11:25:20] "GET /static/images/HR.png HTTP/1.1" 200 -
+2025-08-01 11:25:21,815 - INFO - 127.0.0.1 - - [01/Aug/2025 11:25:21] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-01 11:26:55,725 - INFO - 127.0.0.1 - - [01/Aug/2025 11:26:55] "GET / HTTP/1.1" 200 -
+2025-08-01 11:26:55,775 - INFO - 127.0.0.1 - - [01/Aug/2025 11:26:55] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-01 11:26:55,776 - INFO - 127.0.0.1 - - [01/Aug/2025 11:26:55] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-01 11:26:55,838 - INFO - 127.0.0.1 - - [01/Aug/2025 11:26:55] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-01 11:26:55,963 - INFO - 127.0.0.1 - - [01/Aug/2025 11:26:55] "GET /static/images/HR.png HTTP/1.1" 200 -
+2025-08-01 11:26:56,103 - INFO - 127.0.0.1 - - [01/Aug/2025 11:26:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-01 11:27:06,182 - INFO - 127.0.0.1 - - [01/Aug/2025 11:27:06] "GET /preview/congratulations HTTP/1.1" 200 -
+2025-08-01 11:27:06,224 - INFO - 127.0.0.1 - - [01/Aug/2025 11:27:06] "[36mGET /static/images/HR.png HTTP/1.1[0m" 304 -
+2025-08-01 11:27:07,025 - INFO - 127.0.0.1 - - [01/Aug/2025 11:27:07] "GET /preview/partnership_enterprises HTTP/1.1" 200 -
+2025-08-01 11:27:07,049 - INFO - 127.0.0.1 - - [01/Aug/2025 11:27:07] "[36mGET /static/images/Primary.png HTTP/1.1[0m" 304 -
+2025-08-01 11:27:07,794 - INFO - 127.0.0.1 - - [01/Aug/2025 11:27:07] "GET /preview/partnership_hr HTTP/1.1" 200 -
+2025-08-01 11:27:07,815 - INFO - 127.0.0.1 - - [01/Aug/2025 11:27:07] "[36mGET /static/images/HR.png HTTP/1.1[0m" 304 -
+2025-08-01 11:27:18,931 - INFO - 127.0.0.1 - - [01/Aug/2025 11:27:18] "POST /validate_credentials HTTP/1.1" 200 -
+2025-08-01 11:27:51,133 - INFO - CV file attached: Companyprofile.pdf
+2025-08-01 11:27:51,139 - INFO - Attached logo for template: partnership_hr
+2025-08-01 11:27:53,858 - INFO - Email sent successfully to sid55036124@gmail.com
+2025-08-01 11:27:53,902 - INFO - 127.0.0.1 - - [01/Aug/2025 11:27:53] "POST /send_emails HTTP/1.1" 200 -
+2025-08-01 11:27:53,950 - INFO - 127.0.0.1 - - [01/Aug/2025 11:27:53] "[33mGET /static/css/results_styles.css HTTP/1.1[0m" 404 -
+2025-08-01 11:27:53,975 - INFO - 127.0.0.1 - - [01/Aug/2025 11:27:53] "[33mGET /static/js/results_script.js HTTP/1.1[0m" 404 -
+2025-08-01 11:28:06,694 - INFO - CV file attached: Companyprofile.pdf
+2025-08-01 11:28:06,700 - INFO - Attached logo for template: partnership_hr
+2025-08-01 11:28:08,707 - INFO - Email sent successfully to sid55036124@gmail.com
+2025-08-01 11:28:08,750 - INFO - 127.0.0.1 - - [01/Aug/2025 11:28:08] "POST /send_emails HTTP/1.1" 200 -
+2025-08-01 11:28:08,778 - INFO - 127.0.0.1 - - [01/Aug/2025 11:28:08] "[33mGET /static/css/results_styles.css HTTP/1.1[0m" 404 -
+2025-08-01 11:28:08,778 - INFO - 127.0.0.1 - - [01/Aug/2025 11:28:08] "[33mGET /static/js/results_script.js HTTP/1.1[0m" 404 -
+2025-08-01 11:28:08,958 - INFO - 127.0.0.1 - - [01/Aug/2025 11:28:08] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -

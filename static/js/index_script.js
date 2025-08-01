@@ -169,29 +169,9 @@ function selectTemplate(templateType) {
     // Update CSV requirements text
     updateCsvRequirements();
     
-    // Add note for partnership template
-    const requirementsElement = document.getElementById('csv-requirements');
-    const notepadRequirements = document.getElementById('notepad-requirements');
-    const partnershipNote = '<br><span class="text-orange-600 text-xs">Note: You\'ll also need to provide your name and designation below</span>';
+    // Requirements text is clean and professional - no additional notes needed
     
-    if (templateType === 'partnership_enterprises' || templateType === 'partnership_hr') {
-        if (requirementsElement) {
-            requirementsElement.innerHTML += partnershipNote;
-        }
-        if (notepadRequirements) {
-            notepadRequirements.innerHTML += partnershipNote;
-        }
-    }
-    
-    // Show/hide CV upload section
-    const cvSection = document.getElementById('cv-upload-section');
-    if (cvSection) {
-        if (templateType === 'partnership_enterprises' || templateType === 'partnership_hr') {
-            cvSection.style.display = 'block';
-        } else {
-            cvSection.style.display = 'none';
-        }
-    }
+    // Attachment section is always visible now - no need to show/hide
     
     // Show/hide sender info section
     const senderInfoSection = document.getElementById('sender-info-section');

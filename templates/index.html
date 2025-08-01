@@ -7,87 +7,105 @@
 {% endblock %}
 
 {% block content %}
-<form action="/send_emails" method="post" enctype="multipart/form-data" class="space-y-12">
+<form action="/send_emails" method="post" enctype="multipart/form-data" class="space-y-8">
     
     <div>
-        <h2 class="section-title text-3xl font-bold mb-2 text-center">Step 1: Choose & Preview Your Template</h2>
-        <p class="text-center text-gray-600 mb-8">Select a template to see a live preview of the email.</p>
+        <h2 class="section-title text-2xl font-semibold mb-4 text-center">Step 1: Select Template & Preview</h2>
+        <p class="text-center text-gray-600 mb-6">Choose a template to see a live preview of the email.</p>
         
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-            <div class="space-y-6">
-                <div class="template-card selected p-6" onclick="selectTemplate('interview')">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+            <div class="space-y-4">
+                <div class="template-card selected p-4" onclick="selectTemplate('interview')">
                     <input type="radio" name="template_type" value="interview" id="interview" class="hidden" checked>
                     <div class="flex items-center">
-                        <div class="template-icon interview-icon">📋</div>
-                        <div class="ml-4">
-                            <h3 class="text-xl font-bold text-gray-800">Interview Notification</h3>
-                            <p class="text-gray-600 text-sm">Required CSV: <code class="font-mono text-xs">email, name, role, slot</code></p>
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Interview Notification</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, name, role, slot</code></p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="template-card p-6" onclick="selectTemplate('congratulations')">
+                <div class="template-card p-4" onclick="selectTemplate('congratulations')">
                     <input type="radio" name="template_type" value="congratulations" id="congratulations" class="hidden">
                      <div class="flex items-center">
-                        <div class="template-icon congrats-icon">🎉</div>
-                        <div class="ml-4">
-                            <h3 class="text-xl font-bold text-gray-800">Congratulations / Selection</h3>
-                            <p class="text-gray-600 text-sm">Required CSV: <code class="font-mono text-xs">email, name, role, company</code></p>
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Congratulations / Selection</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, name, role, company</code></p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="template-card p-6" onclick="selectTemplate('partnership_enterprises')">
+                <div class="template-card p-4" onclick="selectTemplate('partnership_enterprises')">
                     <input type="radio" name="template_type" value="partnership_enterprises" id="partnership_enterprises" class="hidden">
                      <div class="flex items-center">
-                        <div class="template-icon partnership-icon">🏢</div>
-                        <div class="ml-4">
-                            <h3 class="text-xl font-bold text-gray-800">Dazzlo Enterprises Partnership</h3>
-                            <p class="text-gray-600 text-sm">Required CSV: <code class="font-mono text-xs">email, company</code></p>
+                        <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Dazzlo Enterprises Partnership</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="template-card p-6" onclick="selectTemplate('partnership_hr')">
+                <div class="template-card p-4" onclick="selectTemplate('partnership_hr')">
                     <input type="radio" name="template_type" value="partnership_hr" id="partnership_hr" class="hidden">
                      <div class="flex items-center">
-                        <div class="template-icon partnership-icon">🤝</div>
-                        <div class="ml-4">
-                            <h3 class="text-xl font-bold text-gray-800">DazzloHR Solutions Partnership</h3>
-                            <p class="text-gray-600 text-sm">Required CSV: <code class="font-mono text-xs">email, company</code></p>
+                        <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">DazzloHR Solutions Partnership</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="preview-container">
-                <div class="preview-header">
-                    <span class="font-semibold text-gray-700">Live Email Preview</span>
+                <div class="bg-white border border-gray-200 rounded-lg shadow-sm">
+                    <div class="px-4 py-3 border-b border-gray-200 bg-gray-50 rounded-t-lg">
+                        <span class="font-medium text-gray-700 text-sm">Live Email Preview</span>
+                    </div>
+                    <iframe id="email-preview-frame" src="{{ url_for('preview_email', template_name='interview') }}" class="w-full h-[600px] border-0 rounded-b-lg"></iframe>
                 </div>
-                <iframe id="email-preview-frame" src="{{ url_for('preview_email', template_name='interview') }}" class="w-full h-[600px] border-0"></iframe>
             </div>
         </div>
     </div>
 
-    <div class="form-section p-8">
-        <h2 class="section-title text-3xl font-bold mb-2 text-center">Step 2: Enter Email Credentials</h2>
-        <p class="text-center text-red-600 font-semibold mb-8">⚠️ Use an App-Specific Password for security.</p>
+    <div class="form-section p-6">
+        <h2 class="section-title text-2xl font-semibold mb-4 text-center">Step 2: Email Credentials</h2>
+        <p class="text-center text-red-600 font-medium mb-6">Use an App-Specific Password for security.</p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
             <div>
-                <label for="email" class="block text-sm font-semibold text-gray-700 mb-3">📧 Your Zoho Email</label>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Zoho Email Address</label>
                 <input type="email" name="email" id="email" required 
-                       class="form-input w-full px-4 py-3" 
+                       class="form-input w-full px-3 py-2" 
                        placeholder="your-email@zoho.com">
             </div>
             <div>
-                <label for="password" class="block text-sm font-semibold text-gray-700 mb-3">🔑 Your Zoho App Password</label>
+                <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Zoho App Password</label>
                 <div class="relative">
                     <input type="password" name="password" id="password" required 
-                           class="form-input w-full px-4 py-3 pr-12" 
+                           class="form-input w-full px-3 py-2 pr-20" 
                            placeholder="Enter your app password">
                     <button type="button" id="validate-btn" 
-                            class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700 transition-colors">
+                            class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-1 rounded text-sm hover:bg-gray-700 transition-colors">
                         Validate
                     </button>
                 </div>
@@ -96,96 +114,94 @@
         </div>
     </div>
 
-    <div class="form-section p-8" id="sender-info-section" style="display: none;">
-        <h2 class="section-title text-3xl font-bold mb-2 text-center">Step 2.5: Sender Information (Partnership Templates)</h2>
-        <p class="text-center text-gray-600 mb-8">This information will appear in the email footer for partnership emails.</p>
+    <div class="form-section p-6" id="sender-info-section" style="display: none;">
+        <h2 class="section-title text-2xl font-semibold mb-4 text-center">Step 2.5: Sender Information</h2>
+        <p class="text-center text-gray-600 mb-6">This information will appear in the email footer for partnership emails.</p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
             <div>
-                <label for="sender_name" class="block text-sm font-semibold text-gray-700 mb-3">👤 Your Name</label>
+                <label for="sender_name" class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
                 <input type="text" name="sender_name" id="sender_name" 
-                       class="form-input w-full px-4 py-3" 
+                       class="form-input w-full px-3 py-2" 
                        placeholder="Your full name">
             </div>
             <div>
-                <label for="sender_designation" class="block text-sm font-semibold text-gray-700 mb-3">💼 Your Designation</label>
+                <label for="sender_designation" class="block text-sm font-medium text-gray-700 mb-2">Your Designation</label>
                 <input type="text" name="sender_designation" id="sender_designation" 
-                       class="form-input w-full px-4 py-3" 
+                       class="form-input w-full px-3 py-2" 
                        placeholder="e.g., Founder & Managing Director">
             </div>
         </div>
     </div>
 
-    <div class="form-section p-8">
-        <h2 class="section-title text-3xl font-bold mb-2 text-center">Step 3: Add Recipients</h2>
-        <p class="text-center text-gray-600 mb-8">Upload a CSV file or use the quick notepad for mobile users.</p>
+    <div class="form-section p-6">
+        <h2 class="section-title text-2xl font-semibold mb-4 text-center">Step 3: Recipients</h2>
+        <p class="text-center text-gray-600 mb-6">Upload a CSV file or use the quick notepad for mobile users.</p>
         
         <!-- CSV Input Toggle -->
         <div class="text-center mb-6">
             <div class="inline-flex bg-gray-100 rounded-lg p-1">
                 <button type="button" id="csv-file-toggle" class="toggle-btn active px-4 py-2 rounded-md text-sm font-medium transition-all" onclick="toggleCsvInput('file')">
-                    📁 Upload CSV File
+                    Upload CSV File
                 </button>
                 <button type="button" id="csv-notepad-toggle" class="toggle-btn px-4 py-2 rounded-md text-sm font-medium transition-all" onclick="toggleCsvInput('notepad')">
-                    📝 Quick Notepad (Mobile)
+                    Quick Notepad (Mobile)
                 </button>
             </div>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <!-- CSV File Upload Section -->
             <div id="csv-file-section">
-                <label class="block text-sm font-semibold text-gray-700 mb-3">📊 Recipients CSV File</label>
-                <div class="upload-area p-8 text-center" onclick="document.getElementById('csv_file').click()">
+                <label class="block text-sm font-medium text-gray-700 mb-3">Recipients CSV File</label>
+                <div class="upload-area p-6 text-center" onclick="document.getElementById('csv_file').click()">
                     <input type="file" name="csv_file" id="csv_file" accept=".csv" class="hidden">
-                    <div class="text-4xl mb-4">📊</div>
-                    <p class="text-lg font-medium text-gray-700 mb-2" id="csv-label">Choose CSV file or drag here</p>
-                    <p class="text-xs text-blue-700 bg-blue-50 rounded px-2 py-1 mt-2 inline-block" id="csv-requirements">Required columns: <b>email, name, role, slot</b></p>
+                    <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                        </svg>
+                    </div>
+                    <p class="text-base font-medium text-gray-700 mb-2" id="csv-label">Choose CSV file or drag here</p>
+                    <p class="text-xs text-blue-600 bg-blue-50 rounded px-2 py-1 mt-2 inline-block" id="csv-requirements">Required columns: <b>email, name, role, slot</b></p>
                 </div>
             </div>
             
             <!-- CSV Notepad Section -->
             <div id="csv-notepad-section" style="display: none;">
-                <label class="block text-sm font-semibold text-gray-700 mb-3">📝 Quick CSV Notepad</label>
+                <label class="block text-sm font-medium text-gray-700 mb-3">Quick CSV Notepad</label>
                 <div class="notepad-container">
                     <textarea name="csv_notepad" id="csv_notepad" rows="12" 
-                              class="w-full p-4 border-2 border-gray-300 rounded-lg font-mono text-sm resize-none focus:border-blue-500 focus:outline-none"
+                              class="w-full p-4 border border-gray-300 rounded-lg font-mono text-sm resize-none focus:border-blue-500 focus:outline-none"
                               placeholder="Enter your CSV data here...
 Example format:
 email,name,role,slot
 john@example.com,John Doe,Software Engineer,October 25, 2025 at 11:00 AM
 jane@example.com,Jane Smith,Product Manager,October 26, 2025 at 2:00 PM"></textarea>
                     <div class="mt-3">
-                        <p class="text-xs text-blue-700 bg-blue-50 rounded px-2 py-1 inline-block" id="notepad-requirements">Required columns: <b>email, name, role, slot</b></p>
-                        <button type="button" onclick="generateSampleCsv()" class="ml-2 text-xs text-green-600 hover:text-green-800 underline">📋 Generate Sample</button>
+                        <p class="text-xs text-blue-600 bg-blue-50 rounded px-2 py-1 inline-block" id="notepad-requirements">Required columns: <b>email, name, role, slot</b></p>
+                        <button type="button" onclick="generateSampleCsv()" class="ml-2 text-xs text-green-600 hover:text-green-800 underline">Generate Sample</button>
                     </div>
                 </div>
             </div>
 
             <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-3">🖼️ Company Logo (Optional)</label>
-                <div class="upload-area p-8 text-center" onclick="document.getElementById('logo_file').click()">
-                    <input type="file" name="logo_file" id="logo_file" accept="image/png,image/jpeg" class="hidden">
-                    <div class="text-4xl mb-4">🖼️</div>
-                    <p class="text-lg font-medium text-gray-700 mb-2" id="logo-label">Choose logo file or drag here</p>
-                </div>
-            </div>
-            
-            <div id="cv-upload-section" style="display: none;">
-                <label class="block text-sm font-semibold text-gray-700 mb-3">📄 Company Profile Attachment (Optional)</label>
-                <div class="upload-area p-8 text-center" onclick="document.getElementById('cv_file').click()">
+                <label class="block text-sm font-medium text-gray-700 mb-3">Company Profile Attachment (Optional)</label>
+                <div class="upload-area p-6 text-center" onclick="document.getElementById('cv_file').click()">
                     <input type="file" name="cv_file" id="cv_file" accept=".pdf,.doc,.docx" class="hidden">
-                    <div class="text-4xl mb-4">📄</div>
-                    <p class="text-lg font-medium text-gray-700 mb-2" id="cv-label">Choose file or drag here</p>
+                    <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <p class="text-base font-medium text-gray-700 mb-2" id="cv-label">Choose file or drag here</p>
                     <p class="text-xs text-gray-500 mt-2">Supported: PDF, DOC, DOCX</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="text-center pt-6">
-        <button type="submit" class="submit-btn px-12 py-5 text-white shadow-lg">
-            <span class="mr-3 text-2xl">🚀</span>
+    <div class="text-center pt-4">
+        <button type="submit" class="submit-btn px-8 py-3 text-white font-medium">
             Launch Email Campaign
         </button>
     </div>

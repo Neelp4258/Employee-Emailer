@@ -68,8 +68,34 @@ def validate_email_credentials(email, password):
     except Exception as e:
         return False, f"Connection error: {str(e)}"
 
+def get_logo_for_template(template_type):
+    """Returns the appropriate logo data and CID for the given template type."""
+    try:
+        if template_type in ['interview', 'congratulations', 'partnership_hr']:
+            # Use HR.png for HR-related templates
+            logo_path = os.path.join(app.root_path, 'static', 'images', 'HR.png')
+            logo_cid = 'hr_logo'
+        elif template_type == 'partnership_enterprises':
+            # Use Primary.png for Dazzlo Enterprises template
+            logo_path = os.path.join(app.root_path, 'static', 'images', 'Primary.png')
+            logo_cid = 'enterprises_logo'
+        else:
+            # Default to HR logo
+            logo_path = os.path.join(app.root_path, 'static', 'images', 'HR.png')
+            logo_cid = 'hr_logo'
+        
+        if os.path.exists(logo_path):
+            with open(logo_path, 'rb') as f:
+                return f.read(), logo_cid
+        else:
+            logging.warning(f"Logo file not found: {logo_path}")
+            return None, None
+    except Exception as e:
+        logging.error(f"Error loading logo for template {template_type}: {e}")
+        return None, None
+
 # --- MODIFIED: This function now accepts credentials as arguments ---
-def send_email_smtp(sender_email, sender_password, recipient_email, subject, html_body, logo_data=None, cv_data=None, cv_filename=None):
+def send_email_smtp(sender_email, sender_password, recipient_email, subject, html_body, template_type, cv_data=None, cv_filename=None):
     """Sends a single email using Zoho SMTP with error handling."""
     
     if not sender_email or not sender_password:
@@ -82,10 +108,13 @@ def send_email_smtp(sender_email, sender_password, recipient_email, subject, htm
         msg['Subject'] = subject
         msg.attach(MIMEText(html_body, 'html'))
 
-        if logo_data:
+        # Automatically attach the appropriate logo based on template type
+        logo_data, logo_cid = get_logo_for_template(template_type)
+        if logo_data and logo_cid:
             img = MIMEImage(logo_data)
-            img.add_header('Content-ID', f"<{app.config['LOGO_CID']}>")
+            img.add_header('Content-ID', f"<{logo_cid}>")
             msg.attach(img)
+            logging.info(f"Attached logo for template: {template_type}")
 
         if cv_data and cv_filename:
             part = MIMEBase('application', 'octet-stream')
@@ -100,16 +129,24 @@ def send_email_smtp(sender_email, sender_password, recipient_email, subject, htm
         with smtplib.SMTP_SSL("smtp.zoho.in", 465, timeout=20) as server:
             server.login(sender_email, sender_password)
             server.send_message(msg)
-        
-        logging.info(f"Email sent successfully to {recipient_email}")
-        return True, "Email sent successfully."
-
+            logging.info(f"Email sent successfully to {recipient_email}")
+            return True, "Email sent successfully"
+            
     except smtplib.SMTPAuthenticationError:
-        logging.error(f"SMTP Auth Error for {recipient_email}. Check credentials.")
-        return False, "Authentication Failed. Please check your email and App Password."
+        logging.error(f"SMTP Authentication failed for {sender_email}")
+        return False, "SMTP Authentication failed. Please check your email and app password."
+    except smtplib.SMTPRecipientsRefused as e:
+        logging.error(f"Recipient refused for {recipient_email}: {e}")
+        return False, f"Recipient email address is invalid: {recipient_email}"
+    except smtplib.SMTPServerDisconnected:
+        logging.error("SMTP server disconnected")
+        return False, "SMTP server disconnected. Please try again."
+    except smtplib.SMTPException as e:
+        logging.error(f"SMTP error for {recipient_email}: {e}")
+        return False, f"SMTP error: {str(e)}"
     except Exception as e:
-        logging.error(f"Failed to send to {recipient_email}: {e}")
-        return False, f"An unexpected error occurred: {e}"
+        logging.error(f"Unexpected error sending email to {recipient_email}: {e}")
+        return False, f"Unexpected error: {str(e)}"
 
 # --- Flask Routes ---
 
@@ -137,7 +174,18 @@ def preview_email(template_name):
             'sender_email': "john.smith@dazzlo.co.in"
         })
     
-    return render_template(f"emails/{template_name}.html", **preview_data)
+    # Render the email template
+    html_content = render_template(f"emails/{template_name}.html", **preview_data)
+    
+    # Replace Content-ID references with actual image URLs for preview
+    if template_name in ['interview', 'congratulations', 'partnership_hr']:
+        # Use HR.png for HR templates
+        html_content = html_content.replace('src="cid:hr_logo"', 'src="/static/images/HR.png"')
+    elif template_name == 'partnership_enterprises':
+        # Use Primary.png for Dazzlo Enterprises template
+        html_content = html_content.replace('src="cid:enterprises_logo"', 'src="/static/images/Primary.png"')
+    
+    return html_content
 
 @app.route('/validate_credentials', methods=['POST'])
 def validate_credentials():
@@ -207,12 +255,8 @@ def send_emails_route():
         flash('Please either upload a CSV file or enter data in the notepad.', 'danger')
         return redirect(url_for('index'))
 
-    # Handle logo file
-    logo_data = None
-    logo_file = request.files.get('logo_file')
-    if logo_file and logo_file.filename != '' and allowed_file(logo_file.filename, 'image'):
-        logo_data = logo_file.read()
-        logging.info(f"Logo file attached: {logo_file.filename}")
+    # Logo handling is now automatic based on template type
+    # No manual logo upload needed
 
     # Handle CV/attachment file
     cv_data = None
@@ -265,7 +309,7 @@ def send_emails_route():
                 html_body = render_template(f"emails/{template_type}.html", **email_data)
 
                 # --- MODIFIED: Pass credentials to the sending function ---
-                success, message = send_email_smtp(sender_email, sender_password, recipient_email, subject, html_body, logo_data, cv_data, cv_filename)
+                success, message = send_email_smtp(sender_email, sender_password, recipient_email, subject, html_body, template_type, cv_data, cv_filename)
                 
                 results.append({'email': recipient_email, 'status': 'Success' if success else 'Failed', 'message': message})
                 if success:

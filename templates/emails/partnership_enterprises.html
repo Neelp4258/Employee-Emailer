@@ -1,88 +1,132 @@
-{% extends "previews/preview_base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dazzlo Enterprises Partnership Proposal</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f9f9f9; }
+        .container { max-width: 700px; margin: 20px auto; background-color: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); }
+        .header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 20px; border-bottom: 2px solid #e0e0e0; margin-bottom: 20px; flex-wrap: wrap; }
+        .header-left { display: flex; align-items: center; }
+        .company-info { margin-left: 15px; }
+        .company-name { font-size: 24px; font-weight: bold; color: #222; margin: 0; }
+        .tagline { font-style: italic; font-size: 11px; color: #666; margin-top: 5px; }
+        .contact-info { text-align: right; font-size: 10px; color: #444; font-weight: bold; }
+        .contact-info p { margin: 2px 0; }
+        .golden-lines { border-bottom: 1.5px solid #D4AF37; padding-bottom: 4px; margin-bottom: 15px; }
+        .golden-lines::after { content: ''; display: block; border-bottom: 0.8px solid #D4AF37; margin-top: 4px; }
+        .content { font-size: 14px; }
+        .instructions ul { list-style-type: disc; margin-left: 20px; padding-left: 0; }
+        .footer { text-align: center; font-size: 10px; color: #666; margin-top: 30px; padding-top: 15px; border-top: 1px solid #e0e0e0; }
+        .logo { width: 50px; height: 50px; border-radius: 8px; margin-right: 15px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <img src="cid:enterprises_logo" alt="Dazzlo Enterprises" class="logo">
+                <div class="company-info">
+                    <h1 class="company-name">Dazzlo Enterprises Pvt Ltd</h1>
+                    <p class="tagline">Redefining lifestyle with Innovations and Dreams</p>
+                </div>
+            </div>
+            <div class="contact-info">
+                <p>Tel: +91 9373015503</p>
+                <p>Email: <a href="mailto:info@dazzlo.co.in" style="color: #007bff;">info@dazzlo.co.in</a></p>
+            </div>
+        </div>
+        <div class="golden-lines"></div>
+        <div class="content">
+            <div style="text-align: right; font-size: 13px; color: #666666; margin-bottom: 30px; font-style: italic;">Date: {{ current_date }}</div>
 
-{% block content %}
-<div style="text-align: right; font-size: 13px; color: #666666; margin-bottom: 30px; font-style: italic;">Date: {{ current_date }}</div>
+            <div style="font-size: 16px; color: #2c2c2c; margin-bottom: 25px; font-weight: 500;">Dear {{ company }} Leadership Team,</div>
 
-<div style="font-size: 16px; color: #2c2c2c; margin-bottom: 25px; font-weight: 500;">Dear {{ company }} Leadership Team,</div>
+            <div style="font-size: 14px; color: #444444; line-height: 1.7; margin-bottom: 20px; text-align: justify;">
+                I hope this letter finds you in excellent health and prosperity. I am writing to introduce <span style="font-weight: 600; color: #d4af37;">Dazzlo Enterprises Pvt Ltd</span>, a comprehensive business solutions provider dedicated to empowering forward-thinking organizations like <span style="font-weight: 600; color: #d4af37;">{{ company }}</span> with cutting-edge technology and strategic consulting services.
+            </div>
 
-<div style="font-size: 14px; color: #444444; line-height: 1.7; margin-bottom: 20px; text-align: justify;">
-    I hope this letter finds you in excellent health and prosperity. I am writing to introduce <span style="font-weight: 600; color: #d4af37;">Dazzlo Enterprises Pvt Ltd</span>, a comprehensive business solutions provider dedicated to empowering forward-thinking organizations like <span style="font-weight: 600; color: #d4af37;">{{ company }}</span> with cutting-edge technology and strategic consulting services.
-</div>
+            <div style="font-size: 14px; color: #444444; line-height: 1.7; margin-bottom: 20px; text-align: justify;">
+                In today's rapidly evolving business landscape, organizations need integrated solutions that drive efficiency, innovation, and sustainable growth. At Dazzlo Enterprises, we understand that your success depends on having the right technology infrastructure, streamlined processes, and strategic insights to stay ahead of the competition.
+            </div>
 
-<div style="font-size: 14px; color: #444444; line-height: 1.7; margin-bottom: 20px; text-align: justify;">
-    In today's rapidly evolving business landscape, organizations need integrated solutions that drive efficiency, innovation, and sustainable growth. At Dazzlo Enterprises, we understand that your success depends on having the right technology infrastructure, streamlined processes, and strategic insights to stay ahead of the competition.
-</div>
+            <div style="margin: 30px 0; background-color: #fafafa; border: 1px solid #e8e8e8; border-radius: 8px; padding: 25px;">
+                <div style="font-size: 18px; font-weight: bold; color: #2c2c2c; text-align: center; margin-bottom: 20px; position: relative;">
+                    Our Comprehensive Business Solutions
+                    <div style="position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: #d4af37; border-radius: 2px;"></div>
+                </div>
+                
+                <table style="width: 100%; border-spacing: 0; border-collapse: collapse;">
+                    <tr>
+                        <td style="padding: 8px;">
+                            <div style="background: #2c2c2c; color: #ffffff; padding: 15px 18px; text-align: center; font-size: 13px; font-weight: 500; border-radius: 6px; border-left: 4px solid #d4af37;">HR & Recruitment Solutions</div>
+                        </td>
+                        <td style="padding: 8px;">
+                            <div style="background: #2c2c2c; color: #ffffff; padding: 15px 18px; text-align: center; font-size: 13px; font-weight: 500; border-radius: 6px; border-left: 4px solid #d4af37;">Business Process Automation</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px;">
+                            <div style="background: #2c2c2c; color: #ffffff; padding: 15px 18px; text-align: center; font-size: 13px; font-weight: 500; border-radius: 6px; border-left: 4px solid #d4af37;">IT Consulting & Strategy</div>
+                        </td>
+                        <td style="padding: 8px;">
+                            <div style="background: #2c2c2c; color: #ffffff; padding: 15px 18px; text-align: center; font-size: 13px; font-weight: 500; border-radius: 6px; border-left: 4px solid #d4af37;">AI Development & Integration</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px;">
+                            <div style="background: #2c2c2c; color: #ffffff; padding: 15px 18px; text-align: center; font-size: 13px; font-weight: 500; border-radius: 6px; border-left: 4px solid #d4af37;">Custom Software Development</div>
+                        </td>
+                        <td style="padding: 8px;">
+                            <div style="background: #2c2c2c; color: #ffffff; padding: 15px 18px; text-align: center; font-size: 13px; font-weight: 500; border-radius: 6px; border-left: 4px solid #d4af37;">CRM & Business Tools</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px;">
+                            <div style="background: #2c2c2c; color: #ffffff; padding: 15px 18px; text-align: center; font-size: 13px; font-weight: 500; border-radius: 6px; border-left: 4px solid #d4af37;">Digital Transformation</div>
+                        </td>
+                        <td style="padding: 8px;">
+                            <div style="background: #2c2c2c; color: #ffffff; padding: 15px 18px; text-align: center; font-size: 13px; font-weight: 500; border-radius: 6px; border-left: 4px solid #d4af37;">Cloud Solutions & Migration</div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
 
-<div style="margin: 30px 0; background-color: #fafafa; border: 1px solid #e8e8e8; border-radius: 8px; padding: 25px;">
-    <div style="font-size: 18px; font-weight: bold; color: #2c2c2c; text-align: center; margin-bottom: 20px; position: relative;">
-        Our Comprehensive Business Solutions
-        <div style="position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: #d4af37; border-radius: 2px;"></div>
+            <div style="font-size: 14px; color: #444444; line-height: 1.7; margin-bottom: 20px; text-align: justify;">
+                Our approach combines deep industry expertise with innovative technology solutions. We work closely with our clients to understand their unique challenges and deliver tailored solutions that drive measurable business outcomes. From initial strategy development to implementation and ongoing support, we ensure seamless integration with your existing operations.
+            </div>
+
+            <div style="background: #2c2c2c; color: #ffffff; padding: 30px; margin: 30px 0; border-radius: 10px; text-align: center; position: relative; overflow: hidden; border-top: 4px solid #d4af37;">
+                <div style="font-size: 20px; font-weight: bold; margin-bottom: 15px; color: #d4af37;">Strategic Partnership Opportunity</div>
+                <div style="font-size: 14px; line-height: 1.6; color: #e0e0e0;">
+                    We would welcome the opportunity to discuss how Dazzlo Enterprises can support <span style="font-weight: 600; color: #d4af37;">{{ company }}</span>'s digital transformation and business optimization initiatives. Whether you're looking to streamline operations, enhance customer engagement, or drive innovation, we are committed to delivering solutions that align with your strategic objectives.
+                </div>
+            </div>
+
+            <div style="font-size: 14px; color: #444444; line-height: 1.7; margin: 25px 0; text-align: justify;">
+                I would be honored to schedule a brief consultation at your convenience to explore how our comprehensive suite of services can add value to your organization. Please feel free to reach out to discuss your specific requirements and how we can help you achieve your business goals.
+            </div>
+
+            <div style="font-size: 14px; color: #444444; line-height: 1.7; margin: 25px 0; text-align: justify;">
+                Thank you for considering Dazzlo Enterprises Pvt Ltd as your strategic business partner. We look forward to contributing to <span style="font-weight: 600; color: #d4af37;">{{ company }}</span>'s continued success and growth.
+            </div>
+
+            <div style="background: #f8f8f8; padding: 30px; border-top: 2px solid #d4af37; border-radius: 0 0 8px 8px;">
+                <div style="font-size: 16px; font-weight: bold; color: #2c2c2c; margin-bottom: 5px;">{{ sender_name }}</div>
+                <div style="font-size: 13px; color: #666666; margin-bottom: 5px; font-style: italic;">{{ sender_designation }}</div>
+                <div style="font-size: 15px; font-weight: bold; color: #d4af37; margin-bottom: 15px;">Dazzlo Enterprises Pvt Ltd</div>
+                
+                <div style="font-size: 12px; color: #666666; line-height: 1.5;">
+                    Email: {{ sender_email }}<br>
+                    Info: info@dazzlo.co.in<br>
+                    Operations: operations@dazzlo.co.in
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; 2025 Dazzlo Enterprises Pvt Ltd. All rights reserved.</p>
+        </div>
     </div>
-    
-    <table style="width: 100%; border-spacing: 0; border-collapse: collapse;">
-        <tr>
-            <td style="padding: 8px;">
-                <div style="background: #2c2c2c; color: #ffffff; padding: 15px 18px; text-align: center; font-size: 13px; font-weight: 500; border-radius: 6px; border-left: 4px solid #d4af37;">HR & Recruitment Solutions</div>
-            </td>
-            <td style="padding: 8px;">
-                <div style="background: #2c2c2c; color: #ffffff; padding: 15px 18px; text-align: center; font-size: 13px; font-weight: 500; border-radius: 6px; border-left: 4px solid #d4af37;">Business Process Automation</div>
-            </td>
-        </tr>
-        <tr>
-            <td style="padding: 8px;">
-                <div style="background: #2c2c2c; color: #ffffff; padding: 15px 18px; text-align: center; font-size: 13px; font-weight: 500; border-radius: 6px; border-left: 4px solid #d4af37;">IT Consulting & Strategy</div>
-            </td>
-            <td style="padding: 8px;">
-                <div style="background: #2c2c2c; color: #ffffff; padding: 15px 18px; text-align: center; font-size: 13px; font-weight: 500; border-radius: 6px; border-left: 4px solid #d4af37;">AI Development & Integration</div>
-            </td>
-        </tr>
-        <tr>
-            <td style="padding: 8px;">
-                <div style="background: #2c2c2c; color: #ffffff; padding: 15px 18px; text-align: center; font-size: 13px; font-weight: 500; border-radius: 6px; border-left: 4px solid #d4af37;">Custom Software Development</div>
-            </td>
-            <td style="padding: 8px;">
-                <div style="background: #2c2c2c; color: #ffffff; padding: 15px 18px; text-align: center; font-size: 13px; font-weight: 500; border-radius: 6px; border-left: 4px solid #d4af37;">CRM & Business Tools</div>
-            </td>
-        </tr>
-        <tr>
-            <td style="padding: 8px;">
-                <div style="background: #2c2c2c; color: #ffffff; padding: 15px 18px; text-align: center; font-size: 13px; font-weight: 500; border-radius: 6px; border-left: 4px solid #d4af37;">Digital Transformation</div>
-            </td>
-            <td style="padding: 8px;">
-                <div style="background: #2c2c2c; color: #ffffff; padding: 15px 18px; text-align: center; font-size: 13px; font-weight: 500; border-radius: 6px; border-left: 4px solid #d4af37;">Cloud Solutions & Migration</div>
-            </td>
-        </tr>
-    </table>
-</div>
-
-<div style="font-size: 14px; color: #444444; line-height: 1.7; margin-bottom: 20px; text-align: justify;">
-    Our approach combines deep industry expertise with innovative technology solutions. We work closely with our clients to understand their unique challenges and deliver tailored solutions that drive measurable business outcomes. From initial strategy development to implementation and ongoing support, we ensure seamless integration with your existing operations.
-</div>
-
-<div style="background: #2c2c2c; color: #ffffff; padding: 30px; margin: 30px 0; border-radius: 10px; text-align: center; position: relative; overflow: hidden; border-top: 4px solid #d4af37;">
-    <div style="font-size: 20px; font-weight: bold; margin-bottom: 15px; color: #d4af37;">Strategic Partnership Opportunity</div>
-    <div style="font-size: 14px; line-height: 1.6; color: #e0e0e0;">
-        We would welcome the opportunity to discuss how Dazzlo Enterprises can support <span style="font-weight: 600; color: #d4af37;">{{ company }}</span>'s digital transformation and business optimization initiatives. Whether you're looking to streamline operations, enhance customer engagement, or drive innovation, we are committed to delivering solutions that align with your strategic objectives.
-    </div>
-</div>
-
-<div style="font-size: 14px; color: #444444; line-height: 1.7; margin: 25px 0; text-align: justify;">
-    I would be honored to schedule a brief consultation at your convenience to explore how our comprehensive suite of services can add value to your organization. Please feel free to reach out to discuss your specific requirements and how we can help you achieve your business goals.
-</div>
-
-<div style="font-size: 14px; color: #444444; line-height: 1.7; margin: 25px 0; text-align: justify;">
-    Thank you for considering Dazzlo Enterprises Pvt Ltd as your strategic business partner. We look forward to contributing to <span style="font-weight: 600; color: #d4af37;">{{ company }}</span>'s continued success and growth.
-</div>
-
-<div style="background: #f8f8f8; padding: 30px; border-top: 2px solid #d4af37; border-radius: 0 0 8px 8px;">
-    <div style="font-size: 16px; font-weight: bold; color: #2c2c2c; margin-bottom: 5px;">{{ sender_name }}</div>
-    <div style="font-size: 13px; color: #666666; margin-bottom: 5px; font-style: italic;">{{ sender_designation }}</div>
-    <div style="font-size: 15px; font-weight: bold; color: #d4af37; margin-bottom: 15px;">Dazzlo Enterprises Pvt Ltd</div>
-    
-    <div style="font-size: 12px; color: #666666; line-height: 1.5;">
-        Email: {{ sender_email }}<br>
-        Info: info@dazzlo.co.in<br>
-        Operations: operations@dazzlo.co.in
-    </div>
-</div>
-{% endblock %} 
+</body>
+</html> 

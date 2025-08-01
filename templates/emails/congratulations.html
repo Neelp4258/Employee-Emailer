@@ -1,32 +1,76 @@
-{% extends "previews/preview_base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations - You're Selected!</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f9f9f9; }
+        .container { max-width: 700px; margin: 20px auto; background-color: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); }
+        .header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 20px; border-bottom: 2px solid #e0e0e0; margin-bottom: 20px; flex-wrap: wrap; }
+        .header-left { display: flex; align-items: center; }
+        .company-info { margin-left: 15px; }
+        .company-name { font-size: 24px; font-weight: bold; color: #222; margin: 0; }
+        .tagline { font-style: italic; font-size: 11px; color: #666; margin-top: 5px; }
+        .contact-info { text-align: right; font-size: 10px; color: #444; font-weight: bold; }
+        .contact-info p { margin: 2px 0; }
+        .golden-lines { border-bottom: 1.5px solid #D4AF37; padding-bottom: 4px; margin-bottom: 15px; }
+        .golden-lines::after { content: ''; display: block; border-bottom: 0.8px solid #D4AF37; margin-top: 4px; }
+        .content { font-size: 14px; }
+        .instructions ul { list-style-type: disc; margin-left: 20px; padding-left: 0; }
+        .footer { text-align: center; font-size: 10px; color: #666; margin-top: 30px; padding-top: 15px; border-top: 1px solid #e0e0e0; }
+        .logo { width: 50px; height: 50px; border-radius: 8px; margin-right: 15px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <img src="cid:hr_logo" alt="DazzloHR" class="logo">
+                <div class="company-info">
+                    <h1 class="company-name">DazzloHR</h1>
+                    <p class="tagline">Redefining lifestyle with Innovations and Dreams</p>
+                </div>
+            </div>
+            <div class="contact-info">
+                <p>Tel: +91 9373015503</p>
+                <p>Email: <a href="mailto:info@dazzlohr.in" style="color: #007bff;">info@dazzlohr.in</a></p>
+            </div>
+        </div>
+        <div class="golden-lines"></div>
+        <div class="content">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <h2 style="font-size: 24px; font-weight: bold; color: #b8860b;">🎊 YOU'RE SELECTED! 🎊</h2>
+                <p style="font-size: 16px; color: #666;">
+                    We are thrilled to offer you the position of<br>
+                    <span style="background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%); color: white; padding: 8px 18px; border-radius: 25px; font-weight: bold; display: inline-block; margin-top: 10px;">{{ role }}</span>
+                </p>
+            </div>
 
-{% block content %}
-<div style="text-align: center; margin-bottom: 20px;">
-    <h2 style="font-size: 24px; font-weight: bold; color: #b8860b;">🎊 YOU'RE SELECTED! 🎊</h2>
-    <p style="font-size: 16px; color: #666;">
-        We are thrilled to offer you the position of<br>
-        <span style="background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%); color: white; padding: 8px 18px; border-radius: 25px; font-weight: bold; display: inline-block; margin-top: 10px;">{{ role }}</span>
-    </p>
-</div>
+            <p><strong>Dear {{ name }},</strong></p>
 
-<p><strong>Dear {{ name }},</strong></p>
+            <p>Congratulations! 🎉 We are delighted to inform you that you have been <strong>selected</strong> for the 
+            <strong>{{ role }}</strong> position at <strong>{{ company }}</strong>.</p>
 
-<p>Congratulations! 🎉 We are delighted to inform you that you have been <strong>selected</strong> for the 
-<strong>{{ role }}</strong> position at <strong>{{ company }}</strong>.</p>
+            <p>Our team believes you are the perfect fit for this role. Your qualifications and enthusiasm impressed us greatly during the selection process.</p>
 
-<p>Our team believes you are the perfect fit for this role. Your qualifications and enthusiasm impressed us greatly during the selection process.</p>
+            <div style="background: #fff3e0; border-left: 4px solid #d4af37; padding: 20px; margin: 20px 0; border-radius: 8px;">
+                <h3 style="color: #b8860b; margin-top: 0;">📋 Next Steps:</h3>
+                <ul>
+                    <li>Our HR team will contact you within 2-3 business days for further discussion.</li>
+                    <li>Please keep your documents ready for the verification process.</li>
+                </ul>
+            </div>
 
-<div style="background: #fff3e0; border-left: 4px solid #d4af37; padding: 20px; margin: 20px 0; border-radius: 8px;">
-    <h3 style="color: #b8860b; margin-top: 0;">📋 Next Steps:</h3>
-    <ul>
-        <li>Our HR team will contact you within 2-3 business days for further discussion.</li>
-        <li>Please keep your documents ready for the verification process.</li>
-    </ul>
-</div>
+            <p>We are excited to welcome you to the <strong>{{ company }}</strong> family!</p>
 
-<p>We are excited to welcome you to the <strong>{{ company }}</strong> family!</p>
-
-<p><strong>Warm Regards,</strong><br>
-<strong>The Dazzlo Enterprises Pvt Ltd Team</strong><br>
-<em>Human Resources Department</em></p>
-{% endblock %}
+            <p><strong>Warm Regards,</strong><br>
+            <strong>The Dazzlo Enterprises Team</strong><br>
+            <em>Human Resources Department</em></p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2025 Dazzlo Enterprises. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

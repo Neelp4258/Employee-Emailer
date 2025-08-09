@@ -52,7 +52,11 @@ manager@designstudio.com,DesignStudio`,
         'partnership_hr': `email,company
 hr@techcorp.com,TechCorp Inc
 hr@innovatelabs.com,InnovateLabs
-hr@designstudio.com,DesignStudio`
+hr@designstudio.com,DesignStudio`,
+        'trivantaedge': `email,company
+md@builderco.com,BuilderCo
+owner@realestategroup.com,RealEstate Group
+director@skylinebuilders.com,Skyline Builders`
     };
     
     notepad.value = samples[templateType] || samples['interview'];
@@ -65,7 +69,8 @@ function updateCsvRequirements() {
         'interview': 'email, name, role, slot',
         'congratulations': 'email, name, role, company',
         'partnership_enterprises': 'email, company',
-        'partnership_hr': 'email, company'
+        'partnership_hr': 'email, company',
+        'trivantaedge': 'email, company'
     };
     
     const requirementsText = `Required columns: <b>${requirements[templateType]}</b>`;
@@ -176,7 +181,7 @@ function selectTemplate(templateType) {
     // Show/hide sender info section
     const senderInfoSection = document.getElementById('sender-info-section');
     if (senderInfoSection) {
-        if (templateType === 'partnership_enterprises' || templateType === 'partnership_hr') {
+        if (templateType === 'partnership_enterprises' || templateType === 'partnership_hr' || templateType === 'trivantaedge') {
             senderInfoSection.style.display = 'block';
         } else {
             senderInfoSection.style.display = 'none';

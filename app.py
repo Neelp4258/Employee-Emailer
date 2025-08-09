@@ -79,6 +79,10 @@ def get_logo_for_template(template_type):
             # Use Primary.png for Dazzlo Enterprises template
             logo_path = os.path.join(app.root_path, 'static', 'images', 'Primary.png')
             logo_cid = 'enterprises_logo'
+        elif template_type == 'trivantaedge':
+            # Use Trivanta Edge logo
+            logo_path = os.path.join(app.root_path, 'static', 'images', 'trivanta.png')
+            logo_cid = 'trivanta_logo'
         else:
             # Default to HR logo
             logo_path = os.path.join(app.root_path, 'static', 'images', 'HR.png')
@@ -156,7 +160,7 @@ def index():
 
 @app.route('/preview/<template_name>')
 def preview_email(template_name):
-    if template_name not in ['interview', 'congratulations', 'partnership_enterprises', 'partnership_hr']:
+    if template_name not in ['interview', 'congratulations', 'partnership_enterprises', 'partnership_hr', 'trivantaedge']:
         abort(404)
     preview_data = {
         'name': "Alex Doe",
@@ -167,7 +171,7 @@ def preview_email(template_name):
     }
     
     # Add sample sender information for partnership templates
-    if template_name in ['partnership_enterprises', 'partnership_hr']:
+    if template_name in ['partnership_enterprises', 'partnership_hr', 'trivantaedge']:
         preview_data.update({
             'sender_name': "John Smith",
             'sender_designation': "Senior Business Development Manager",
@@ -184,6 +188,9 @@ def preview_email(template_name):
     elif template_name == 'partnership_enterprises':
         # Use Primary.png for Dazzlo Enterprises template
         html_content = html_content.replace('src="cid:enterprises_logo"', 'src="/static/images/Primary.png"')
+    elif template_name == 'trivantaedge':
+        # Use Trivanta Edge logo for preview
+        html_content = html_content.replace('src="cid:trivanta_logo"', 'src="/static/images/trivanta.png"')
     
     return html_content
 
@@ -279,7 +286,8 @@ def send_emails_route():
                 'interview': ['email', 'name', 'role', 'slot'],
                 'congratulations': ['email', 'name', 'role', 'company'],
                 'partnership_enterprises': ['email', 'company'],
-                'partnership_hr': ['email', 'company']
+                'partnership_hr': ['email', 'company'],
+                'trivantaedge': ['email', 'company']
             }.get(template_type)
 
             if not all(col in reader.fieldnames for col in required_columns):
@@ -293,10 +301,16 @@ def send_emails_route():
 
                 email_data = {key: row.get(key, '').strip() for key in required_columns}
 
-                subject = f"🎉 Congratulations! You're Selected for the {email_data['role']} Role at {email_data['company']}" if template_type == 'congratulations' else f"Strategic Partnership Opportunity - Dazzlo Enterprises Pvt Ltd" if template_type == 'partnership_enterprises' else f"Strategic Partnership Opportunity - DazzloHR Solutions" if template_type == 'partnership_hr' else f"Interview for {email_data['role']} at {app.config['COMPANY_NAME']}"
+                subject = (
+                    f"🎉 Congratulations! You're Selected for the {email_data['role']} Role at {email_data['company']}" if template_type == 'congratulations' else
+                    "Strategic Partnership Opportunity - Dazzlo Enterprises Pvt Ltd" if template_type == 'partnership_enterprises' else
+                    "Strategic Partnership Opportunity - DazzloHR Solutions" if template_type == 'partnership_hr' else
+                    "Strategic Partnership Opportunity - Trivanta Edge" if template_type == 'trivantaedge' else
+                    f"Interview for {email_data['role']} at {app.config['COMPANY_NAME']}"
+                )
                 
                 # Add sender information for partnership templates
-                if template_type in ['partnership_enterprises', 'partnership_hr']:
+                if template_type in ['partnership_enterprises', 'partnership_hr', 'trivantaedge']:
                     email_data.update({
                         'sender_name': sender_name,
                         'sender_designation': sender_designation,

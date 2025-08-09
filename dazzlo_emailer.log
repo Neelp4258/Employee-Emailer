@@ -538,3 +538,81 @@
 2025-08-01 11:28:08,778 - INFO - 127.0.0.1 - - [01/Aug/2025 11:28:08] "[33mGET /static/css/results_styles.css HTTP/1.1[0m" 404 -
 2025-08-01 11:28:08,778 - INFO - 127.0.0.1 - - [01/Aug/2025 11:28:08] "[33mGET /static/js/results_script.js HTTP/1.1[0m" 404 -
 2025-08-01 11:28:08,958 - INFO - 127.0.0.1 - - [01/Aug/2025 11:28:08] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-08 12:00:17,461 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5050
+2025-08-08 12:00:17,462 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-08 12:00:17,465 - INFO -  * Restarting with stat
+2025-08-08 12:00:18,289 - WARNING -  * Debugger is active!
+2025-08-08 12:00:18,300 - INFO -  * Debugger PIN: 592-236-368
+2025-08-08 12:00:37,962 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5050
+2025-08-08 12:00:37,963 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-08 12:00:37,966 - INFO -  * Restarting with stat
+2025-08-08 12:00:38,665 - WARNING -  * Debugger is active!
+2025-08-08 12:00:38,668 - INFO -  * Debugger PIN: 592-236-368
+2025-08-08 12:01:06,831 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5050
+2025-08-08 12:01:06,832 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-08 12:01:06,835 - INFO -  * Restarting with stat
+2025-08-08 12:01:07,639 - WARNING -  * Debugger is active!
+2025-08-08 12:01:07,643 - INFO -  * Debugger PIN: 592-236-368
+2025-08-08 12:01:45,665 - INFO - 127.0.0.1 - - [08/Aug/2025 12:01:45] "GET / HTTP/1.1" 200 -
+2025-08-08 12:01:45,906 - INFO - 127.0.0.1 - - [08/Aug/2025 12:01:45] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-08 12:01:45,907 - INFO - 127.0.0.1 - - [08/Aug/2025 12:01:45] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-08 12:01:46,884 - INFO - 127.0.0.1 - - [08/Aug/2025 12:01:46] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-08 12:01:47,099 - INFO - 127.0.0.1 - - [08/Aug/2025 12:01:47] "GET /static/images/HR.png HTTP/1.1" 200 -
+2025-08-08 12:01:47,140 - INFO - 127.0.0.1 - - [08/Aug/2025 12:01:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-08 12:01:49,941 - INFO - 127.0.0.1 - - [08/Aug/2025 12:01:49] "GET /preview/trivantaedge HTTP/1.1" 200 -
+2025-08-08 12:01:49,962 - INFO - 127.0.0.1 - - [08/Aug/2025 12:01:49] "GET /static/images/trivanta.png HTTP/1.1" 200 -
+2025-08-08 12:02:26,183 - INFO - 127.0.0.1 - - [08/Aug/2025 12:02:26] "POST /validate_credentials HTTP/1.1" 200 -
+2025-08-08 12:03:32,706 - INFO - CV file attached: Trivanta_Company_Profile.pdf
+2025-08-08 12:03:32,744 - INFO - Attached logo for template: trivantaedge
+2025-08-08 12:03:45,744 - INFO - Email sent successfully to bhavani@dazzlo.co.in
+2025-08-08 12:03:45,787 - INFO - 127.0.0.1 - - [08/Aug/2025 12:03:45] "POST /send_emails HTTP/1.1" 200 -
+2025-08-08 12:03:45,833 - INFO - 127.0.0.1 - - [08/Aug/2025 12:03:45] "[33mGET /static/css/results_styles.css HTTP/1.1[0m" 404 -
+2025-08-08 12:03:45,839 - INFO - 127.0.0.1 - - [08/Aug/2025 12:03:45] "[33mGET /static/js/results_script.js HTTP/1.1[0m" 404 -
+2025-08-08 12:06:20,723 - INFO - 127.0.0.1 - - [08/Aug/2025 12:06:20] "GET / HTTP/1.1" 200 -
+2025-08-08 12:06:20,769 - INFO - 127.0.0.1 - - [08/Aug/2025 12:06:20] "[36mGET /static/css/index_styles.css HTTP/1.1[0m" 304 -
+2025-08-08 12:06:20,769 - INFO - 127.0.0.1 - - [08/Aug/2025 12:06:20] "[36mGET /static/js/index_script.js HTTP/1.1[0m" 304 -
+2025-08-08 12:06:20,804 - INFO - 127.0.0.1 - - [08/Aug/2025 12:06:20] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-08 12:06:20,918 - INFO - 127.0.0.1 - - [08/Aug/2025 12:06:20] "[36mGET /static/images/HR.png HTTP/1.1[0m" 304 -
+2025-08-08 12:06:22,755 - INFO - 127.0.0.1 - - [08/Aug/2025 12:06:22] "GET /preview/trivantaedge HTTP/1.1" 200 -
+2025-08-08 12:06:22,776 - INFO - 127.0.0.1 - - [08/Aug/2025 12:06:22] "[36mGET /static/images/trivanta.png HTTP/1.1[0m" 304 -
+2025-08-08 12:06:29,364 - INFO - 127.0.0.1 - - [08/Aug/2025 12:06:29] "POST /validate_credentials HTTP/1.1" 200 -
+2025-08-08 12:07:11,414 - INFO - CV file attached: Trivanta_Company_Profile.pdf
+2025-08-08 12:07:11,451 - INFO - Attached logo for template: trivantaedge
+2025-08-08 12:07:13,461 - INFO - Email sent successfully to neel.parmar@dazzlo.co.in
+2025-08-08 12:07:13,505 - INFO - Attached logo for template: trivantaedge
+2025-08-08 12:07:16,563 - INFO - Email sent successfully to sidsur23@gmail.com
+2025-08-08 12:07:16,593 - INFO - 127.0.0.1 - - [08/Aug/2025 12:07:16] "POST /send_emails HTTP/1.1" 200 -
+2025-08-08 12:07:16,635 - INFO - 127.0.0.1 - - [08/Aug/2025 12:07:16] "[33mGET /static/css/results_styles.css HTTP/1.1[0m" 404 -
+2025-08-08 12:07:16,636 - INFO - 127.0.0.1 - - [08/Aug/2025 12:07:16] "[33mGET /static/js/results_script.js HTTP/1.1[0m" 404 -
+2025-08-08 12:08:00,215 - INFO - 127.0.0.1 - - [08/Aug/2025 12:08:00] "GET / HTTP/1.1" 200 -
+2025-08-08 12:08:00,252 - INFO - 127.0.0.1 - - [08/Aug/2025 12:08:00] "[36mGET /static/css/index_styles.css HTTP/1.1[0m" 304 -
+2025-08-08 12:08:00,253 - INFO - 127.0.0.1 - - [08/Aug/2025 12:08:00] "[36mGET /static/js/index_script.js HTTP/1.1[0m" 304 -
+2025-08-08 12:08:00,297 - INFO - 127.0.0.1 - - [08/Aug/2025 12:08:00] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-08 12:08:00,441 - INFO - 127.0.0.1 - - [08/Aug/2025 12:08:00] "[36mGET /static/images/HR.png HTTP/1.1[0m" 304 -
+2025-08-08 12:08:02,019 - INFO - 127.0.0.1 - - [08/Aug/2025 12:08:02] "GET /preview/trivantaedge HTTP/1.1" 200 -
+2025-08-08 12:08:02,037 - INFO - 127.0.0.1 - - [08/Aug/2025 12:08:02] "[36mGET /static/images/trivanta.png HTTP/1.1[0m" 304 -
+2025-08-08 12:08:07,202 - INFO - 127.0.0.1 - - [08/Aug/2025 12:08:07] "POST /validate_credentials HTTP/1.1" 200 -
+2025-08-08 12:08:32,474 - INFO - CV file attached: Trivanta_Company_Profile.pdf
+2025-08-08 12:08:32,518 - INFO - Attached logo for template: trivantaedge
+2025-08-08 12:08:34,683 - INFO - Email sent successfully to bhavanikashinathswami@gmail.com
+2025-08-08 12:08:34,718 - INFO - 127.0.0.1 - - [08/Aug/2025 12:08:34] "POST /send_emails HTTP/1.1" 200 -
+2025-08-08 12:08:34,757 - INFO - 127.0.0.1 - - [08/Aug/2025 12:08:34] "[33mGET /static/css/results_styles.css HTTP/1.1[0m" 404 -
+2025-08-08 12:08:34,757 - INFO - 127.0.0.1 - - [08/Aug/2025 12:08:34] "[33mGET /static/js/results_script.js HTTP/1.1[0m" 404 -
+2025-08-08 12:30:36,919 - INFO - 127.0.0.1 - - [08/Aug/2025 12:30:36] "GET / HTTP/1.1" 200 -
+2025-08-08 12:30:36,986 - INFO - 127.0.0.1 - - [08/Aug/2025 12:30:36] "[36mGET /static/css/index_styles.css HTTP/1.1[0m" 304 -
+2025-08-08 12:30:36,986 - INFO - 127.0.0.1 - - [08/Aug/2025 12:30:36] "[36mGET /static/js/index_script.js HTTP/1.1[0m" 304 -
+2025-08-08 12:30:37,071 - INFO - 127.0.0.1 - - [08/Aug/2025 12:30:37] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-08 12:30:37,252 - INFO - 127.0.0.1 - - [08/Aug/2025 12:30:37] "[36mGET /static/images/HR.png HTTP/1.1[0m" 304 -
+2025-08-08 12:30:39,030 - INFO - 127.0.0.1 - - [08/Aug/2025 12:30:39] "GET /preview/trivantaedge HTTP/1.1" 200 -
+2025-08-08 12:30:39,048 - INFO - 127.0.0.1 - - [08/Aug/2025 12:30:39] "[36mGET /static/images/trivanta.png HTTP/1.1[0m" 304 -
+2025-08-08 12:30:58,619 - INFO - 127.0.0.1 - - [08/Aug/2025 12:30:58] "POST /validate_credentials HTTP/1.1" 200 -
+2025-08-08 12:37:05,562 - INFO - 127.0.0.1 - - [08/Aug/2025 12:37:05] "POST /validate_credentials HTTP/1.1" 200 -
+2025-08-08 12:37:07,351 - INFO - CV file attached: Trivanta_Company_Profile.pdf
+2025-08-08 12:37:07,433 - INFO - Attached logo for template: trivantaedge
+2025-08-08 12:37:17,350 - INFO - Email sent successfully to infinitesolutionsmp@gmail.com
+2025-08-08 12:37:17,382 - INFO - 127.0.0.1 - - [08/Aug/2025 12:37:17] "POST /send_emails HTTP/1.1" 200 -
+2025-08-08 12:37:17,423 - INFO - 127.0.0.1 - - [08/Aug/2025 12:37:17] "[33mGET /static/css/results_styles.css HTTP/1.1[0m" 404 -
+2025-08-08 12:37:17,424 - INFO - 127.0.0.1 - - [08/Aug/2025 12:37:17] "[33mGET /static/js/results_script.js HTTP/1.1[0m" 404 -

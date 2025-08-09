@@ -13,10 +13,20 @@
         <h2 class="section-title text-2xl font-semibold mb-4 text-center">Step 1: Select Template & Preview</h2>
         <p class="text-center text-gray-600 mb-6">Choose a template to see a live preview of the email.</p>
         
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
-            <div class="space-y-4">
-                <div class="template-card selected p-4" onclick="selectTemplate('interview')">
-                    <input type="radio" name="template_type" value="interview" id="interview" class="hidden" checked>
+        <div class="flex flex-row gap-6 items-start" style="display:flex;flex-direction:row;gap:1.5rem;align-items:flex-start;flex-wrap:nowrap;overflow-x:auto;">
+            <div class="space-y-4 flex-1 min-w-[320px]">
+                <!-- Brand (Folder) Selector -->
+                <div class="text-center mb-2">
+                    <div class="inline-flex bg-gray-100 rounded-lg p-1">
+                        <button type="button" id="brand-enterprises-btn" class="brand-btn active px-4 py-2 rounded-md text-sm font-medium transition-all" onclick="selectBrand('enterprises')">Dazzlo Enterprises</button>
+                        <button type="button" id="brand-hr-btn" class="brand-btn px-4 py-2 rounded-md text-sm font-medium transition-all" onclick="selectBrand('hr')">DazzloHR</button>
+                        <button type="button" id="brand-trivanta-btn" class="brand-btn px-4 py-2 rounded-md text-sm font-medium transition-all" onclick="selectBrand('trivanta')">Trivanta Edge</button>
+                        <button type="button" id="brand-general-btn" class="brand-btn px-4 py-2 rounded-md text-sm font-medium transition-all" onclick="selectBrand('general')">General</button>
+                    </div>
+                </div>
+                <div id="brand-general" class="brand-section space-y-4" style="display: none;">
+                <div class="template-card p-4" onclick="selectTemplate('interview')">
+                    <input type="radio" name="template_type" value="interview" id="interview" class="hidden">
                     <div class="flex items-center">
                         <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
                             <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -44,7 +54,10 @@
                         </div>
                     </div>
                 </div>
+                </div>
                 
+                <!-- Dazzlo Enterprises templates -->
+                <div id="brand-enterprises" class="brand-section space-y-4">
                 <div class="template-card p-4" onclick="selectTemplate('partnership_enterprises')">
                     <input type="radio" name="template_type" value="partnership_enterprises" id="partnership_enterprises" class="hidden">
                      <div class="flex items-center">
@@ -89,14 +102,190 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- DazzloHR Set -->
+                <div class="template-card p-4" onclick="selectTemplate('hr_intro')">
+                    <input type="radio" name="template_type" value="hr_intro" id="hr_intro" class="hidden">
+                     <div class="flex items-center">
+                        <div class="w-10 h-10 bg-indigo-50 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-indigo-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h8M8 14h6M12 4v4m0 8v4"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">DazzloHR Intro</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="template-card p-4" onclick="selectTemplate('hr_followup')">
+                    <input type="radio" name="template_type" value="hr_followup" id="hr_followup" class="hidden">
+                     <div class="flex items-center">
+                        <div class="w-10 h-10 bg-indigo-50 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-indigo-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 12h12M4 16h8"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">DazzloHR Follow-up</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="template-card p-4" onclick="selectTemplate('hr_thanks')">
+                    <input type="radio" name="template_type" value="hr_thanks" id="hr_thanks" class="hidden">
+                     <div class="flex items-center">
+                        <div class="w-10 h-10 bg-indigo-50 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-indigo-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">DazzloHR Thank You</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="template-card p-4" onclick="selectTemplate('hr_case_study')">
+                    <input type="radio" name="template_type" value="hr_case_study" id="hr_case_study" class="hidden">
+                     <div class="flex items-center">
+                        <div class="w-10 h-10 bg-indigo-50 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-indigo-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h14M3 17h10"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">DazzloHR Case Study</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dazzlo Enterprises Set -->
+                <div class="template-card p-4" onclick="selectTemplate('enterprises_intro')">
+                    <input type="radio" name="template_type" value="enterprises_intro" id="enterprises_intro" class="hidden">
+                     <div class="flex items-center">
+                        <div class="w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h8M8 14h6M12 4v4m0 8v4"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Dazzlo Enterprises Intro</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="template-card p-4" onclick="selectTemplate('enterprises_followup')">
+                    <input type="radio" name="template_type" value="enterprises_followup" id="enterprises_followup" class="hidden">
+                     <div class="flex items-center">
+                        <div class="w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 12h12M4 16h8"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Dazzlo Enterprises Follow-up</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="template-card p-4" onclick="selectTemplate('enterprises_thanks')">
+                    <input type="radio" name="template_type" value="enterprises_thanks" id="enterprises_thanks" class="hidden">
+                     <div class="flex items-center">
+                        <div class="w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Dazzlo Enterprises Thank You</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="template-card p-4" onclick="selectTemplate('enterprises_case_study')">
+                    <input type="radio" name="template_type" value="enterprises_case_study" id="enterprises_case_study" class="hidden">
+                     <div class="flex items-center">
+                        <div class="w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h14M3 17h10"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Dazzlo Enterprises Case Study</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card p-4" onclick="selectTemplate('trivantaedge_intro')">
+                    <input type="radio" name="template_type" value="trivantaedge_intro" id="trivantaedge_intro" class="hidden">
+                     <div class="flex items-center">
+                        <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h8M8 14h6M12 4v4m0 8v4"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Trivanta Edge Intro</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card p-4" onclick="selectTemplate('trivantaedge_followup')">
+                    <input type="radio" name="template_type" value="trivantaedge_followup" id="trivantaedge_followup" class="hidden">
+                     <div class="flex items-center">
+                        <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 12h12M4 16h8"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Trivanta Edge Follow-up</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card p-4" onclick="selectTemplate('trivantaedge_thanks')">
+                    <input type="radio" name="template_type" value="trivantaedge_thanks" id="trivantaedge_thanks" class="hidden">
+                     <div class="flex items-center">
+                        <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Trivanta Edge Thank You</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card p-4" onclick="selectTemplate('trivantaedge_case_study')">
+                    <input type="radio" name="template_type" value="trivantaedge_case_study" id="trivantaedge_case_study" class="hidden">
+                     <div class="flex items-center">
+                        <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h14M3 17h10"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Trivanta Edge Case Study</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="preview-container">
+            <div class="preview-container sticky top-4 w-[640px] max-w-full" style="width:640px;max-width:100%;position:sticky;top:1rem;">
                 <div class="bg-white border border-gray-200 rounded-lg shadow-sm">
                     <div class="px-4 py-3 border-b border-gray-200 bg-gray-50 rounded-t-lg">
                         <span class="font-medium text-gray-700 text-sm">Live Email Preview</span>
                     </div>
-                    <iframe id="email-preview-frame" src="{{ url_for('preview_email', template_name='interview') }}" class="w-full h-[600px] border-0 rounded-b-lg"></iframe>
+                    <iframe id="email-preview-frame" src="{{ url_for('preview_email', template_name='enterprises_intro') }}" class="w-full h-[600px] border-0 rounded-b-lg"></iframe>
                 </div>
             </div>
         </div>

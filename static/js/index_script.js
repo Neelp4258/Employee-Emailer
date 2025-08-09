@@ -56,7 +56,55 @@ hr@designstudio.com,DesignStudio`,
         'trivantaedge': `email,company
 md@builderco.com,BuilderCo
 owner@realestategroup.com,RealEstate Group
-director@skylinebuilders.com,Skyline Builders`
+director@skylinebuilders.com,Skyline Builders`,
+        'trivantaedge_intro': `email,company
+md@builderco.com,BuilderCo
+owner@realestategroup.com,RealEstate Group
+director@skylinebuilders.com,Skyline Builders`,
+        'trivantaedge_followup': `email,company
+md@builderco.com,BuilderCo
+owner@realestategroup.com,RealEstate Group
+director@skylinebuilders.com,Skyline Builders`,
+        'trivantaedge_thanks': `email,company
+md@builderco.com,BuilderCo
+owner@realestategroup.com,RealEstate Group
+director@skylinebuilders.com,Skyline Builders`,
+        'trivantaedge_case_study': `email,company
+md@builderco.com,BuilderCo
+owner@realestategroup.com,RealEstate Group
+director@skylinebuilders.com,Skyline Builders`,
+        'hr_intro': `email,company
+hr@techcorp.com,TechCorp Inc
+hr@innovatelabs.com,InnovateLabs
+hr@designstudio.com,DesignStudio`,
+        'hr_followup': `email,company
+hr@techcorp.com,TechCorp Inc
+hr@innovatelabs.com,InnovateLabs
+hr@designstudio.com,DesignStudio`,
+        'hr_thanks': `email,company
+hr@techcorp.com,TechCorp Inc
+hr@innovatelabs.com,InnovateLabs
+hr@designstudio.com,DesignStudio`,
+        'hr_case_study': `email,company
+hr@techcorp.com,TechCorp Inc
+hr@innovatelabs.com,InnovateLabs
+hr@designstudio.com,DesignStudio`,
+        'enterprises_intro': `email,company
+ceo@techcorp.com,TechCorp Inc
+director@innovatelabs.com,InnovateLabs
+manager@designstudio.com,DesignStudio`,
+        'enterprises_followup': `email,company
+ceo@techcorp.com,TechCorp Inc
+director@innovatelabs.com,InnovateLabs
+manager@designstudio.com,DesignStudio`,
+        'enterprises_thanks': `email,company
+ceo@techcorp.com,TechCorp Inc
+director@innovatelabs.com,InnovateLabs
+manager@designstudio.com,DesignStudio`,
+        'enterprises_case_study': `email,company
+ceo@techcorp.com,TechCorp Inc
+director@innovatelabs.com,InnovateLabs
+manager@designstudio.com,DesignStudio`
     };
     
     notepad.value = samples[templateType] || samples['interview'];
@@ -70,7 +118,19 @@ function updateCsvRequirements() {
         'congratulations': 'email, name, role, company',
         'partnership_enterprises': 'email, company',
         'partnership_hr': 'email, company',
-        'trivantaedge': 'email, company'
+        'trivantaedge': 'email, company',
+        'trivantaedge_intro': 'email, company',
+        'trivantaedge_followup': 'email, company',
+        'trivantaedge_thanks': 'email, company',
+        'trivantaedge_case_study': 'email, company',
+        'hr_intro': 'email, company',
+        'hr_followup': 'email, company',
+        'hr_thanks': 'email, company',
+        'hr_case_study': 'email, company',
+        'enterprises_intro': 'email, company',
+        'enterprises_followup': 'email, company',
+        'enterprises_thanks': 'email, company',
+        'enterprises_case_study': 'email, company'
     };
     
     const requirementsText = `Required columns: <b>${requirements[templateType]}</b>`;
@@ -181,7 +241,23 @@ function selectTemplate(templateType) {
     // Show/hide sender info section
     const senderInfoSection = document.getElementById('sender-info-section');
     if (senderInfoSection) {
-        if (templateType === 'partnership_enterprises' || templateType === 'partnership_hr' || templateType === 'trivantaedge') {
+        if (
+            templateType === 'partnership_enterprises' ||
+            templateType === 'partnership_hr' ||
+            templateType === 'trivantaedge' ||
+            templateType === 'trivantaedge_intro' ||
+            templateType === 'trivantaedge_followup' ||
+            templateType === 'trivantaedge_thanks' ||
+            templateType === 'trivantaedge_case_study' ||
+            templateType === 'hr_intro' ||
+            templateType === 'hr_followup' ||
+            templateType === 'hr_thanks' ||
+            templateType === 'hr_case_study' ||
+            templateType === 'enterprises_intro' ||
+            templateType === 'enterprises_followup' ||
+            templateType === 'enterprises_thanks' ||
+            templateType === 'enterprises_case_study'
+        ) {
             senderInfoSection.style.display = 'block';
         } else {
             senderInfoSection.style.display = 'none';
@@ -276,6 +352,18 @@ document.addEventListener('DOMContentLoaded', function() {
     if (validateBtn) {
         validateBtn.addEventListener('click', validateEmailCredentials);
     }
+    
+    // Initialize brand selection to Enterprises and default template
+    try {
+        selectBrand('enterprises');
+        // Prefer a default template within the selected brand
+        const defaultEnterprises = document.getElementById('enterprises_intro');
+        if (defaultEnterprises) {
+            selectTemplate('enterprises_intro');
+        }
+    } catch (e) {
+        // no-op if not yet defined
+    }
 });
 
 // Form validation
@@ -347,3 +435,55 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 }); 
+
+// Brand selector
+function brandOfTemplate(templateType) {
+    if (!templateType) return 'general';
+    if (templateType === 'partnership_enterprises' || templateType.startsWith('enterprises_')) {
+        return 'enterprises';
+    }
+    if (templateType === 'partnership_hr' || templateType.startsWith('hr_')) {
+        return 'hr';
+    }
+    if (templateType === 'trivantaedge' || templateType.startsWith('trivantaedge_')) {
+        return 'trivanta';
+    }
+    return 'general';
+}
+
+function selectBrand(brand) {
+    // Toggle active class on brand buttons
+    const brandButtons = [
+        ['enterprises', document.getElementById('brand-enterprises-btn')],
+        ['hr', document.getElementById('brand-hr-btn')],
+        ['trivanta', document.getElementById('brand-trivanta-btn')],
+        ['general', document.getElementById('brand-general-btn')]
+    ];
+    brandButtons.forEach(([key, btn]) => {
+        if (!btn) return;
+        if (key === brand) btn.classList.add('active');
+        else btn.classList.remove('active');
+    });
+
+    // Show/hide template cards based on brand
+    const cards = Array.from(document.querySelectorAll('.template-card'));
+    let firstVisibleTemplate = null;
+    cards.forEach(card => {
+        const input = card.querySelector('input[name="template_type"]');
+        const t = input ? input.value : '';
+        const belongs = brandOfTemplate(t) === brand;
+        card.style.display = belongs ? '' : 'none';
+        if (belongs && !firstVisibleTemplate) firstVisibleTemplate = t;
+    });
+
+    // If currently selected template is hidden, switch to the first visible in this brand
+    const currentSelected = document.querySelector('input[name="template_type"]:checked');
+    const currentType = currentSelected ? currentSelected.value : '';
+    if (!currentType || brandOfTemplate(currentType) !== brand) {
+        const fallback = firstVisibleTemplate || (brand === 'enterprises' ? 'enterprises_intro' : brand === 'hr' ? 'hr_intro' : brand === 'trivanta' ? 'trivantaedge' : 'interview');
+        const radio = document.getElementById(fallback);
+        if (radio) {
+            selectTemplate(fallback);
+        }
+    }
+}

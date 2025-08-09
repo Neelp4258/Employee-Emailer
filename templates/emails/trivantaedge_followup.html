@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Follow-up: Strategic Partnership - Trivanta Edge</title>
+    <style>
+        body { font-family: 'Times New Roman', Times, serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f9f9f9; }
+        .container { max-width: 700px; margin: 20px auto; background-color: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); }
+        .letterhead { padding: 15px 25px; border-bottom: 3px solid #2c5282; margin: -30px -30px 20px -30px; }
+        .letterhead table { width: 100%; border: none; margin: 0; padding: 0; border-spacing: 0; }
+        .company-name { font-family: 'Times New Roman', Times, serif; font-size: 24px; font-weight: 700; margin-bottom: 6px; color: #1a365d; }
+        .tagline { font-family: 'Times New Roman', Times, serif; font-size: 13px; font-style: italic; color: #2c5282; line-height: 1.2; }
+        .contact-info { font-family: 'Times New Roman', Times, serif; font-size: 12px; font-weight: 700; line-height: 1.4; color: #1a365d; }
+        .content { font-size: 14px; }
+        .footer { text-align: center; padding: 8px 0; font-size: 10px; color: #666; font-style: italic; border-top: 1px solid #ddd; margin-top: 30px; }
+        .website { font-weight: 700; color: #1a365d; }
+        .logo { width: 60px; height: 60px; }
+        .golden-lines { border-bottom: 1.5px solid #2c5282; padding-bottom: 4px; margin-bottom: 15px; }
+        .golden-lines::after { content: ''; display: block; border-bottom: 0.8px solid #2c5282; margin-top: 4px; }
+        .cta { background: #1a365d; color: #fff; text-decoration: none; padding: 10px 16px; border-radius: 6px; display: inline-block; }
+    </style>
+    </head>
+<body>
+    <div class="container">
+        <div class="letterhead">
+            <table>
+                <tr>
+                    <td style="width:60px;vertical-align:bottom;padding:0">
+                        <img src="cid:trivanta_logo" alt="Trivanta Edge" class="logo">
+                    </td>
+                    <td style="vertical-align:bottom;padding:0 0 0 25px">
+                        <div class="company-name">Trivanta Edge</div>
+                        <div class="tagline">From Land to Legacy - with Edge</div>
+                    </td>
+                    <td class="contact-info" style="vertical-align:bottom;text-align:right;padding:0;background:transparent">
+                        sales@trivantaedge.com<br>
+                        info@trivantaedge.com<br>
+                        +91 9373015503<br>
+                        Kalyan, Maharashtra
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="golden-lines"></div>
+
+        <div class="content">
+            <div style="text-align: right; font-size: 13px; color: #666666; margin-bottom: 30px; font-style: italic;">Date: {{ current_date }}</div>
+
+            <div style="font-size: 16px; color: #2c2c2c; margin-bottom: 25px; font-weight: 500;">Dear {{ company }} Leadership Team,</div>
+
+            <div style="font-size: 14px; color: #444444; line-height: 1.7; margin-bottom: 18px; text-align: justify;">
+                I hope you're doing well. I wanted to follow up on our previous note regarding a strategic partnership with <span style="font-weight: 600; color: #2c5282;">Trivanta Edge</span>. We specialize in accelerating sales for real estate projects through structured strategies, market positioning, and performance marketing.
+            </div>
+
+            <div style="font-size: 14px; color: #444444; line-height: 1.7; margin-bottom: 18px; text-align: justify;">
+                If you're currently planning a launch, re-positioning an existing project, or looking to improve conversion velocity, we'd be happy to share a concise plan tailored for <span style="font-weight: 600; color: #2c5282;">{{ company }}</span>.
+            </div>
+
+            <div style="background: #1a365d; color: #ffffff; padding: 18px; margin: 22px 0; border-radius: 8px; text-align: center;">
+                <div style="font-size: 16px; font-weight: bold; margin-bottom: 8px;">Quick 20-Min Discovery Call</div>
+                <div style="font-size: 13px; color: #e0e0e0; margin-bottom: 12px;">We will align on goals, current challenges, and immediate milestones.</div>
+                <a href="mailto:{{ sender_email }}" class="cta">Reply to Schedule</a>
+            </div>
+
+            <div style="font-size: 14px; color: #444444; line-height: 1.7; margin: 8px 0; text-align: justify;">
+                Looking forward to your response. If preferred, I can also share a brief case study deck highlighting outcomes we have delivered for similar projects.
+            </div>
+
+            <div style="background: #f8f8f8; padding: 22px; border-top: 2px solid #2c5282; border-radius: 0 0 8px 8px; margin-top: 24px;">
+                <div style="font-size: 16px; font-weight: bold; color: #1a365d; margin-bottom: 5px;">{{ sender_name }}</div>
+                <div style="font-size: 13px; color: #666666; margin-bottom: 5px; font-style: italic;">{{ sender_designation }}</div>
+                <div style="font-size: 15px; font-weight: bold; color: #2c5282; margin-bottom: 10px;">Trivanta Edge</div>
+                <div style="font-size: 12px; color: #666666; line-height: 1.5;">
+                    Email: {{ sender_email }}<br>
+                    Sales: sales@trivantaedge.com | Info: info@trivantaedge.com<br>
+                    Phone: +91 9373015503
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            © 2025 Trivanta Edge. All rights reserved. | <span class="website">www.trivantaedge.com</span>
+        </div>
+    </div>
+</body>
+</html>
+
+

@@ -160,7 +160,25 @@ def index():
 
 @app.route('/preview/<template_name>')
 def preview_email(template_name):
-    if template_name not in ['interview', 'congratulations', 'partnership_enterprises', 'partnership_hr', 'trivantaedge']:
+    if template_name not in [
+        'interview',
+        'congratulations',
+        'partnership_enterprises',
+        'partnership_hr',
+        'trivantaedge',
+        'trivantaedge_intro',
+        'trivantaedge_followup',
+        'trivantaedge_thanks',
+        'trivantaedge_case_study',
+        'hr_intro',
+        'hr_followup',
+        'hr_thanks',
+        'hr_case_study',
+        'enterprises_intro',
+        'enterprises_followup',
+        'enterprises_thanks',
+        'enterprises_case_study'
+    ]:
         abort(404)
     preview_data = {
         'name': "Alex Doe",
@@ -171,7 +189,23 @@ def preview_email(template_name):
     }
     
     # Add sample sender information for partnership templates
-    if template_name in ['partnership_enterprises', 'partnership_hr', 'trivantaedge']:
+    if template_name in [
+        'partnership_enterprises',
+        'partnership_hr',
+        'trivantaedge',
+        'trivantaedge_intro',
+        'trivantaedge_followup',
+        'trivantaedge_thanks',
+        'trivantaedge_case_study',
+        'hr_intro',
+        'hr_followup',
+        'hr_thanks',
+        'hr_case_study',
+        'enterprises_intro',
+        'enterprises_followup',
+        'enterprises_thanks',
+        'enterprises_case_study'
+    ]:
         preview_data.update({
             'sender_name': "John Smith",
             'sender_designation': "Senior Business Development Manager",
@@ -182,13 +216,13 @@ def preview_email(template_name):
     html_content = render_template(f"emails/{template_name}.html", **preview_data)
     
     # Replace Content-ID references with actual image URLs for preview
-    if template_name in ['interview', 'congratulations', 'partnership_hr']:
+    if template_name in ['interview', 'congratulations', 'partnership_hr'] or template_name.startswith('hr_'):
         # Use HR.png for HR templates
         html_content = html_content.replace('src="cid:hr_logo"', 'src="/static/images/HR.png"')
-    elif template_name == 'partnership_enterprises':
+    elif template_name == 'partnership_enterprises' or template_name.startswith('enterprises_'):
         # Use Primary.png for Dazzlo Enterprises template
         html_content = html_content.replace('src="cid:enterprises_logo"', 'src="/static/images/Primary.png"')
-    elif template_name == 'trivantaedge':
+    elif template_name.startswith('trivantaedge'):
         # Use Trivanta Edge logo for preview
         html_content = html_content.replace('src="cid:trivanta_logo"', 'src="/static/images/trivanta.png"')
     
@@ -287,7 +321,19 @@ def send_emails_route():
                 'congratulations': ['email', 'name', 'role', 'company'],
                 'partnership_enterprises': ['email', 'company'],
                 'partnership_hr': ['email', 'company'],
-                'trivantaedge': ['email', 'company']
+                'trivantaedge': ['email', 'company'],
+                'trivantaedge_intro': ['email', 'company'],
+                'trivantaedge_followup': ['email', 'company'],
+                'trivantaedge_thanks': ['email', 'company'],
+                'trivantaedge_case_study': ['email', 'company'],
+                'hr_intro': ['email', 'company'],
+                'hr_followup': ['email', 'company'],
+                'hr_thanks': ['email', 'company'],
+                'hr_case_study': ['email', 'company'],
+                'enterprises_intro': ['email', 'company'],
+                'enterprises_followup': ['email', 'company'],
+                'enterprises_thanks': ['email', 'company'],
+                'enterprises_case_study': ['email', 'company']
             }.get(template_type)
 
             if not all(col in reader.fieldnames for col in required_columns):
@@ -306,11 +352,28 @@ def send_emails_route():
                     "Strategic Partnership Opportunity - Dazzlo Enterprises Pvt Ltd" if template_type == 'partnership_enterprises' else
                     "Strategic Partnership Opportunity - DazzloHR Solutions" if template_type == 'partnership_hr' else
                     "Strategic Partnership Opportunity - Trivanta Edge" if template_type == 'trivantaedge' else
+                    "Introduction - Trivanta Edge" if template_type == 'trivantaedge_intro' else
+                    "Following up: Strategic Partnership - Trivanta Edge" if template_type == 'trivantaedge_followup' else
+                    "Thank you - Trivanta Edge" if template_type == 'trivantaedge_thanks' else
+                    "Case Study Highlights - Trivanta Edge" if template_type == 'trivantaedge_case_study' else
+                    "Introduction - DazzloHR Solutions" if template_type == 'hr_intro' else
+                    "Following up: DazzloHR Solutions" if template_type == 'hr_followup' else
+                    "Thank you - DazzloHR Solutions" if template_type == 'hr_thanks' else
+                    "Case Study Highlights - DazzloHR Solutions" if template_type == 'hr_case_study' else
+                    "Introduction - Dazzlo Enterprises Pvt Ltd" if template_type == 'enterprises_intro' else
+                    "Following up: Dazzlo Enterprises Pvt Ltd" if template_type == 'enterprises_followup' else
+                    "Thank you - Dazzlo Enterprises Pvt Ltd" if template_type == 'enterprises_thanks' else
+                    "Case Study Highlights - Dazzlo Enterprises Pvt Ltd" if template_type == 'enterprises_case_study' else
                     f"Interview for {email_data['role']} at {app.config['COMPANY_NAME']}"
                 )
                 
                 # Add sender information for partnership templates
-                if template_type in ['partnership_enterprises', 'partnership_hr', 'trivantaedge']:
+                if template_type in [
+                    'partnership_enterprises', 'partnership_hr',
+                    'trivantaedge', 'trivantaedge_intro', 'trivantaedge_followup', 'trivantaedge_thanks', 'trivantaedge_case_study',
+                    'hr_intro', 'hr_followup', 'hr_thanks', 'hr_case_study',
+                    'enterprises_intro', 'enterprises_followup', 'enterprises_thanks', 'enterprises_case_study'
+                ]:
                     email_data.update({
                         'sender_name': sender_name,
                         'sender_designation': sender_designation,
@@ -342,4 +405,11 @@ def send_emails_route():
     return render_template('results.html', results=results, sent_count=sent_count, failed_count=failed_count)
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    # Allow specifying port via CLI arg or PORT env var. Default to 8000 to avoid Windows 5000 exclusion
+    import sys
+    port_str = os.environ.get('PORT') if 'PORT' in os.environ else (sys.argv[1] if len(sys.argv) > 1 else None)
+    try:
+        port = int(port_str) if port_str else 8000
+    except (TypeError, ValueError):
+        port = 8000
+    app.run(debug=True, host='0.0.0.0', port=port)

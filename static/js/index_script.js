@@ -295,27 +295,106 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // CV file upload
-    const cvFile = document.getElementById('cv_file');
-    const cvLabel = document.getElementById('cv-label');
+    // Multiple attachment files upload
+    const attachmentFiles = document.getElementById('attachment_files');
+    const attachmentLabel = document.getElementById('attachment-label');
+    const selectedFilesDiv = document.getElementById('selected-files');
+    const filesListDiv = document.getElementById('files-list');
+    const clearFilesBtn = document.getElementById('clear-files');
     
-    if (cvFile) {
-        cvFile.addEventListener('change', function() {
-            if (this.files.length > 0) {
-                const file = this.files[0];
-                const fileSize = (file.size / 1024 / 1024).toFixed(2); // Convert to MB
-                cvLabel.textContent = `📄 ${file.name} (${fileSize} MB)`;
-                
-                // Check file size (max 10MB)
-                if (file.size > 10 * 1024 * 1024) {
-                    alert('File size must be less than 10MB');
-                    this.value = '';
-                    cvLabel.textContent = 'Choose file or drag here';
-                }
-            } else {
-                cvLabel.textContent = 'Choose file or drag here';
-            }
+    if (attachmentFiles) {
+        attachmentFiles.addEventListener('change', function() {
+            displaySelectedFiles(this.files);
         });
+    }
+    
+    if (clearFilesBtn) {
+        clearFilesBtn.addEventListener('click', function() {
+            attachmentFiles.value = '';
+            selectedFilesDiv.style.display = 'none';
+            attachmentLabel.textContent = 'Choose files or drag here';
+        });
+    }
+    
+    function displaySelectedFiles(files) {
+        if (!files || files.length === 0) {
+            selectedFilesDiv.style.display = 'none';
+            attachmentLabel.textContent = 'Choose files or drag here';
+            return;
+        }
+        
+        // Update main label
+        if (files.length === 1) {
+            attachmentLabel.textContent = `📎 ${files[0].name}`;
+        } else {
+            attachmentLabel.textContent = `📎 ${files.length} files selected`;
+        }
+        
+        // Clear and populate files list
+        filesListDiv.innerHTML = '';
+        let totalSize = 0;
+        
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            const fileSize = (file.size / 1024 / 1024).toFixed(2); // Convert to MB
+            totalSize += file.size;
+            
+            // Check file size (max 10MB per file)
+            if (file.size > 10 * 1024 * 1024) {
+                alert(`File "${file.name}" is too large. Maximum size is 10MB per file.`);
+                attachmentFiles.value = '';
+                selectedFilesDiv.style.display = 'none';
+                attachmentLabel.textContent = 'Choose files or drag here';
+                return;
+            }
+            
+            const fileDiv = document.createElement('div');
+            fileDiv.className = 'flex items-center justify-between text-xs text-gray-600 bg-gray-50 p-2 rounded';
+            fileDiv.innerHTML = `
+                <div class="flex items-center">
+                    <span class="mr-2">${getFileIcon(file.name)}</span>
+                    <span class="font-medium">${file.name}</span>
+                    <span class="ml-2 text-gray-500">(${fileSize} MB)</span>
+                </div>
+            `;
+            filesListDiv.appendChild(fileDiv);
+        }
+        
+        // Check total size (max 50MB total)
+        const totalSizeMB = (totalSize / 1024 / 1024).toFixed(2);
+        if (totalSize > 50 * 1024 * 1024) {
+            alert(`Total file size is too large (${totalSizeMB} MB). Maximum total size is 50MB.`);
+            attachmentFiles.value = '';
+            selectedFilesDiv.style.display = 'none';
+            attachmentLabel.textContent = 'Choose files or drag here';
+            return;
+        }
+        
+        // Add total size info
+        if (files.length > 1) {
+            const totalDiv = document.createElement('div');
+            totalDiv.className = 'text-xs text-gray-500 pt-2 border-t border-gray-200 mt-2';
+            totalDiv.textContent = `Total size: ${totalSizeMB} MB`;
+            filesListDiv.appendChild(totalDiv);
+        }
+        
+        selectedFilesDiv.style.display = 'block';
+    }
+    
+    function getFileIcon(filename) {
+        const extension = filename.split('.').pop().toLowerCase();
+        const icons = {
+            'pdf': '📄',
+            'doc': '📝',
+            'docx': '📝',
+            'txt': '📝',
+            'jpg': '🖼️',
+            'jpeg': '🖼️',
+            'png': '🖼️',
+            'zip': '🗜️',
+            'rar': '🗜️'
+        };
+        return icons[extension] || '📎';
     }
     
     // Drag and drop functionality

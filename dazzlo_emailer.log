@@ -824,3 +824,114 @@
 2025-08-09 18:56:37,292 - INFO - 127.0.0.1 - - [09/Aug/2025 18:56:37] "GET /preview/enterprises_intro HTTP/1.1" 200 -
 2025-08-09 18:56:37,590 - INFO - 127.0.0.1 - - [09/Aug/2025 18:56:37] "GET /static/images/Primary.png HTTP/1.1" 200 -
 2025-08-09 18:56:37,628 - INFO - 127.0.0.1 - - [09/Aug/2025 18:56:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-09 18:58:57,531 - INFO - 127.0.0.1 - - [09/Aug/2025 18:58:57] "GET / HTTP/1.1" 200 -
+2025-08-09 18:58:57,565 - INFO - 127.0.0.1 - - [09/Aug/2025 18:58:57] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-09 18:58:57,779 - INFO - 127.0.0.1 - - [09/Aug/2025 18:58:57] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-09 18:58:57,958 - INFO - 127.0.0.1 - - [09/Aug/2025 18:58:57] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-09 18:58:58,145 - INFO - 127.0.0.1 - - [09/Aug/2025 18:58:58] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-09 18:58:58,287 - INFO - 127.0.0.1 - - [09/Aug/2025 18:58:58] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-09 18:58:58,302 - INFO - 127.0.0.1 - - [09/Aug/2025 18:58:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-09 19:01:59,367 - INFO - 127.0.0.1 - - [09/Aug/2025 19:01:59] "GET / HTTP/1.1" 200 -
+2025-08-09 19:01:59,402 - INFO - 127.0.0.1 - - [09/Aug/2025 19:01:59] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-09 19:01:59,604 - INFO - 127.0.0.1 - - [09/Aug/2025 19:01:59] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-09 19:01:59,805 - INFO - 127.0.0.1 - - [09/Aug/2025 19:01:59] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-09 19:01:59,962 - INFO - 127.0.0.1 - - [09/Aug/2025 19:01:59] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-09 19:02:00,180 - INFO - 127.0.0.1 - - [09/Aug/2025 19:02:00] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-09 19:02:00,200 - INFO - 127.0.0.1 - - [09/Aug/2025 19:02:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-09 19:02:41,263 - INFO - 127.0.0.1 - - [09/Aug/2025 19:02:41] "GET /preview/trivantaedge HTTP/1.1" 200 -
+2025-08-09 19:02:41,599 - INFO - 127.0.0.1 - - [09/Aug/2025 19:02:41] "[36mGET /static/images/trivanta.png HTTP/1.1[0m" 304 -
+2025-08-09 19:02:51,287 - INFO - 127.0.0.1 - - [09/Aug/2025 19:02:51] "GET /preview/partnership_enterprises HTTP/1.1" 200 -
+2025-08-09 19:02:51,537 - INFO - 127.0.0.1 - - [09/Aug/2025 19:02:51] "[36mGET /static/images/Primary.png HTTP/1.1[0m" 304 -
+2025-08-09 19:02:56,441 - INFO - 127.0.0.1 - - [09/Aug/2025 19:02:56] "GET /preview/trivantaedge HTTP/1.1" 200 -
+2025-08-09 19:02:56,782 - INFO - 127.0.0.1 - - [09/Aug/2025 19:02:56] "[36mGET /static/images/trivanta.png HTTP/1.1[0m" 304 -
+2025-08-09 19:05:26,897 - INFO - 127.0.0.1 - - [09/Aug/2025 19:05:26] "GET / HTTP/1.1" 200 -
+2025-08-09 19:05:26,942 - INFO - 127.0.0.1 - - [09/Aug/2025 19:05:26] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-09 19:05:27,141 - INFO - 127.0.0.1 - - [09/Aug/2025 19:05:27] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-09 19:05:27,331 - INFO - 127.0.0.1 - - [09/Aug/2025 19:05:27] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-09 19:05:27,524 - INFO - 127.0.0.1 - - [09/Aug/2025 19:05:27] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-09 19:05:27,649 - INFO - 127.0.0.1 - - [09/Aug/2025 19:05:27] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-09 19:05:27,669 - INFO - 127.0.0.1 - - [09/Aug/2025 19:05:27] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-09 19:06:43,633 - INFO - 127.0.0.1 - - [09/Aug/2025 19:06:43] "GET / HTTP/1.1" 200 -
+2025-08-09 19:06:43,673 - INFO - 127.0.0.1 - - [09/Aug/2025 19:06:43] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-09 19:06:43,847 - INFO - 127.0.0.1 - - [09/Aug/2025 19:06:43] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-09 19:06:44,052 - INFO - 127.0.0.1 - - [09/Aug/2025 19:06:44] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-09 19:06:44,311 - INFO - 127.0.0.1 - - [09/Aug/2025 19:06:44] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-09 19:06:44,403 - INFO - 127.0.0.1 - - [09/Aug/2025 19:06:44] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-09 19:06:44,425 - INFO - 127.0.0.1 - - [09/Aug/2025 19:06:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-09 19:07:07,558 - INFO - 127.0.0.1 - - [09/Aug/2025 19:07:07] "GET / HTTP/1.1" 200 -
+2025-08-09 19:07:07,858 - INFO - 127.0.0.1 - - [09/Aug/2025 19:07:07] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-09 19:07:07,894 - INFO - 127.0.0.1 - - [09/Aug/2025 19:07:07] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-09 19:07:08,164 - INFO - 127.0.0.1 - - [09/Aug/2025 19:07:08] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-09 19:07:08,533 - INFO - 127.0.0.1 - - [09/Aug/2025 19:07:08] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-09 19:07:08,596 - INFO - 127.0.0.1 - - [09/Aug/2025 19:07:08] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-09 19:07:08,979 - INFO - 127.0.0.1 - - [09/Aug/2025 19:07:08] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-09 19:07:09,234 - INFO - 127.0.0.1 - - [09/Aug/2025 19:07:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-09 19:07:25,739 - INFO - 127.0.0.1 - - [09/Aug/2025 19:07:25] "GET / HTTP/1.1" 200 -
+2025-08-09 19:07:26,059 - INFO - 127.0.0.1 - - [09/Aug/2025 19:07:26] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-09 19:07:26,059 - INFO - 127.0.0.1 - - [09/Aug/2025 19:07:26] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-09 19:07:26,175 - INFO - 127.0.0.1 - - [09/Aug/2025 19:07:26] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-09 19:07:26,320 - INFO - 127.0.0.1 - - [09/Aug/2025 19:07:26] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-09 19:07:26,387 - INFO - 127.0.0.1 - - [09/Aug/2025 19:07:26] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-09 19:07:26,506 - INFO - 127.0.0.1 - - [09/Aug/2025 19:07:26] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-09 19:11:38,019 - INFO - 127.0.0.1 - - [09/Aug/2025 19:11:38] "GET / HTTP/1.1" 200 -
+2025-08-09 19:11:38,056 - INFO - 127.0.0.1 - - [09/Aug/2025 19:11:38] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-09 19:11:38,355 - INFO - 127.0.0.1 - - [09/Aug/2025 19:11:38] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-09 19:11:38,438 - INFO - 127.0.0.1 - - [09/Aug/2025 19:11:38] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-09 19:11:38,698 - INFO - 127.0.0.1 - - [09/Aug/2025 19:11:38] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-09 19:11:38,791 - INFO - 127.0.0.1 - - [09/Aug/2025 19:11:38] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-09 19:11:38,808 - INFO - 127.0.0.1 - - [09/Aug/2025 19:11:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-09 19:12:03,322 - INFO - 127.0.0.1 - - [09/Aug/2025 19:12:03] "GET / HTTP/1.1" 200 -
+2025-08-09 19:12:03,642 - INFO - 127.0.0.1 - - [09/Aug/2025 19:12:03] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-09 19:12:03,643 - INFO - 127.0.0.1 - - [09/Aug/2025 19:12:03] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-09 19:12:03,861 - INFO - 127.0.0.1 - - [09/Aug/2025 19:12:03] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-09 19:12:03,898 - INFO - 127.0.0.1 - - [09/Aug/2025 19:12:03] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-09 19:12:04,070 - INFO - 127.0.0.1 - - [09/Aug/2025 19:12:04] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-09 19:12:04,187 - INFO - 127.0.0.1 - - [09/Aug/2025 19:12:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-09 19:19:21,054 - INFO - 127.0.0.1 - - [09/Aug/2025 19:19:21] "GET / HTTP/1.1" 200 -
+2025-08-09 19:19:21,087 - INFO - 127.0.0.1 - - [09/Aug/2025 19:19:21] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-09 19:19:21,301 - INFO - 127.0.0.1 - - [09/Aug/2025 19:19:21] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-09 19:19:21,527 - INFO - 127.0.0.1 - - [09/Aug/2025 19:19:21] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-09 19:19:21,745 - INFO - 127.0.0.1 - - [09/Aug/2025 19:19:21] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-09 19:19:21,851 - INFO - 127.0.0.1 - - [09/Aug/2025 19:19:21] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-09 19:19:21,866 - INFO - 127.0.0.1 - - [09/Aug/2025 19:19:21] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-26 09:21:16,328 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.5:8000
+2025-08-26 09:21:16,329 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-26 09:21:16,333 - INFO -  * Restarting with stat
+2025-08-26 09:21:17,031 - WARNING -  * Debugger is active!
+2025-08-26 09:21:17,050 - INFO -  * Debugger PIN: 146-127-904
+2025-08-26 09:21:33,765 - INFO - 127.0.0.1 - - [26/Aug/2025 09:21:33] "GET / HTTP/1.1" 200 -
+2025-08-26 09:21:55,362 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\app.py', reloading
+2025-08-26 09:21:55,482 - INFO -  * Restarting with stat
+2025-08-26 09:21:56,372 - WARNING -  * Debugger is active!
+2025-08-26 09:21:56,378 - INFO -  * Debugger PIN: 146-127-904
+2025-08-26 09:26:12,054 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.5:8000
+2025-08-26 09:26:12,055 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-26 09:26:12,058 - INFO -  * Restarting with stat
+2025-08-26 09:26:12,585 - WARNING -  * Debugger is active!
+2025-08-26 09:26:12,592 - INFO -  * Debugger PIN: 466-869-846
+2025-08-26 09:26:48,518 - INFO - 127.0.0.1 - - [26/Aug/2025 09:26:48] "GET / HTTP/1.1" 200 -
+2025-08-26 09:26:48,636 - INFO - 127.0.0.1 - - [26/Aug/2025 09:26:48] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-26 09:26:48,736 - INFO - 127.0.0.1 - - [26/Aug/2025 09:26:48] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-26 09:26:49,029 - INFO - 127.0.0.1 - - [26/Aug/2025 09:26:49] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-26 09:26:49,297 - INFO - 127.0.0.1 - - [26/Aug/2025 09:26:49] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-26 09:26:49,404 - INFO - 127.0.0.1 - - [26/Aug/2025 09:26:49] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-26 09:26:49,423 - INFO - 127.0.0.1 - - [26/Aug/2025 09:26:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-26 09:34:25,878 - INFO - 127.0.0.1 - - [26/Aug/2025 09:34:25] "POST /validate_credentials HTTP/1.1" 200 -
+2025-08-26 09:34:52,411 - INFO - 127.0.0.1 - - [26/Aug/2025 09:34:52] "POST /validate_credentials HTTP/1.1" 200 -
+2025-08-26 09:42:48,170 - INFO - 127.0.0.1 - - [26/Aug/2025 09:42:48] "POST /validate_credentials HTTP/1.1" 200 -
+2025-08-26 09:43:42,911 - INFO - Attachment file processed: ai-generated-image-1756084394941.jpg (0.02 MB)
+2025-08-26 09:43:42,912 - INFO - Attachment file processed: dazzlodocs_1756059086026.pdf (0.07 MB)
+2025-08-26 09:43:42,913 - INFO - Total of 2 attachment files processed, total size: 0.10 MB
+2025-08-26 09:43:43,011 - INFO - Attached logo for template: enterprises_intro
+2025-08-26 09:43:43,012 - INFO - Attached file: ai-generated-image-1756084394941.jpg
+2025-08-26 09:43:43,014 - INFO - Attached file: dazzlodocs_1756059086026.pdf
+2025-08-26 09:43:44,168 - INFO - Email sent successfully to sidsur23@gmail.com
+2025-08-26 09:43:44,237 - INFO - 127.0.0.1 - - [26/Aug/2025 09:43:44] "POST /send_emails HTTP/1.1" 200 -
+2025-08-26 09:43:44,264 - INFO - 127.0.0.1 - - [26/Aug/2025 09:43:44] "[33mGET /static/css/results_styles.css HTTP/1.1[0m" 404 -
+2025-08-26 09:43:44,571 - INFO - 127.0.0.1 - - [26/Aug/2025 09:43:44] "[33mGET /static/js/results_script.js HTTP/1.1[0m" 404 -

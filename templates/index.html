@@ -13,8 +13,8 @@
         <h2 class="section-title text-2xl font-semibold mb-4 text-center">Step 1: Select Template & Preview</h2>
         <p class="text-center text-gray-600 mb-6">Choose a template to see a live preview of the email.</p>
         
-        <div class="flex flex-row gap-6 items-start" style="display:flex;flex-direction:row;gap:1.5rem;align-items:flex-start;flex-wrap:nowrap;overflow-x:auto;">
-            <div class="space-y-4 flex-1 min-w-[320px]">
+        <div class="templates-preview-grid gap-6 items-start">
+            <div class="space-y-4 min-w-0">
                 <!-- Brand (Folder) Selector -->
                 <div class="text-center mb-2">
                     <div class="inline-flex bg-gray-100 rounded-lg p-1">
@@ -279,8 +279,9 @@
                     </div>
                 </div>
             </div>
+            <!-- End left list column -->
 
-            <div class="preview-container sticky top-4 w-[640px] max-w-full" style="width:640px;max-width:100%;position:sticky;top:1rem;">
+            <div class="preview-container sticky top-4">
                 <div class="bg-white border border-gray-200 rounded-lg shadow-sm">
                     <div class="px-4 py-3 border-b border-gray-200 bg-gray-50 rounded-t-lg">
                         <span class="font-medium text-gray-700 text-sm">Live Email Preview</span>
@@ -389,16 +390,23 @@ jane@example.com,Jane Smith,Product Manager,October 26, 2025 at 2:00 PM"></texta
             </div>
 
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-3">Company Profile Attachment (Optional)</label>
-                <div class="upload-area p-6 text-center" onclick="document.getElementById('cv_file').click()">
-                    <input type="file" name="cv_file" id="cv_file" accept=".pdf,.doc,.docx" class="hidden">
+                <label class="block text-sm font-medium text-gray-700 mb-3">Attachments (Optional)</label>
+                <div class="upload-area p-6 text-center" onclick="document.getElementById('attachment_files').click()">
+                    <input type="file" name="attachment_files" id="attachment_files" accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png,.zip,.rar" multiple class="hidden">
                     <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-3">
                         <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
                     </div>
-                    <p class="text-base font-medium text-gray-700 mb-2" id="cv-label">Choose file or drag here</p>
-                    <p class="text-xs text-gray-500 mt-2">Supported: PDF, DOC, DOCX</p>
+                    <p class="text-base font-medium text-gray-700 mb-2" id="attachment-label">Choose files or drag here</p>
+                    <p class="text-xs text-gray-500 mt-2">Supported: PDF, DOC, DOCX, TXT, JPG, PNG, ZIP, RAR<br>Multiple files allowed</p>
+                </div>
+                
+                <!-- Selected files display -->
+                <div id="selected-files" class="mt-4 space-y-2" style="display: none;">
+                    <div class="text-sm font-medium text-gray-700 mb-2">Selected files:</div>
+                    <div id="files-list" class="space-y-1"></div>
+                    <button type="button" id="clear-files" class="text-xs text-red-600 hover:text-red-800 underline mt-2">Clear all files</button>
                 </div>
             </div>
         </div>

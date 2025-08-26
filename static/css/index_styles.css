@@ -26,6 +26,16 @@ body {
     --glass-border: rgba(255, 255, 255, 0.2);
 }
 
+/* Grid for templates list + preview */
+.templates-preview-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 640px) !important;
+    align-items: start !important;
+    width: 100%;
+    gap: 1.5rem !important;
+}
+.templates-preview-grid > div { min-width: 0; }
+
 /* Form sections */
 .form-section {
     background: var(--glass-bg);
@@ -166,6 +176,7 @@ body {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     height: 600px;
     backdrop-filter: blur(20px);
+    width: 100%;
 }
 
 .preview-header {
@@ -259,6 +270,9 @@ body {
 
 /* Responsive improvements */
 @media (max-width: 768px) {
+    .templates-preview-grid {
+        grid-template-columns: 1fr !important;
+    }
     .template-card {
         padding: 16px;
     }

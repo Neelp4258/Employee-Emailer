@@ -43,6 +43,8 @@ def allowed_file(filename, file_type):
         return '.' in filename and filename.rsplit('.', 1)[1].lower() == 'csv'
     elif file_type == 'document':
         return '.' in filename and filename.rsplit('.', 1)[1].lower() in ['pdf', 'doc', 'docx']
+    elif file_type == 'attachment':
+        return '.' in filename and filename.rsplit('.', 1)[1].lower() in ['pdf', 'doc', 'docx', 'txt', 'jpg', 'jpeg', 'png', 'zip', 'rar']
     elif file_type == 'image':
         return '.' in filename and filename.rsplit('.', 1)[1].lower() in ['png', 'jpg', 'jpeg']
     return '.' in filename and \
@@ -98,9 +100,19 @@ def get_logo_for_template(template_type):
         logging.error(f"Error loading logo for template {template_type}: {e}")
         return None, None
 
-# --- MODIFIED: This function now accepts credentials as arguments ---
-def send_email_smtp(sender_email, sender_password, recipient_email, subject, html_body, template_type, cv_data=None, cv_filename=None):
-    """Sends a single email using Zoho SMTP with error handling."""
+# --- MODIFIED: This function now accepts credentials as arguments and multiple attachments ---
+def send_email_smtp(sender_email, sender_password, recipient_email, subject, html_body, template_type, attachments=None):
+    """Sends a single email using Zoho SMTP with error handling and multiple attachments support.
+    
+    Args:
+        sender_email: Sender's email address
+        sender_password: Sender's password
+        recipient_email: Recipient's email address
+        subject: Email subject
+        html_body: Email HTML body
+        template_type: Template type for logo selection
+        attachments: List of dictionaries with 'data' and 'filename' keys
+    """
     
     if not sender_email or not sender_password:
         return False, "Email or Password was not provided."
@@ -120,15 +132,22 @@ def send_email_smtp(sender_email, sender_password, recipient_email, subject, htm
             msg.attach(img)
             logging.info(f"Attached logo for template: {template_type}")
 
-        if cv_data and cv_filename:
-            part = MIMEBase('application', 'octet-stream')
-            part.set_payload(cv_data)
-            encoders.encode_base64(part)
-            part.add_header(
-                'Content-Disposition',
-                f'attachment; filename= {cv_filename}'
-            )
-            msg.attach(part)
+        # Attach multiple files if provided
+        if attachments:
+            for attachment in attachments:
+                if 'data' in attachment and 'filename' in attachment:
+                    try:
+                        part = MIMEBase('application', 'octet-stream')
+                        part.set_payload(attachment['data'])
+                        encoders.encode_base64(part)
+                        part.add_header(
+                            'Content-Disposition',
+                            f'attachment; filename= {attachment["filename"]}'
+                        )
+                        msg.attach(part)
+                        logging.info(f"Attached file: {attachment['filename']}")
+                    except Exception as e:
+                        logging.warning(f"Failed to attach file {attachment.get('filename', 'unknown')}: {e}")
 
         with smtplib.SMTP_SSL("smtp.zoho.in", 465, timeout=20) as server:
             server.login(sender_email, sender_password)
@@ -299,14 +318,40 @@ def send_emails_route():
     # Logo handling is now automatic based on template type
     # No manual logo upload needed
 
-    # Handle CV/attachment file
-    cv_data = None
-    cv_filename = None
-    cv_file = request.files.get('cv_file')
-    if cv_file and cv_file.filename != '' and allowed_file(cv_file.filename, 'document'):
-        cv_data = cv_file.read()
-        cv_filename = secure_filename(cv_file.filename)
-        logging.info(f"CV file attached: {cv_filename}")
+    # Handle multiple attachment files
+    attachments = []
+    attachment_files = request.files.getlist('attachment_files')
+    
+    for attachment_file in attachment_files:
+        if attachment_file and attachment_file.filename != '' and allowed_file(attachment_file.filename, 'attachment'):
+            try:
+                attachment_data = attachment_file.read()
+                attachment_filename = secure_filename(attachment_file.filename)
+                
+                # Check file size (max 10MB per file)
+                if len(attachment_data) > 10 * 1024 * 1024:
+                    logging.warning(f"Attachment file {attachment_filename} is too large ({len(attachment_data)/1024/1024:.2f} MB)")
+                    flash(f'File {attachment_filename} is too large. Maximum size is 10MB per file.', 'warning')
+                    continue
+                
+                attachments.append({
+                    'data': attachment_data,
+                    'filename': attachment_filename
+                })
+                logging.info(f"Attachment file processed: {attachment_filename} ({len(attachment_data)/1024/1024:.2f} MB)")
+            except Exception as e:
+                logging.error(f"Error processing attachment file {attachment_file.filename}: {e}")
+                flash(f'Error processing file {attachment_file.filename}', 'warning')
+    
+    # Check total attachment size (max 50MB total)
+    total_size = sum(len(att['data']) for att in attachments)
+    if total_size > 50 * 1024 * 1024:
+        logging.warning(f"Total attachment size is too large ({total_size/1024/1024:.2f} MB)")
+        flash(f'Total attachment size is too large ({total_size/1024/1024:.2f} MB). Maximum total size is 50MB.', 'danger')
+        return redirect(url_for('index'))
+    
+    if attachments:
+        logging.info(f"Total of {len(attachments)} attachment files processed, total size: {total_size/1024/1024:.2f} MB")
 
     # --- CSV Processing & Email Sending ---
     results = []
@@ -385,8 +430,8 @@ def send_emails_route():
                 
                 html_body = render_template(f"emails/{template_type}.html", **email_data)
 
-                # --- MODIFIED: Pass credentials to the sending function ---
-                success, message = send_email_smtp(sender_email, sender_password, recipient_email, subject, html_body, template_type, cv_data, cv_filename)
+                # --- MODIFIED: Pass credentials and attachments to the sending function ---
+                success, message = send_email_smtp(sender_email, sender_password, recipient_email, subject, html_body, template_type, attachments)
                 
                 results.append({'email': recipient_email, 'status': 'Success' if success else 'Failed', 'message': message})
                 if success:

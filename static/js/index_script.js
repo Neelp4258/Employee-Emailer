@@ -339,9 +339,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const fileSize = (file.size / 1024 / 1024).toFixed(2); // Convert to MB
             totalSize += file.size;
             
-            // Check file size (max 10MB per file)
-            if (file.size > 10 * 1024 * 1024) {
-                alert(`File "${file.name}" is too large. Maximum size is 10MB per file.`);
+            // Check file size (max 25MB per file)
+            if (file.size > 25 * 1024 * 1024) {
+                alert(`File "${file.name}" is too large. Maximum size is 25MB per file.`);
                 attachmentFiles.value = '';
                 selectedFilesDiv.style.display = 'none';
                 attachmentLabel.textContent = 'Choose files or drag here';
@@ -360,10 +360,10 @@ document.addEventListener('DOMContentLoaded', function() {
             filesListDiv.appendChild(fileDiv);
         }
         
-        // Check total size (max 50MB total)
+        // Check total size (max 100MB total)
         const totalSizeMB = (totalSize / 1024 / 1024).toFixed(2);
-        if (totalSize > 50 * 1024 * 1024) {
-            alert(`Total file size is too large (${totalSizeMB} MB). Maximum total size is 50MB.`);
+        if (totalSize > 100 * 1024 * 1024) {
+            alert(`Total file size is too large (${totalSizeMB} MB). Maximum total size is 100MB.`);
             attachmentFiles.value = '';
             selectedFilesDiv.style.display = 'none';
             attachmentLabel.textContent = 'Choose files or drag here';

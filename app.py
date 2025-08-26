@@ -328,10 +328,10 @@ def send_emails_route():
                 attachment_data = attachment_file.read()
                 attachment_filename = secure_filename(attachment_file.filename)
                 
-                # Check file size (max 10MB per file)
-                if len(attachment_data) > 10 * 1024 * 1024:
+                # Check file size (max 25MB per file)
+                if len(attachment_data) > 25 * 1024 * 1024:
                     logging.warning(f"Attachment file {attachment_filename} is too large ({len(attachment_data)/1024/1024:.2f} MB)")
-                    flash(f'File {attachment_filename} is too large. Maximum size is 10MB per file.', 'warning')
+                    flash(f'File {attachment_filename} is too large. Maximum size is 25MB per file.', 'warning')
                     continue
                 
                 attachments.append({
@@ -343,11 +343,11 @@ def send_emails_route():
                 logging.error(f"Error processing attachment file {attachment_file.filename}: {e}")
                 flash(f'Error processing file {attachment_file.filename}', 'warning')
     
-    # Check total attachment size (max 50MB total)
+    # Check total attachment size (max 100MB total)
     total_size = sum(len(att['data']) for att in attachments)
-    if total_size > 50 * 1024 * 1024:
+    if total_size > 100 * 1024 * 1024:
         logging.warning(f"Total attachment size is too large ({total_size/1024/1024:.2f} MB)")
-        flash(f'Total attachment size is too large ({total_size/1024/1024:.2f} MB). Maximum total size is 50MB.', 'danger')
+        flash(f'Total attachment size is too large ({total_size/1024/1024:.2f} MB). Maximum total size is 100MB.', 'danger')
         return redirect(url_for('index'))
     
     if attachments:

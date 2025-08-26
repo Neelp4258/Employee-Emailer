@@ -935,3 +935,35 @@
 2025-08-26 09:43:44,237 - INFO - 127.0.0.1 - - [26/Aug/2025 09:43:44] "POST /send_emails HTTP/1.1" 200 -
 2025-08-26 09:43:44,264 - INFO - 127.0.0.1 - - [26/Aug/2025 09:43:44] "[33mGET /static/css/results_styles.css HTTP/1.1[0m" 404 -
 2025-08-26 09:43:44,571 - INFO - 127.0.0.1 - - [26/Aug/2025 09:43:44] "[33mGET /static/js/results_script.js HTTP/1.1[0m" 404 -
+2025-08-26 09:59:23,043 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.5:8000
+2025-08-26 09:59:23,044 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-26 09:59:23,047 - INFO -  * Restarting with stat
+2025-08-26 09:59:23,634 - WARNING -  * Debugger is active!
+2025-08-26 09:59:23,639 - INFO -  * Debugger PIN: 466-869-846
+2025-08-26 09:59:32,245 - INFO - 127.0.0.1 - - [26/Aug/2025 09:59:32] "GET / HTTP/1.1" 200 -
+2025-08-26 09:59:32,362 - INFO - 127.0.0.1 - - [26/Aug/2025 09:59:32] "[36mGET /static/css/index_styles.css HTTP/1.1[0m" 304 -
+2025-08-26 09:59:32,481 - INFO - 127.0.0.1 - - [26/Aug/2025 09:59:32] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-26 09:59:32,709 - INFO - 127.0.0.1 - - [26/Aug/2025 09:59:32] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-26 09:59:32,961 - INFO - 127.0.0.1 - - [26/Aug/2025 09:59:32] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-26 09:59:33,084 - INFO - 127.0.0.1 - - [26/Aug/2025 09:59:33] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-26 09:59:33,097 - INFO - 127.0.0.1 - - [26/Aug/2025 09:59:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-26 09:59:35,798 - INFO - 127.0.0.1 - - [26/Aug/2025 09:59:35] "GET /preview/partnership_hr HTTP/1.1" 200 -
+2025-08-26 09:59:36,131 - INFO - 127.0.0.1 - - [26/Aug/2025 09:59:36] "GET /static/images/HR.png HTTP/1.1" 200 -
+2025-08-26 09:59:37,054 - INFO - 127.0.0.1 - - [26/Aug/2025 09:59:37] "GET /preview/hr_intro HTTP/1.1" 200 -
+2025-08-26 09:59:37,309 - INFO - 127.0.0.1 - - [26/Aug/2025 09:59:37] "[36mGET /static/images/HR.png HTTP/1.1[0m" 304 -
+2025-08-26 10:00:03,805 - INFO - 127.0.0.1 - - [26/Aug/2025 10:00:03] "POST /validate_credentials HTTP/1.1" 200 -
+2025-08-26 10:00:26,629 - INFO - Attachment file processed: HIRE_SIDE_HUSTLE.pdf (16.38 MB)
+2025-08-26 10:00:26,629 - INFO - Attachment file processed: Dazzlo_Company_Profile.pdf (0.28 MB)
+2025-08-26 10:00:26,630 - INFO - Attachment file processed: DazzloHR_Company_Profile.pdf (0.25 MB)
+2025-08-26 10:00:26,630 - INFO - Total of 3 attachment files processed, total size: 16.92 MB
+2025-08-26 10:00:26,658 - INFO - Attached logo for template: hr_intro
+2025-08-26 10:00:27,184 - INFO - Attached file: HIRE_SIDE_HUSTLE.pdf
+2025-08-26 10:00:27,190 - INFO - Attached file: Dazzlo_Company_Profile.pdf
+2025-08-26 10:00:27,199 - INFO - Attached file: DazzloHR_Company_Profile.pdf
+2025-08-26 10:00:44,014 - INFO - Email sent successfully to recruitment@icanbpo.com
+2025-08-26 10:00:44,072 - INFO - 127.0.0.1 - - [26/Aug/2025 10:00:44] "POST /send_emails HTTP/1.1" 200 -
+2025-08-26 10:00:44,413 - INFO - 127.0.0.1 - - [26/Aug/2025 10:00:44] "[33mGET /static/css/results_styles.css HTTP/1.1[0m" 404 -
+2025-08-26 10:00:44,415 - INFO - 127.0.0.1 - - [26/Aug/2025 10:00:44] "[33mGET /static/js/results_script.js HTTP/1.1[0m" 404 -

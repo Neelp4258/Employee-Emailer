@@ -104,7 +104,43 @@ manager@designstudio.com,DesignStudio`,
         'enterprises_case_study': `email,company
 ceo@techcorp.com,TechCorp Inc
 director@innovatelabs.com,InnovateLabs
-manager@designstudio.com,DesignStudio`
+manager@designstudio.com,DesignStudio`,
+        'ambivare_template': `email,company
+cto@techstartup.com,TechStartup
+it@digitalagency.com,Digital Agency
+ceo@innovativetech.com,Innovative Tech Solutions`,
+        'ambivare_blue': `email,company
+cto@techstartup.com,TechStartup
+it@digitalagency.com,Digital Agency
+ceo@innovativetech.com,Innovative Tech Solutions`,
+        'ambivare_dark': `email,company
+cto@techstartup.com,TechStartup
+it@digitalagency.com,Digital Agency
+ceo@innovativetech.com,Innovative Tech Solutions`,
+        'ambivare_green': `email,company
+cto@techstartup.com,TechStartup
+it@digitalagency.com,Digital Agency
+ceo@innovativetech.com,Innovative Tech Solutions`,
+        'Ambivare_AI_Intergration': `email,company
+cto@techstartup.com,TechStartup
+it@digitalagency.com,Digital Agency
+ceo@innovativetech.com,Innovative Tech Solutions`,
+        'Ambivare_Automation': `email,company
+cto@techstartup.com,TechStartup
+it@digitalagency.com,Digital Agency
+ceo@innovativetech.com,Innovative Tech Solutions`,
+        'Ambivare_Chatbot': `email,company
+cto@techstartup.com,TechStartup
+it@digitalagency.com,Digital Agency
+ceo@innovativetech.com,Innovative Tech Solutions`,
+        'Ambivare_app_dev': `email,company
+cto@techstartup.com,TechStartup
+it@digitalagency.com,Digital Agency
+ceo@innovativetech.com,Innovative Tech Solutions`,
+        'web_dev': `email,company
+cto@techstartup.com,TechStartup
+it@digitalagency.com,Digital Agency
+ceo@innovativetech.com,Innovative Tech Solutions`
     };
     
     notepad.value = samples[templateType] || samples['interview'];
@@ -130,7 +166,16 @@ function updateCsvRequirements() {
         'enterprises_intro': 'email, company',
         'enterprises_followup': 'email, company',
         'enterprises_thanks': 'email, company',
-        'enterprises_case_study': 'email, company'
+        'enterprises_case_study': 'email, company',
+        'ambivare_template': 'email, company',
+        'ambivare_blue': 'email, company',
+        'ambivare_dark': 'email, company',
+        'ambivare_green': 'email, company',
+        'Ambivare_AI_Intergration': 'email, company',
+        'Ambivare_Automation': 'email, company',
+        'Ambivare_Chatbot': 'email, company',
+        'Ambivare_app_dev': 'email, company',
+        'web_dev': 'email, company'
     };
     
     const requirementsText = `Required columns: <b>${requirements[templateType]}</b>`;
@@ -256,7 +301,16 @@ function selectTemplate(templateType) {
             templateType === 'enterprises_intro' ||
             templateType === 'enterprises_followup' ||
             templateType === 'enterprises_thanks' ||
-            templateType === 'enterprises_case_study'
+            templateType === 'enterprises_case_study' ||
+            templateType === 'ambivare_template' ||
+            templateType === 'ambivare_blue' ||
+            templateType === 'ambivare_dark' ||
+            templateType === 'ambivare_green' ||
+            templateType === 'Ambivare_AI_Intergration' ||
+            templateType === 'Ambivare_Automation' ||
+            templateType === 'Ambivare_Chatbot' ||
+            templateType === 'Ambivare_app_dev' ||
+            templateType === 'web_dev'
         ) {
             senderInfoSection.style.display = 'block';
         } else {
@@ -527,6 +581,9 @@ function brandOfTemplate(templateType) {
     if (templateType === 'trivantaedge' || templateType.startsWith('trivantaedge_')) {
         return 'trivanta';
     }
+    if (templateType.startsWith('ambivare') || templateType.startsWith('Ambivare') || templateType === 'web_dev') {
+        return 'ambivare';
+    }
     return 'general';
 }
 
@@ -536,6 +593,7 @@ function selectBrand(brand) {
         ['enterprises', document.getElementById('brand-enterprises-btn')],
         ['hr', document.getElementById('brand-hr-btn')],
         ['trivanta', document.getElementById('brand-trivanta-btn')],
+        ['ambivare', document.getElementById('brand-ambivare-btn')],
         ['general', document.getElementById('brand-general-btn')]
     ];
     brandButtons.forEach(([key, btn]) => {
@@ -544,22 +602,35 @@ function selectBrand(brand) {
         else btn.classList.remove('active');
     });
 
-    // Show/hide template cards based on brand
-    const cards = Array.from(document.querySelectorAll('.template-card'));
+    // Show/hide brand sections
+    const brandSections = [
+        'brand-enterprises',
+        'brand-hr', 
+        'brand-trivanta',
+        'brand-ambivare',
+        'brand-general'
+    ];
+    
     let firstVisibleTemplate = null;
-    cards.forEach(card => {
-        const input = card.querySelector('input[name="template_type"]');
-        const t = input ? input.value : '';
-        const belongs = brandOfTemplate(t) === brand;
-        card.style.display = belongs ? '' : 'none';
-        if (belongs && !firstVisibleTemplate) firstVisibleTemplate = t;
+    brandSections.forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+        if (!section) return;
+        
+        const shouldShow = sectionId === `brand-${brand}`;
+        section.style.display = shouldShow ? '' : 'none';
+        
+        if (shouldShow && !firstVisibleTemplate) {
+            // Find first template in this section
+            const input = section.querySelector('input[name="template_type"]');
+            if (input) firstVisibleTemplate = input.value;
+        }
     });
 
     // If currently selected template is hidden, switch to the first visible in this brand
     const currentSelected = document.querySelector('input[name="template_type"]:checked');
     const currentType = currentSelected ? currentSelected.value : '';
     if (!currentType || brandOfTemplate(currentType) !== brand) {
-        const fallback = firstVisibleTemplate || (brand === 'enterprises' ? 'enterprises_intro' : brand === 'hr' ? 'hr_intro' : brand === 'trivanta' ? 'trivantaedge' : 'interview');
+        const fallback = firstVisibleTemplate || (brand === 'enterprises' ? 'enterprises_intro' : brand === 'hr' ? 'hr_intro' : brand === 'trivanta' ? 'trivantaedge' : brand === 'ambivare' ? 'ambivare_template' : 'interview');
         const radio = document.getElementById(fallback);
         if (radio) {
             selectTemplate(fallback);

@@ -85,6 +85,10 @@ def get_logo_for_template(template_type):
             # Use Trivanta Edge logo
             logo_path = os.path.join(app.root_path, 'static', 'images', 'trivanta.png')
             logo_cid = 'trivanta_logo'
+        elif template_type.startswith('ambivare') or template_type.startswith('Ambivare') or template_type == 'web_dev':
+            # Use Ambivare logo for all Ambivare-related templates
+            logo_path = os.path.join(app.root_path, 'static', 'images', 'ambivare.png')
+            logo_cid = 'ambivare_logo'
         else:
             # Default to HR logo
             logo_path = os.path.join(app.root_path, 'static', 'images', 'HR.png')
@@ -196,7 +200,16 @@ def preview_email(template_name):
         'enterprises_intro',
         'enterprises_followup',
         'enterprises_thanks',
-        'enterprises_case_study'
+        'enterprises_case_study',
+        'ambivare_template',
+        'ambivare_blue',
+        'ambivare_dark',
+        'ambivare_green',
+        'Ambivare_AI_Intergration',
+        'Ambivare_Automation',
+        'Ambivare_Chatbot',
+        'Ambivare_app_dev',
+        'web_dev'
     ]:
         abort(404)
     preview_data = {
@@ -223,7 +236,16 @@ def preview_email(template_name):
         'enterprises_intro',
         'enterprises_followup',
         'enterprises_thanks',
-        'enterprises_case_study'
+        'enterprises_case_study',
+        'ambivare_template',
+        'ambivare_blue',
+        'ambivare_dark',
+        'ambivare_green',
+        'Ambivare_AI_Intergration',
+        'Ambivare_Automation',
+        'Ambivare_Chatbot',
+        'Ambivare_app_dev',
+        'web_dev'
     ]:
         preview_data.update({
             'sender_name': "John Smith",
@@ -244,6 +266,10 @@ def preview_email(template_name):
     elif template_name.startswith('trivantaedge'):
         # Use Trivanta Edge logo for preview
         html_content = html_content.replace('src="cid:trivanta_logo"', 'src="/static/images/trivanta.png"')
+    elif template_name.startswith('ambivare') or template_name.startswith('Ambivare') or template_name == 'web_dev':
+        # Use Ambivare logo for preview - replace both cid and direct references
+        html_content = html_content.replace('src="cid:ambivare_logo"', 'src="/static/images/ambivare.png"')
+        html_content = html_content.replace('src="ambivare.png"', 'src="/static/images/ambivare.png"')
     
     return html_content
 
@@ -378,7 +404,16 @@ def send_emails_route():
                 'enterprises_intro': ['email', 'company'],
                 'enterprises_followup': ['email', 'company'],
                 'enterprises_thanks': ['email', 'company'],
-                'enterprises_case_study': ['email', 'company']
+                'enterprises_case_study': ['email', 'company'],
+                'ambivare_template': ['email', 'company'],
+                'ambivare_blue': ['email', 'company'],
+                'ambivare_dark': ['email', 'company'],
+                'ambivare_green': ['email', 'company'],
+                'Ambivare_AI_Intergration': ['email', 'company'],
+                'Ambivare_Automation': ['email', 'company'],
+                'Ambivare_Chatbot': ['email', 'company'],
+                'Ambivare_app_dev': ['email', 'company'],
+                'web_dev': ['email', 'company']
             }.get(template_type)
 
             if not all(col in reader.fieldnames for col in required_columns):
@@ -409,6 +444,15 @@ def send_emails_route():
                     "Following up: Dazzlo Enterprises Pvt Ltd" if template_type == 'enterprises_followup' else
                     "Thank you - Dazzlo Enterprises Pvt Ltd" if template_type == 'enterprises_thanks' else
                     "Case Study Highlights - Dazzlo Enterprises Pvt Ltd" if template_type == 'enterprises_case_study' else
+                    "Transform Your Business with IT Excellence - Ambivare Solutions" if template_type == 'ambivare_template' else
+                    "Strategic Technology Partnership - Ambivare Solutions" if template_type == 'ambivare_blue' else
+                    "Premium IT Solutions - Ambivare Solutions" if template_type == 'ambivare_dark' else
+                    "Innovation & Growth Partnership - Ambivare Solutions" if template_type == 'ambivare_green' else
+                    "AI Integration & Implementation Services - Ambivare Solutions" if template_type == 'Ambivare_AI_Intergration' else
+                    "Enterprise Automation Setup Services - Ambivare Solutions" if template_type == 'Ambivare_Automation' else
+                    "Advanced Chatbot Integration Services - Ambivare Solutions" if template_type == 'Ambivare_Chatbot' else
+                    "Mobile & Desktop Application Development - Ambivare Solutions" if template_type == 'Ambivare_app_dev' else
+                    "Enterprise Web Development Services - Ambivare Solutions" if template_type == 'web_dev' else
                     f"Interview for {email_data['role']} at {app.config['COMPANY_NAME']}"
                 )
                 
@@ -417,7 +461,9 @@ def send_emails_route():
                     'partnership_enterprises', 'partnership_hr',
                     'trivantaedge', 'trivantaedge_intro', 'trivantaedge_followup', 'trivantaedge_thanks', 'trivantaedge_case_study',
                     'hr_intro', 'hr_followup', 'hr_thanks', 'hr_case_study',
-                    'enterprises_intro', 'enterprises_followup', 'enterprises_thanks', 'enterprises_case_study'
+                    'enterprises_intro', 'enterprises_followup', 'enterprises_thanks', 'enterprises_case_study',
+                    'ambivare_template', 'ambivare_blue', 'ambivare_dark', 'ambivare_green',
+                    'Ambivare_AI_Intergration', 'Ambivare_Automation', 'Ambivare_Chatbot', 'Ambivare_app_dev', 'web_dev'
                 ]:
                     email_data.update({
                         'sender_name': sender_name,
@@ -457,4 +503,15 @@ if __name__ == '__main__':
         port = int(port_str) if port_str else 8000
     except (TypeError, ValueError):
         port = 8000
+    
+    # Log startup information
+    print(f"\n{'='*60}")
+    print(f"🚀 Dazzlo Email Mailer Starting...")
+    print(f"📧 Supporting: Dazzlo Enterprises | DazzloHR | Trivanta Edge | Ambivare Solutions")
+    print(f"🌐 Server running on: http://localhost:{port}")
+    print(f"🌍 External access: http://0.0.0.0:{port}")
+    print(f"📝 Logs saved to: dazzlo_emailer.log")
+    print(f"{'='*60}\n")
+    
+    logging.info(f"Dazzlo Email Mailer started on port {port}")
     app.run(debug=True, host='0.0.0.0', port=port)

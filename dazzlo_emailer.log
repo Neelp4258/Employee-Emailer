@@ -967,3 +967,247 @@
 2025-08-26 10:00:44,072 - INFO - 127.0.0.1 - - [26/Aug/2025 10:00:44] "POST /send_emails HTTP/1.1" 200 -
 2025-08-26 10:00:44,413 - INFO - 127.0.0.1 - - [26/Aug/2025 10:00:44] "[33mGET /static/css/results_styles.css HTTP/1.1[0m" 404 -
 2025-08-26 10:00:44,415 - INFO - 127.0.0.1 - - [26/Aug/2025 10:00:44] "[33mGET /static/js/results_script.js HTTP/1.1[0m" 404 -
+2025-08-26 11:20:56,187 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.5:8000
+2025-08-26 11:20:56,188 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-26 11:20:56,191 - INFO -  * Restarting with stat
+2025-08-26 11:20:56,870 - WARNING -  * Debugger is active!
+2025-08-26 11:20:56,883 - INFO -  * Debugger PIN: 466-869-846
+2025-08-26 11:20:58,939 - INFO - 127.0.0.1 - - [26/Aug/2025 11:20:58] "GET / HTTP/1.1" 200 -
+2025-08-26 11:20:59,239 - INFO - 127.0.0.1 - - [26/Aug/2025 11:20:59] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-26 11:20:59,279 - INFO - 127.0.0.1 - - [26/Aug/2025 11:20:59] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-26 11:20:59,371 - INFO - 127.0.0.1 - - [26/Aug/2025 11:20:59] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-26 11:20:59,756 - INFO - 127.0.0.1 - - [26/Aug/2025 11:20:59] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-26 11:21:00,075 - INFO - 127.0.0.1 - - [26/Aug/2025 11:21:00] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-26 11:21:00,339 - INFO - 127.0.0.1 - - [26/Aug/2025 11:21:00] "[36mGET /static/images/Primary.png HTTP/1.1[0m" 304 -
+2025-08-26 11:21:00,407 - INFO - 127.0.0.1 - - [26/Aug/2025 11:21:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-26 11:21:05,005 - INFO - 127.0.0.1 - - [26/Aug/2025 11:21:05] "GET /preview/partnership_hr HTTP/1.1" 200 -
+2025-08-26 11:21:05,263 - INFO - 127.0.0.1 - - [26/Aug/2025 11:21:05] "GET /static/images/HR.png HTTP/1.1" 200 -
+2025-08-26 11:21:05,776 - INFO - 127.0.0.1 - - [26/Aug/2025 11:21:05] "GET /preview/partnership_hr HTTP/1.1" 200 -
+2025-08-26 11:21:06,113 - INFO - 127.0.0.1 - - [26/Aug/2025 11:21:06] "[36mGET /static/images/HR.png HTTP/1.1[0m" 304 -
+2025-08-26 11:21:33,515 - INFO - 127.0.0.1 - - [26/Aug/2025 11:21:33] "[36mGET /static/css/index_styles.css HTTP/1.1[0m" 304 -
+2025-08-26 11:21:33,602 - INFO - 127.0.0.1 - - [26/Aug/2025 11:21:33] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-26 11:21:54,679 - INFO - 127.0.0.1 - - [26/Aug/2025 11:21:54] "GET / HTTP/1.1" 200 -
+2025-08-26 11:21:54,716 - INFO - 127.0.0.1 - - [26/Aug/2025 11:21:54] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-26 11:21:54,935 - INFO - 127.0.0.1 - - [26/Aug/2025 11:21:54] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-26 11:21:55,173 - INFO - 127.0.0.1 - - [26/Aug/2025 11:21:55] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-26 11:21:55,408 - INFO - 127.0.0.1 - - [26/Aug/2025 11:21:55] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-26 11:21:55,493 - INFO - 127.0.0.1 - - [26/Aug/2025 11:21:55] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-26 11:21:55,508 - INFO - 127.0.0.1 - - [26/Aug/2025 11:21:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-26 11:21:56,754 - INFO - 127.0.0.1 - - [26/Aug/2025 11:21:56] "GET /preview/partnership_hr HTTP/1.1" 200 -
+2025-08-26 11:21:57,074 - INFO - 127.0.0.1 - - [26/Aug/2025 11:21:57] "GET /static/images/HR.png HTTP/1.1" 200 -
+2025-08-26 11:22:10,499 - INFO - 127.0.0.1 - - [26/Aug/2025 11:22:10] "POST /validate_credentials HTTP/1.1" 200 -
+2025-08-26 11:24:28,837 - INFO - Attachment file processed: HIRE_SIDE_HUSTLE.pdf (16.38 MB)
+2025-08-26 11:24:28,838 - INFO - Attachment file processed: Dazzlo_Company_Profile.pdf (0.28 MB)
+2025-08-26 11:24:28,838 - INFO - Attachment file processed: DazzloHR_Company_Profile.pdf (0.25 MB)
+2025-08-26 11:24:28,838 - INFO - Total of 3 attachment files processed, total size: 16.92 MB
+2025-08-26 11:24:29,006 - INFO - Attached logo for template: partnership_hr
+2025-08-26 11:24:29,391 - INFO - Attached file: HIRE_SIDE_HUSTLE.pdf
+2025-08-26 11:24:29,399 - INFO - Attached file: Dazzlo_Company_Profile.pdf
+2025-08-26 11:24:29,408 - INFO - Attached file: DazzloHR_Company_Profile.pdf
+2025-08-26 11:24:38,070 - INFO - Email sent successfully to mahima.kumar@prune.co.in
+2025-08-26 11:24:38,096 - INFO - 127.0.0.1 - - [26/Aug/2025 11:24:38] "POST /send_emails HTTP/1.1" 200 -
+2025-08-26 11:24:38,430 - INFO - 127.0.0.1 - - [26/Aug/2025 11:24:38] "[33mGET /static/css/results_styles.css HTTP/1.1[0m" 404 -
+2025-08-26 11:24:38,434 - INFO - 127.0.0.1 - - [26/Aug/2025 11:24:38] "[33mGET /static/js/results_script.js HTTP/1.1[0m" 404 -
+2025-08-26 12:22:16,802 - INFO - 127.0.0.1 - - [26/Aug/2025 12:22:16] "GET / HTTP/1.1" 200 -
+2025-08-26 12:22:16,878 - INFO - 127.0.0.1 - - [26/Aug/2025 12:22:16] "[36mGET /static/css/index_styles.css HTTP/1.1[0m" 304 -
+2025-08-26 12:22:16,998 - INFO - 127.0.0.1 - - [26/Aug/2025 12:22:16] "[36mGET /static/js/index_script.js HTTP/1.1[0m" 304 -
+2025-08-26 12:22:17,156 - INFO - 127.0.0.1 - - [26/Aug/2025 12:22:17] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-26 12:22:17,356 - INFO - 127.0.0.1 - - [26/Aug/2025 12:22:17] "[36mGET /static/images/Primary.png HTTP/1.1[0m" 304 -
+2025-08-26 12:22:19,989 - INFO - 127.0.0.1 - - [26/Aug/2025 12:22:19] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-26 12:22:20,219 - INFO - 127.0.0.1 - - [26/Aug/2025 12:22:20] "[36mGET /static/images/HR.png HTTP/1.1[0m" 304 -
+2025-08-26 12:22:25,234 - INFO - 127.0.0.1 - - [26/Aug/2025 12:22:25] "GET /preview/trivantaedge HTTP/1.1" 200 -
+2025-08-26 12:22:25,635 - INFO - 127.0.0.1 - - [26/Aug/2025 12:22:25] "GET /static/images/trivanta.png HTTP/1.1" 200 -
+2025-08-26 12:22:50,043 - INFO - 127.0.0.1 - - [26/Aug/2025 12:22:50] "GET /preview/trivantaedge_intro HTTP/1.1" 200 -
+2025-08-26 12:22:50,363 - INFO - 127.0.0.1 - - [26/Aug/2025 12:22:50] "[36mGET /static/images/trivanta.png HTTP/1.1[0m" 304 -
+2025-08-31 08:46:22,665 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.5:8000
+2025-08-31 08:46:22,666 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-31 08:46:22,668 - INFO -  * Restarting with stat
+2025-08-31 08:46:23,211 - WARNING -  * Debugger is active!
+2025-08-31 08:46:23,219 - INFO -  * Debugger PIN: 466-869-846
+2025-08-31 08:46:54,416 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\app.py', reloading
+2025-08-31 08:46:54,543 - INFO -  * Restarting with stat
+2025-08-31 08:46:55,168 - INFO - Dazzlo Email Mailer started on port 8000
+2025-08-31 08:46:55,188 - WARNING -  * Debugger is active!
+2025-08-31 08:46:55,193 - INFO -  * Debugger PIN: 466-869-846
+2025-08-31 08:47:04,282 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\app.py', reloading
+2025-08-31 08:47:04,439 - INFO -  * Restarting with stat
+2025-08-31 08:47:05,050 - INFO - Dazzlo Email Mailer started on port 8000
+2025-08-31 08:47:05,078 - WARNING -  * Debugger is active!
+2025-08-31 08:47:05,084 - INFO -  * Debugger PIN: 466-869-846
+2025-08-31 08:47:06,222 - INFO - 127.0.0.1 - - [31/Aug/2025 08:47:06] "GET / HTTP/1.1" 200 -
+2025-08-31 08:47:06,374 - INFO - 127.0.0.1 - - [31/Aug/2025 08:47:06] "[36mGET /static/css/index_styles.css HTTP/1.1[0m" 304 -
+2025-08-31 08:47:06,400 - INFO - 127.0.0.1 - - [31/Aug/2025 08:47:06] "[36mGET /static/js/index_script.js HTTP/1.1[0m" 304 -
+2025-08-31 08:47:06,991 - INFO - 127.0.0.1 - - [31/Aug/2025 08:47:06] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-31 08:47:07,181 - INFO - 127.0.0.1 - - [31/Aug/2025 08:47:07] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-31 08:47:07,198 - INFO - 127.0.0.1 - - [31/Aug/2025 08:47:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-31 08:47:10,811 - INFO - 127.0.0.1 - - [31/Aug/2025 08:47:10] "GET /preview/interview HTTP/1.1" 200 -
+2025-08-31 08:47:11,146 - INFO - 127.0.0.1 - - [31/Aug/2025 08:47:11] "[36mGET /static/images/HR.png HTTP/1.1[0m" 304 -
+2025-08-31 08:47:12,493 - INFO - 127.0.0.1 - - [31/Aug/2025 08:47:12] "GET /preview/trivantaedge HTTP/1.1" 200 -
+2025-08-31 08:47:12,831 - INFO - 127.0.0.1 - - [31/Aug/2025 08:47:12] "GET /static/images/trivanta.png HTTP/1.1" 200 -
+2025-08-31 08:47:13,353 - INFO - 127.0.0.1 - - [31/Aug/2025 08:47:13] "GET /preview/partnership_hr HTTP/1.1" 200 -
+2025-08-31 08:47:13,677 - INFO - 127.0.0.1 - - [31/Aug/2025 08:47:13] "[36mGET /static/images/HR.png HTTP/1.1[0m" 304 -
+2025-08-31 08:47:14,031 - INFO - 127.0.0.1 - - [31/Aug/2025 08:47:14] "GET /preview/partnership_enterprises HTTP/1.1" 200 -
+2025-08-31 08:47:14,347 - INFO - 127.0.0.1 - - [31/Aug/2025 08:47:14] "[36mGET /static/images/Primary.png HTTP/1.1[0m" 304 -
+2025-08-31 08:51:02,416 - INFO - 127.0.0.1 - - [31/Aug/2025 08:51:02] "GET / HTTP/1.1" 200 -
+2025-08-31 08:51:02,545 - INFO - 127.0.0.1 - - [31/Aug/2025 08:51:02] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-31 08:51:02,604 - INFO - 127.0.0.1 - - [31/Aug/2025 08:51:02] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-31 08:51:03,222 - INFO - 127.0.0.1 - - [31/Aug/2025 08:51:03] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-31 08:51:03,451 - INFO - 127.0.0.1 - - [31/Aug/2025 08:51:03] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-31 08:51:03,557 - INFO - 127.0.0.1 - - [31/Aug/2025 08:51:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-31 08:51:05,580 - INFO - 127.0.0.1 - - [31/Aug/2025 08:51:05] "GET /preview/ambivare_template HTTP/1.1" 200 -
+2025-08-31 08:51:05,899 - INFO - 127.0.0.1 - - [31/Aug/2025 08:51:05] "GET /static/images/ambivare.png HTTP/1.1" 200 -
+2025-08-31 08:52:31,429 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\app.py', reloading
+2025-08-31 08:52:31,613 - INFO -  * Restarting with stat
+2025-08-31 08:52:32,603 - INFO - Dazzlo Email Mailer started on port 8000
+2025-08-31 08:52:32,629 - WARNING -  * Debugger is active!
+2025-08-31 08:52:32,635 - INFO -  * Debugger PIN: 466-869-846
+2025-08-31 08:52:46,958 - INFO - 127.0.0.1 - - [31/Aug/2025 08:52:46] "GET / HTTP/1.1" 200 -
+2025-08-31 08:52:47,109 - INFO - 127.0.0.1 - - [31/Aug/2025 08:52:47] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-31 08:52:47,205 - INFO - 127.0.0.1 - - [31/Aug/2025 08:52:47] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-31 08:52:47,388 - INFO - 127.0.0.1 - - [31/Aug/2025 08:52:47] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-31 08:52:47,531 - INFO - 127.0.0.1 - - [31/Aug/2025 08:52:47] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-31 08:52:47,721 - INFO - 127.0.0.1 - - [31/Aug/2025 08:52:47] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-31 08:52:47,738 - INFO - 127.0.0.1 - - [31/Aug/2025 08:52:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-31 08:52:49,581 - INFO - 127.0.0.1 - - [31/Aug/2025 08:52:49] "GET /preview/ambivare_template HTTP/1.1" 200 -
+2025-08-31 08:52:49,919 - INFO - 127.0.0.1 - - [31/Aug/2025 08:52:49] "[36mGET /static/images/ambivare.png HTTP/1.1[0m" 304 -
+2025-08-31 08:52:52,349 - INFO - 127.0.0.1 - - [31/Aug/2025 08:52:52] "GET /preview/partnership_enterprises HTTP/1.1" 200 -
+2025-08-31 08:52:52,668 - INFO - 127.0.0.1 - - [31/Aug/2025 08:52:52] "[36mGET /static/images/Primary.png HTTP/1.1[0m" 304 -
+2025-08-31 08:53:07,740 - INFO - 127.0.0.1 - - [31/Aug/2025 08:53:07] "GET /preview/ambivare_template HTTP/1.1" 200 -
+2025-08-31 08:53:07,988 - INFO - 127.0.0.1 - - [31/Aug/2025 08:53:07] "[36mGET /static/images/ambivare.png HTTP/1.1[0m" 304 -
+2025-08-31 08:53:13,053 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\app.py', reloading
+2025-08-31 08:53:13,323 - INFO -  * Restarting with stat
+2025-08-31 08:53:14,140 - INFO - Dazzlo Email Mailer started on port 8000
+2025-08-31 08:53:14,166 - WARNING -  * Debugger is active!
+2025-08-31 08:53:14,171 - INFO -  * Debugger PIN: 466-869-846
+2025-08-31 08:53:39,589 - INFO - Dazzlo Email Mailer started on port 8000
+2025-08-31 08:53:39,635 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.5:8000
+2025-08-31 08:53:39,635 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-31 08:53:39,638 - INFO -  * Restarting with stat
+2025-08-31 08:53:40,291 - INFO - Dazzlo Email Mailer started on port 8000
+2025-08-31 08:53:40,314 - WARNING -  * Debugger is active!
+2025-08-31 08:53:40,319 - INFO -  * Debugger PIN: 466-869-846
+2025-08-31 08:57:01,230 - INFO - Dazzlo Email Mailer started on port 8000
+2025-08-31 08:57:01,287 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.5:8000
+2025-08-31 08:57:01,288 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-31 08:57:01,290 - INFO -  * Restarting with stat
+2025-08-31 08:57:01,947 - INFO - Dazzlo Email Mailer started on port 8000
+2025-08-31 08:57:01,975 - WARNING -  * Debugger is active!
+2025-08-31 08:57:01,979 - INFO -  * Debugger PIN: 466-869-846
+2025-08-31 08:57:52,802 - INFO - 127.0.0.1 - - [31/Aug/2025 08:57:52] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-08-31 08:57:53,171 - INFO - 127.0.0.1 - - [31/Aug/2025 08:57:53] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-08-31 08:57:53,204 - INFO - 127.0.0.1 - - [31/Aug/2025 08:57:53] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-08-31 08:57:53,589 - INFO - 127.0.0.1 - - [31/Aug/2025 08:57:53] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-08-31 08:57:53,826 - INFO - 127.0.0.1 - - [31/Aug/2025 08:57:53] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-08-31 09:01:44,780 - INFO - Dazzlo Email Mailer started on port 8000
+2025-08-31 09:01:44,841 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.5:8000
+2025-08-31 09:01:44,841 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-31 09:01:44,844 - INFO -  * Restarting with stat
+2025-08-31 09:01:45,535 - INFO - Dazzlo Email Mailer started on port 8000
+2025-08-31 09:01:45,563 - WARNING -  * Debugger is active!
+2025-08-31 09:01:45,568 - INFO -  * Debugger PIN: 466-869-846
+2025-08-31 09:01:59,089 - INFO - 127.0.0.1 - - [31/Aug/2025 09:01:59] "GET / HTTP/1.1" 200 -
+2025-08-31 09:01:59,134 - INFO - 127.0.0.1 - - [31/Aug/2025 09:01:59] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-31 09:01:59,313 - INFO - 127.0.0.1 - - [31/Aug/2025 09:01:59] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-31 09:01:59,773 - INFO - 127.0.0.1 - - [31/Aug/2025 09:01:59] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-31 09:01:59,850 - INFO - 127.0.0.1 - - [31/Aug/2025 09:01:59] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-31 09:01:59,870 - INFO - 127.0.0.1 - - [31/Aug/2025 09:01:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-31 09:02:02,528 - INFO - 127.0.0.1 - - [31/Aug/2025 09:02:02] "GET /preview/ambivare_template HTTP/1.1" 200 -
+2025-08-31 09:02:02,865 - INFO - 127.0.0.1 - - [31/Aug/2025 09:02:02] "[36mGET /static/images/ambivare.png HTTP/1.1[0m" 304 -
+2025-08-31 09:02:57,641 - INFO - Dazzlo Email Mailer started on port 8000
+2025-08-31 09:02:57,693 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.5:8000
+2025-08-31 09:02:57,694 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-31 09:02:57,697 - INFO -  * Restarting with stat
+2025-08-31 09:02:58,385 - INFO - Dazzlo Email Mailer started on port 8000
+2025-08-31 09:02:58,414 - WARNING -  * Debugger is active!
+2025-08-31 09:02:58,421 - INFO -  * Debugger PIN: 466-869-846
+2025-08-31 09:03:33,452 - INFO - 127.0.0.1 - - [31/Aug/2025 09:03:33] "GET / HTTP/1.1" 200 -
+2025-08-31 09:03:33,488 - INFO - 127.0.0.1 - - [31/Aug/2025 09:03:33] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-31 09:03:33,716 - INFO - 127.0.0.1 - - [31/Aug/2025 09:03:33] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-31 09:03:33,935 - INFO - 127.0.0.1 - - [31/Aug/2025 09:03:33] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-31 09:03:34,053 - INFO - 127.0.0.1 - - [31/Aug/2025 09:03:34] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-31 09:03:34,268 - INFO - 127.0.0.1 - - [31/Aug/2025 09:03:34] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-31 09:03:34,384 - INFO - 127.0.0.1 - - [31/Aug/2025 09:03:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-31 09:03:36,123 - INFO - 127.0.0.1 - - [31/Aug/2025 09:03:36] "GET /preview/ambivare_template HTTP/1.1" 200 -
+2025-08-31 09:03:36,449 - INFO - 127.0.0.1 - - [31/Aug/2025 09:03:36] "[36mGET /static/images/ambivare.png HTTP/1.1[0m" 304 -
+2025-08-31 09:03:41,564 - INFO - 127.0.0.1 - - [31/Aug/2025 09:03:41] "GET /preview/ambivare_green HTTP/1.1" 200 -
+2025-08-31 09:03:41,803 - INFO - 127.0.0.1 - - [31/Aug/2025 09:03:41] "[36mGET /static/images/ambivare.png HTTP/1.1[0m" 304 -
+2025-08-31 09:03:44,892 - INFO - 127.0.0.1 - - [31/Aug/2025 09:03:44] "GET /preview/ambivare_dark HTTP/1.1" 200 -
+2025-08-31 09:03:45,221 - INFO - 127.0.0.1 - - [31/Aug/2025 09:03:45] "[36mGET /static/images/ambivare.png HTTP/1.1[0m" 304 -
+2025-08-31 09:07:24,326 - INFO - 127.0.0.1 - - [31/Aug/2025 09:07:24] "GET / HTTP/1.1" 200 -
+2025-08-31 09:07:24,443 - INFO - 127.0.0.1 - - [31/Aug/2025 09:07:24] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-31 09:07:24,528 - INFO - 127.0.0.1 - - [31/Aug/2025 09:07:24] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-31 09:07:25,227 - INFO - 127.0.0.1 - - [31/Aug/2025 09:07:25] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-31 09:07:25,411 - INFO - 127.0.0.1 - - [31/Aug/2025 09:07:25] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-31 09:07:25,551 - INFO - 127.0.0.1 - - [31/Aug/2025 09:07:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-31 09:07:27,187 - INFO - 127.0.0.1 - - [31/Aug/2025 09:07:27] "GET /preview/ambivare_template HTTP/1.1" 200 -
+2025-08-31 09:07:27,525 - INFO - 127.0.0.1 - - [31/Aug/2025 09:07:27] "[36mGET /static/images/ambivare.png HTTP/1.1[0m" 304 -
+2025-08-31 09:07:37,161 - INFO - 127.0.0.1 - - [31/Aug/2025 09:07:37] "GET /preview/ambivare_dark HTTP/1.1" 200 -
+2025-08-31 09:07:37,491 - INFO - 127.0.0.1 - - [31/Aug/2025 09:07:37] "[36mGET /static/images/ambivare.png HTTP/1.1[0m" 304 -
+2025-08-31 09:07:40,881 - INFO - 127.0.0.1 - - [31/Aug/2025 09:07:40] "GET /preview/ambivare_green HTTP/1.1" 200 -
+2025-08-31 09:07:41,214 - INFO - 127.0.0.1 - - [31/Aug/2025 09:07:41] "[36mGET /static/images/ambivare.png HTTP/1.1[0m" 304 -
+2025-08-31 09:07:43,033 - INFO - 127.0.0.1 - - [31/Aug/2025 09:07:43] "GET /preview/Ambivare_AI_Intergration HTTP/1.1" 200 -
+2025-08-31 09:07:43,358 - INFO - 127.0.0.1 - - [31/Aug/2025 09:07:43] "[36mGET /static/images/ambivare.png HTTP/1.1[0m" 304 -
+2025-08-31 09:07:44,229 - INFO - Dazzlo Email Mailer started on port 8000
+2025-08-31 09:07:44,297 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.5:8000
+2025-08-31 09:07:44,297 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-31 09:07:44,300 - INFO -  * Restarting with stat
+2025-08-31 09:07:45,173 - INFO - Dazzlo Email Mailer started on port 8000
+2025-08-31 09:07:45,206 - WARNING -  * Debugger is active!
+2025-08-31 09:07:45,213 - INFO -  * Debugger PIN: 466-869-846
+2025-08-31 09:07:48,034 - INFO - 127.0.0.1 - - [31/Aug/2025 09:07:48] "GET /preview/Ambivare_Chatbot HTTP/1.1" 200 -
+2025-08-31 09:07:48,374 - INFO - 127.0.0.1 - - [31/Aug/2025 09:07:48] "[36mGET /static/images/ambivare.png HTTP/1.1[0m" 304 -
+2025-08-31 09:08:01,752 - INFO - 127.0.0.1 - - [31/Aug/2025 09:08:01] "GET /preview/Ambivare_app_dev HTTP/1.1" 200 -
+2025-08-31 09:08:02,007 - INFO - 127.0.0.1 - - [31/Aug/2025 09:08:02] "[36mGET /static/images/ambivare.png HTTP/1.1[0m" 304 -
+2025-08-31 09:09:23,945 - INFO - 127.0.0.1 - - [31/Aug/2025 09:09:23] "GET / HTTP/1.1" 200 -
+2025-08-31 09:09:23,975 - INFO - 127.0.0.1 - - [31/Aug/2025 09:09:23] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-31 09:09:24,199 - INFO - 127.0.0.1 - - [31/Aug/2025 09:09:24] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-31 09:09:24,380 - INFO - 127.0.0.1 - - [31/Aug/2025 09:09:24] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-31 09:09:24,530 - INFO - 127.0.0.1 - - [31/Aug/2025 09:09:24] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-31 09:09:24,703 - INFO - 127.0.0.1 - - [31/Aug/2025 09:09:24] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-31 09:09:24,736 - INFO - 127.0.0.1 - - [31/Aug/2025 09:09:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-31 09:09:26,633 - INFO - 127.0.0.1 - - [31/Aug/2025 09:09:26] "GET /preview/ambivare_template HTTP/1.1" 200 -
+2025-08-31 09:09:26,965 - INFO - 127.0.0.1 - - [31/Aug/2025 09:09:26] "[36mGET /static/images/ambivare.png HTTP/1.1[0m" 304 -
+2025-08-31 09:09:30,485 - INFO - 127.0.0.1 - - [31/Aug/2025 09:09:30] "GET /preview/web_dev HTTP/1.1" 200 -
+2025-08-31 09:09:30,729 - INFO - 127.0.0.1 - - [31/Aug/2025 09:09:30] "[36mGET /static/images/ambivare.png HTTP/1.1[0m" 304 -
+2025-08-31 09:09:51,895 - INFO - 127.0.0.1 - - [31/Aug/2025 09:09:51] "GET / HTTP/1.1" 200 -
+2025-08-31 09:09:51,921 - INFO - 127.0.0.1 - - [31/Aug/2025 09:09:51] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-08-31 09:09:52,165 - INFO - 127.0.0.1 - - [31/Aug/2025 09:09:52] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-31 09:09:52,324 - INFO - 127.0.0.1 - - [31/Aug/2025 09:09:52] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-08-31 09:09:52,495 - INFO - 127.0.0.1 - - [31/Aug/2025 09:09:52] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-08-31 09:09:52,650 - INFO - 127.0.0.1 - - [31/Aug/2025 09:09:52] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-08-31 09:09:52,668 - INFO - 127.0.0.1 - - [31/Aug/2025 09:09:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-31 09:09:54,267 - INFO - 127.0.0.1 - - [31/Aug/2025 09:09:54] "GET /preview/ambivare_template HTTP/1.1" 200 -
+2025-08-31 09:09:54,595 - INFO - 127.0.0.1 - - [31/Aug/2025 09:09:54] "[36mGET /static/images/ambivare.png HTTP/1.1[0m" 304 -
+2025-08-31 09:09:59,517 - INFO - 127.0.0.1 - - [31/Aug/2025 09:09:59] "GET /preview/Ambivare_Automation HTTP/1.1" 200 -
+2025-08-31 09:09:59,788 - INFO - 127.0.0.1 - - [31/Aug/2025 09:09:59] "[36mGET /static/images/ambivare.png HTTP/1.1[0m" 304 -
+2025-08-31 09:10:40,687 - INFO - Dazzlo Email Mailer started on port 8000
+2025-08-31 09:10:40,751 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.5:8000
+2025-08-31 09:10:40,751 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-31 09:10:40,753 - INFO -  * Restarting with stat
+2025-08-31 09:10:41,446 - INFO - Dazzlo Email Mailer started on port 8000
+2025-08-31 09:10:41,477 - WARNING -  * Debugger is active!
+2025-08-31 09:10:41,483 - INFO -  * Debugger PIN: 466-869-846

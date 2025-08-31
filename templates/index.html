@@ -21,9 +21,12 @@
                         <button type="button" id="brand-enterprises-btn" class="brand-btn active px-4 py-2 rounded-md text-sm font-medium transition-all" onclick="selectBrand('enterprises')">Dazzlo Enterprises</button>
                         <button type="button" id="brand-hr-btn" class="brand-btn px-4 py-2 rounded-md text-sm font-medium transition-all" onclick="selectBrand('hr')">DazzloHR</button>
                         <button type="button" id="brand-trivanta-btn" class="brand-btn px-4 py-2 rounded-md text-sm font-medium transition-all" onclick="selectBrand('trivanta')">Trivanta Edge</button>
+                        <button type="button" id="brand-ambivare-btn" class="brand-btn px-4 py-2 rounded-md text-sm font-medium transition-all" onclick="selectBrand('ambivare')">Ambivare Solutions</button>
                         <button type="button" id="brand-general-btn" class="brand-btn px-4 py-2 rounded-md text-sm font-medium transition-all" onclick="selectBrand('general')">General</button>
                     </div>
                 </div>
+                
+                <!-- General templates -->
                 <div id="brand-general" class="brand-section space-y-4" style="display: none;">
                 <div class="template-card p-4" onclick="selectTemplate('interview')">
                     <input type="radio" name="template_type" value="interview" id="interview" class="hidden">
@@ -73,95 +76,6 @@
                     </div>
                 </div>
                 
-                <div class="template-card p-4" onclick="selectTemplate('partnership_hr')">
-                    <input type="radio" name="template_type" value="partnership_hr" id="partnership_hr" class="hidden">
-                     <div class="flex items-center">
-                        <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-semibold text-gray-800">DazzloHR Solutions Partnership</h3>
-                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="template-card p-4" onclick="selectTemplate('trivantaedge')">
-                    <input type="radio" name="template_type" value="trivantaedge" id="trivantaedge" class="hidden">
-                     <div class="flex items-center">
-                        <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-5 h-5 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.343-3 3m0 0a3 3 0 006 0m-6 0H6m9 0h3m-9 4h6"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-semibold text-gray-800">Trivanta Edge Partnership</h3>
-                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- DazzloHR Set -->
-                <div class="template-card p-4" onclick="selectTemplate('hr_intro')">
-                    <input type="radio" name="template_type" value="hr_intro" id="hr_intro" class="hidden">
-                     <div class="flex items-center">
-                        <div class="w-10 h-10 bg-indigo-50 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-5 h-5 text-indigo-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h8M8 14h6M12 4v4m0 8v4"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-semibold text-gray-800">DazzloHR Intro</h3>
-                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="template-card p-4" onclick="selectTemplate('hr_followup')">
-                    <input type="radio" name="template_type" value="hr_followup" id="hr_followup" class="hidden">
-                     <div class="flex items-center">
-                        <div class="w-10 h-10 bg-indigo-50 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-5 h-5 text-indigo-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 12h12M4 16h8"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-semibold text-gray-800">DazzloHR Follow-up</h3>
-                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="template-card p-4" onclick="selectTemplate('hr_thanks')">
-                    <input type="radio" name="template_type" value="hr_thanks" id="hr_thanks" class="hidden">
-                     <div class="flex items-center">
-                        <div class="w-10 h-10 bg-indigo-50 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-5 h-5 text-indigo-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-semibold text-gray-800">DazzloHR Thank You</h3>
-                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="template-card p-4" onclick="selectTemplate('hr_case_study')">
-                    <input type="radio" name="template_type" value="hr_case_study" id="hr_case_study" class="hidden">
-                     <div class="flex items-center">
-                        <div class="w-10 h-10 bg-indigo-50 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-5 h-5 text-indigo-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h14M3 17h10"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-semibold text-gray-800">DazzloHR Case Study</h3>
-                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dazzlo Enterprises Set -->
                 <div class="template-card p-4" onclick="selectTemplate('enterprises_intro')">
                     <input type="radio" name="template_type" value="enterprises_intro" id="enterprises_intro" class="hidden">
                      <div class="flex items-center">
@@ -190,35 +104,70 @@
                         </div>
                     </div>
                 </div>
-                <div class="template-card p-4" onclick="selectTemplate('enterprises_thanks')">
-                    <input type="radio" name="template_type" value="enterprises_thanks" id="enterprises_thanks" class="hidden">
-                     <div class="flex items-center">
-                        <div class="w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-5 h-5 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-semibold text-gray-800">Dazzlo Enterprises Thank You</h3>
-                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="template-card p-4" onclick="selectTemplate('enterprises_case_study')">
-                    <input type="radio" name="template_type" value="enterprises_case_study" id="enterprises_case_study" class="hidden">
-                     <div class="flex items-center">
-                        <div class="w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-5 h-5 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h14M3 17h10"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-semibold text-gray-800">Dazzlo Enterprises Case Study</h3>
-                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
-                        </div>
-                    </div>
                 </div>
 
+                <!-- DazzloHR templates -->
+                <div id="brand-hr" class="brand-section space-y-4" style="display: none;">
+                <div class="template-card p-4" onclick="selectTemplate('partnership_hr')">
+                    <input type="radio" name="template_type" value="partnership_hr" id="partnership_hr" class="hidden">
+                     <div class="flex items-center">
+                        <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">DazzloHR Solutions Partnership</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="template-card p-4" onclick="selectTemplate('hr_intro')">
+                    <input type="radio" name="template_type" value="hr_intro" id="hr_intro" class="hidden">
+                     <div class="flex items-center">
+                        <div class="w-10 h-10 bg-indigo-50 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-indigo-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h8M8 14h6M12 4v4m0 8v4"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">DazzloHR Intro</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="template-card p-4" onclick="selectTemplate('hr_followup')">
+                    <input type="radio" name="template_type" value="hr_followup" id="hr_followup" class="hidden">
+                     <div class="flex items-center">
+                        <div class="w-10 h-10 bg-indigo-50 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-indigo-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 12h12M4 16h8"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">DazzloHR Follow-up</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Trivanta Edge templates -->
+                <div id="brand-trivanta" class="brand-section space-y-4" style="display: none;">
+                <div class="template-card p-4" onclick="selectTemplate('trivantaedge')">
+                    <input type="radio" name="template_type" value="trivantaedge" id="trivantaedge" class="hidden">
+                     <div class="flex items-center">
+                        <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.343-3 3m0 0a3 3 0 006 0m-6 0H6m9 0h3m-9 4h6"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Trivanta Edge Partnership</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
                 <div class="template-card p-4" onclick="selectTemplate('trivantaedge_intro')">
                     <input type="radio" name="template_type" value="trivantaedge_intro" id="trivantaedge_intro" class="hidden">
                      <div class="flex items-center">
@@ -233,7 +182,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="template-card p-4" onclick="selectTemplate('trivantaedge_followup')">
                     <input type="radio" name="template_type" value="trivantaedge_followup" id="trivantaedge_followup" class="hidden">
                      <div class="flex items-center">
@@ -248,36 +196,147 @@
                         </div>
                     </div>
                 </div>
+                </div>
 
-                <div class="template-card p-4" onclick="selectTemplate('trivantaedge_thanks')">
-                    <input type="radio" name="template_type" value="trivantaedge_thanks" id="trivantaedge_thanks" class="hidden">
+                <!-- Ambivare Solutions templates -->
+                <div id="brand-ambivare" class="brand-section space-y-4" style="display: none;">
+                <div class="template-card p-4" onclick="selectTemplate('ambivare_template')">
+                    <input type="radio" name="template_type" value="ambivare_template" id="ambivare_template" class="hidden">
                      <div class="flex items-center">
-                        <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-5 h-5 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold text-gray-800">Trivanta Edge Thank You</h3>
+                            <h3 class="text-lg font-semibold text-gray-800">Ambivare Main Template</h3>
                             <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
                         </div>
                     </div>
                 </div>
 
-                <div class="template-card p-4" onclick="selectTemplate('trivantaedge_case_study')">
-                    <input type="radio" name="template_type" value="trivantaedge_case_study" id="trivantaedge_case_study" class="hidden">
+                <div class="template-card p-4" onclick="selectTemplate('ambivare_blue')">
+                    <input type="radio" name="template_type" value="ambivare_blue" id="ambivare_blue" class="hidden">
                      <div class="flex items-center">
-                        <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-5 h-5 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h14M3 17h10"></path>
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold text-gray-800">Trivanta Edge Case Study</h3>
+                            <h3 class="text-lg font-semibold text-gray-800">Corporate Blue Theme</h3>
                             <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
                         </div>
                     </div>
                 </div>
+
+                <div class="template-card p-4" onclick="selectTemplate('ambivare_dark')">
+                    <input type="radio" name="template_type" value="ambivare_dark" id="ambivare_dark" class="hidden">
+                     <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Premium Dark Theme</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card p-4" onclick="selectTemplate('ambivare_green')">
+                    <input type="radio" name="template_type" value="ambivare_green" id="ambivare_green" class="hidden">
+                     <div class="flex items-center">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Innovation Green Theme</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card p-4" onclick="selectTemplate('Ambivare_AI_Intergration')">
+                    <input type="radio" name="template_type" value="Ambivare_AI_Intergration" id="Ambivare_AI_Intergration" class="hidden">
+                     <div class="flex items-center">
+                        <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">AI Integration Services</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card p-4" onclick="selectTemplate('Ambivare_Automation')">
+                    <input type="radio" name="template_type" value="Ambivare_Automation" id="Ambivare_Automation" class="hidden">
+                     <div class="flex items-center">
+                        <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Automation Services</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card p-4" onclick="selectTemplate('Ambivare_Chatbot')">
+                    <input type="radio" name="template_type" value="Ambivare_Chatbot" id="Ambivare_Chatbot" class="hidden">
+                     <div class="flex items-center">
+                        <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Chatbot Integration</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card p-4" onclick="selectTemplate('Ambivare_app_dev')">
+                    <input type="radio" name="template_type" value="Ambivare_app_dev" id="Ambivare_app_dev" class="hidden">
+                     <div class="flex items-center">
+                        <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">App Development</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card p-4" onclick="selectTemplate('web_dev')">
+                    <input type="radio" name="template_type" value="web_dev" id="web_dev" class="hidden">
+                     <div class="flex items-center">
+                        <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Web Development</h3>
+                            <p class="text-gray-600 text-sm">Required: <code class="font-mono text-xs bg-gray-100 px-1 rounded">email, company</code></p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
             </div>
             <!-- End left list column -->
 

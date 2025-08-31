@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambivare Solutions - Sustainable Tech Partnership</title>
+    <style>
+        body { font-family: 'Georgia', 'Times New Roman', serif; line-height: 1.7; color: #2d3748; margin: 0; padding: 0; background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%); }
+        .container { max-width: 700px; margin: 20px auto; background-color: #ffffff; border-radius: 16px; box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12); overflow: hidden; border: 1px solid #e2e8f0; }
+        .letterhead { padding: 28px 35px; background: linear-gradient(135deg, #38a169 0%, #48bb78 50%, #68d391 100%); position: relative; }
+        .letterhead::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #22543d 0%, #2f855a 50%, #38a169 100%); }
+        .letterhead table { width: 100%; border: none; margin: 0; padding: 0; border-spacing: 0; }
+        .company-name { font-family: 'Georgia', serif; font-size: 28px; font-weight: 700; margin-bottom: 6px; color: #ffffff; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .tagline { font-family: 'Georgia', serif; font-size: 13px; color: rgba(255,255,255,0.95); line-height: 1.4; font-style: italic; font-weight: 500; }
+        .contact-info { font-family: 'Georgia', serif; font-size: 12px; font-weight: 600; line-height: 1.5; color: #ffffff; text-shadow: 0 1px 2px rgba(0,0,0,0.2); }
+        .content { font-size: 14px; padding: 35px; }
+        .footer { text-align: center; padding: 18px; font-size: 10px; color: #718096; background: linear-gradient(90deg, #f7fafc 0%, #edf2f7 100%); font-style: italic; }
+        .website { font-weight: 700; color: #38a169; }
+        .logo { width: 68px; height: 68px; border-radius: 12px; box-shadow: 0 6px 20px rgba(56, 161, 105, 0.3); }
+        .elegant-divider { height: 3px; background: linear-gradient(90deg, #38a169 0%, #48bb78 50%, #68d391 100%); margin: 0 -35px 30px -35px; box-shadow: 0 2px 10px rgba(56, 161, 105, 0.2); }
+        .service-highlight { color: #2f855a; font-weight: 700; }
+        .nature-card { background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%); padding: 28px; border-radius: 12px; margin: 25px 0; border: 2px solid #c6f6d5; position: relative; }
+        .nature-card::before { content: '🌱'; position: absolute; top: -15px; left: 25px; background: white; padding: 5px 10px; border-radius: 20px; box-shadow: 0 4px 15px rgba(56, 161, 105, 0.2); }
+        .service-leaf { background: linear-gradient(135deg, #38a169 0%, #48bb78 100%); color: white; padding: 15px 20px; margin: 8px; border-radius: 12px; font-size: 12px; font-weight: 600; display: inline-block; box-shadow: 0 4px 15px rgba(56, 161, 105, 0.3); }
+        .sustainable-cta { background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%); color: white; padding: 32px; margin: 30px -35px; text-align: center; position: relative; }
+        .sustainable-cta::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #38a169 0%, #48bb78 50%, #68d391 100%); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="letterhead">
+            <table>
+                <tr>
+                    <td style="width:68px;vertical-align:middle;padding:0">
+                        <img src="cid:ambivare_logo" alt="Ambivare Solutions" class="logo">
+                    </td>
+                    <td style="vertical-align:middle;padding:0 0 0 25px">
+                        <div class="company-name">Ambivare Solutions</div>
+                        <div class="tagline">Breaking Deadlines Since Never — Ambivare</div>
+                    </td>
+                    <td class="contact-info" style="vertical-align:middle;text-align:right;padding:0">
+                        operations@ambivare.com<br>
+                        +91 9373015503<br>
+                        <span style="font-size: 11px; opacity: 0.9;">www.ambivare.com</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="elegant-divider"></div>
+        
+        <div class="content">
+            <div style="text-align: right; font-size: 12px; color: #a0aec0; margin-bottom: 28px; font-style: italic;">{{ current_date }}</div>
+
+            <div style="font-size: 17px; color: #2d3748; margin-bottom: 28px; font-weight: 600;">Distinguished {{ company }} Leadership,</div>
+
+            <div style="font-size: 14px; color: #4a5568; line-height: 1.8; margin-bottom: 25px; text-align: justify;">
+                It is with great pleasure that we introduce <span class="service-highlight">Ambivare Solutions</span>, a distinguished international technology consultancy committed to sustainable and innovative IT solutions. We are writing to explore a potential partnership that could significantly enhance <span style="font-weight: 600; color: #38a169;">{{ company }}</span>'s technological capabilities while maintaining operational excellence.
+            </div>
+
+            <div class="nature-card">
+                <div style="font-size: 20px; font-weight: bold; color: #2f855a; text-align: center; margin-bottom: 25px; margin-top: 10px;">
+                    Sustainable Technology Solutions
+                </div>
+                <div style="text-align: center;">
+                    <span class="service-leaf">🌐 Eco-Friendly Web Solutions</span>
+                    <span class="service-leaf">📱 Sustainable Mobile Apps</span>
+                    <span class="service-leaf">🌿 Green Digital Marketing</span>
+                    <span class="service-leaf">🔋 Energy-Efficient Systems</span>
+                    <span class="service-leaf">📊 Smart Analytics Platform</span>
+                    <span class="service-leaf">♻️ Circular Economy Tech</span>
+                </div>
+            </div>
+
+            <div style="font-size: 14px; color: #4a5568; line-height: 1.8; margin: 25px 0; text-align: justify;">
+                Our philosophy centers on creating technology solutions that not only drive business growth but also contribute positively to environmental sustainability. We have assisted numerous enterprises in reducing their digital carbon footprint by 35-50% while simultaneously improving operational efficiency and customer satisfaction.
+            </div>
+
+            <div style="background: linear-gradient(135deg, #f7fafc 0%, #e2e8f0 100%); padding: 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #38a169;">
+                <div style="font-size: 16px; font-weight: 600; color: #2f855a; margin-bottom: 12px;">🌟 Our Commitment to Excellence</div>
+                <div style="color: #4a5568; line-height: 1.7;">
+                    "We believe in creating technology that grows with your business while respecting our planet's resources. Every solution we develop is crafted with precision, sustainability, and long-term value in mind."
+                </div>
+            </div>
+
+            <div class="sustainable-cta">
+                <div style="font-size: 20px; font-weight: bold; margin-bottom: 15px;">🤝 Partnership Invitation</div>
+                <div style="font-size: 14px; line-height: 1.6; opacity: 0.9; margin-bottom: 20px;">
+                    We would be honored to discuss how our sustainable technology solutions can contribute to <span style="font-weight: 600;">{{ company }}</span>'s continued success and environmental stewardship.
+                </div>
+                <a href="mailto:operations@ambivare.com?subject=Sustainable Partnership - {{ company }}" style="display: inline-block; background: linear-gradient(135deg, #38a169 0%, #48bb78 100%); color: white; padding: 16px 32px; text-decoration: none; border-radius: 25px; font-weight: 600; font-size: 14px; box-shadow: 0 6px 20px rgba(56, 161, 105, 0.4); transition: all 0.3s ease;">
+                    Schedule Consultation 🌱
+                </a>
+            </div>
+
+            <div style="font-size: 14px; color: #4a5568; line-height: 1.8; margin: 25px 0; text-align: justify;">
+                We deeply appreciate your time and consideration. Our team stands ready to demonstrate how our innovative yet responsible approach to technology can serve <span style="font-weight: 600; color: #38a169;">{{ company }}</span>'s strategic objectives while contributing to a more sustainable digital future.
+            </div>
+
+            <div style="background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%); padding: 28px; border-radius: 12px; margin-top: 30px; border: 1px solid #c6f6d5;">
+                <div style="font-size: 16px; font-weight: bold; color: #2d3748; margin-bottom: 8px;">{{ sender_name }}</div>
+                <div style="font-size: 13px; color: #718096; margin-bottom: 5px; font-style: italic;">{{ sender_designation }}</div>
+                <div style="font-size: 15px; font-weight: bold; margin-bottom: 15px; color: #2f855a;">Ambivare Solutions</div>
+                
+                <div style="font-size: 12px; color: #718096; line-height: 1.6;">
+                    📧 {{ sender_email }}<br>
+                    📧 operations@ambivare.com<br>
+                    📱 +91 9373015503<br>
+                    🌐 www.ambivare.com
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            © 2025 Ambivare Solutions. Technology with Purpose. | <span class="website">www.ambivare.com</span>
+        </div>
+    </div>
+</body>
+</html>

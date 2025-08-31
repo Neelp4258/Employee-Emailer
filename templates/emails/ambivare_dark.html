@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambivare Solutions - Premium Tech Partnership</title>
+    <style>
+        body { font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; color: #ffffff; margin: 0; padding: 0; background: #000000; }
+        .container { max-width: 700px; margin: 20px auto; background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); border-radius: 24px; box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5); overflow: hidden; border: 1px solid #333; }
+        .letterhead { padding: 35px 40px; background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #333333 100%); position: relative; }
+        .letterhead::after { content: ''; position: absolute; bottom: 0; left: 20px; right: 20px; height: 1px; background: linear-gradient(90deg, transparent 0%, #666 50%, transparent 100%); }
+        .letterhead table { width: 100%; border: none; margin: 0; padding: 0; border-spacing: 0; }
+        .company-name { font-family: 'SF Pro Display', sans-serif; font-size: 32px; font-weight: 700; margin-bottom: 8px; color: #ffffff; letter-spacing: -1.5px; }
+        .tagline { font-family: 'SF Pro Display', sans-serif; font-size: 12px; color: #a0a0a0; line-height: 1.4; font-weight: 400; letter-spacing: 0.5px; }
+        .contact-info { font-family: 'SF Pro Display', sans-serif; font-size: 11px; font-weight: 500; line-height: 1.6; color: #cccccc; }
+        .content { font-size: 14px; padding: 40px; color: #e0e0e0; }
+        .footer { text-align: center; padding: 20px; font-size: 10px; color: #666; background: #111; }
+        .website { font-weight: 600; color: #ffffff; }
+        .logo { width: 70px; height: 70px; border-radius: 16px; filter: brightness(1.1) contrast(1.1); }
+        .minimal-divider { height: 1px; background: linear-gradient(90deg, transparent 0%, #444 50%, transparent 100%); margin: 0 -40px 35px -40px; }
+        .service-highlight { color: #ffffff; font-weight: 600; }
+        .dark-card { background: linear-gradient(135deg, #2a2a2a 0%, #1e1e1e 100%); padding: 30px; border-radius: 16px; margin: 30px 0; border: 1px solid #333; }
+        .service-chip { background: linear-gradient(135deg, #333 0%, #444 100%); color: #ffffff; padding: 12px 18px; margin: 6px; border-radius: 8px; font-size: 11px; font-weight: 500; display: inline-block; border: 1px solid #555; }
+        .premium-cta { background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%); color: #000000; padding: 35px; margin: 30px -40px; text-align: center; }
+        .cta-button { background: #000000; color: #ffffff; padding: 16px 32px; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 14px; border: 1px solid #333; transition: all 0.3s ease; display: inline-block; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="letterhead">
+            <table>
+                <tr>
+                    <td style="width:70px;vertical-align:middle;padding:0">
+                        <img src="cid:ambivare_logo" alt="Ambivare Solutions" class="logo">
+                    </td>
+                    <td style="vertical-align:middle;padding:0 0 0 30px">
+                        <div class="company-name">Ambivare Solutions</div>
+                        <div class="tagline">BREAKING DEADLINES SINCE NEVER — AMBIVARE</div>
+                    </td>
+                    <td class="contact-info" style="vertical-align:middle;text-align:right;padding:0">
+                        operations@ambivare.com<br>
+                        +91 9373015503<br>
+                        <span style="font-size: 10px; opacity: 0.8;">www.ambivare.com</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="minimal-divider"></div>
+        
+        <div class="content">
+            <div style="text-align: right; font-size: 11px; color: #888; margin-bottom: 35px; font-weight: 400;">{{ current_date }}</div>
+
+            <div style="font-size: 18px; color: #ffffff; margin-bottom: 30px; font-weight: 600;">{{ company }}</div>
+
+            <div style="font-size: 14px; color: #cccccc; line-height: 1.8; margin-bottom: 30px;">
+                <span class="service-highlight">Ambivare Solutions</span> is an international technology consultancy that delivers premium IT solutions to forward-thinking organizations. We're reaching out to explore how we can accelerate <span style="color: #ffffff; font-weight: 500;">{{ company }}</span>'s technological advancement through our comprehensive suite of services.
+            </div>
+
+            <div class="dark-card">
+                <div style="font-size: 20px; font-weight: 600; color: #ffffff; text-align: center; margin-bottom: 25px;">
+                    Premium Technology Stack
+                </div>
+                <div style="text-align: center;">
+                    <span class="service-chip">Enterprise Web Development</span>
+                    <span class="service-chip">Mobile Application Suite</span>
+                    <span class="service-chip">Digital Marketing Automation</span>
+                    <span class="service-chip">AI & Machine Learning</span>
+                    <span class="service-chip">Cloud Infrastructure</span>
+                    <span class="service-chip">DevOps & Security</span>
+                </div>
+            </div>
+
+            <div style="font-size: 14px; color: #cccccc; line-height: 1.8; margin: 30px 0;">
+                Our methodology focuses on delivering high-performance, scalable solutions that drive measurable business outcomes. We've helped organizations achieve 50-80% improvement in system performance, 40-60% reduction in operational costs, and streamlined workflows that enhance productivity across all departments.
+            </div>
+
+            <div style="background: #1e1e1e; padding: 25px; border-radius: 12px; margin: 30px 0; border-left: 3px solid #ffffff;">
+                <div style="color: #ffffff; font-size: 14px; line-height: 1.7;">
+                    "Excellence is not a destination, it's a continuous journey. We partner with organizations that share our commitment to pushing the boundaries of what's possible through technology."
+                </div>
+            </div>
+
+            <div class="premium-cta">
+                <div style="font-size: 20px; font-weight: 600; margin-bottom: 15px; color: #000;">Premium Partnership Opportunity</div>
+                <div style="font-size: 14px; line-height: 1.6; margin-bottom: 25px; color: #333;">
+                    Ready to elevate <span style="font-weight: 600;">{{ company }}</span>'s technology infrastructure to the next level?
+                </div>
+                <a href="mailto:operations@ambivare.com?subject=Premium Partnership - {{ company }}" class="cta-button">
+                    Schedule Executive Consultation
+                </a>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #2a2a2a 0%, #1e1e1e 100%); padding: 30px; border-radius: 12px; margin-top: 35px; border: 1px solid #333;">
+                <div style="font-size: 16px; font-weight: 600; color: #ffffff; margin-bottom: 8px;">{{ sender_name }}</div>
+                <div style="font-size: 12px; color: #888; margin-bottom: 5px;">{{ sender_designation }}</div>
+                <div style="font-size: 15px; font-weight: 600; margin-bottom: 20px; color: #ffffff;">Ambivare Solutions</div>
+                
+                <div style="font-size: 11px; color: #aaa; line-height: 1.6;">
+                    {{ sender_email }}<br>
+                    operations@ambivare.com<br>
+                    +91 9373015503<br>
+                    www.ambivare.com
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            © 2025 Ambivare Solutions. Premium Technology Solutions. | <span class="website">www.ambivare.com</span>
+        </div>
+    </div>
+</body>
+</html>

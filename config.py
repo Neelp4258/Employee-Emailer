@@ -29,6 +29,15 @@ HR_LOCATION = "Kalyan, Maharashtra 421301"
 HR_WEBSITE = "www.dazzlo.co.in"
 HR_LOGO = "static/images/HR.png"
 
+# Ambivare Configuration (for IT services and digital solutions)
+AMBIVARE_NAME = "Ambivare Solutions"
+AMBIVARE_TAGLINE = "Breaking Deadlines Since Never — Ambivare"
+AMBIVARE_EMAIL = "operations@ambivare.com"
+AMBIVARE_PHONE = "+91 9373015503"
+AMBIVARE_LOCATION = "Kalyan, Maharashtra 421301"
+AMBIVARE_WEBSITE = "www.ambivare.com"
+AMBIVARE_LOGO = "static/images/ambivare.png"
+
 # Legacy configuration (keeping for backward compatibility)
 COMPANY_NAME = ENTERPRISES_NAME
 COMPANY_TAGLINE = ENTERPRISES_TAGLINE

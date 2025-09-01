@@ -1211,3 +1211,86 @@
 2025-08-31 09:10:41,446 - INFO - Dazzlo Email Mailer started on port 8000
 2025-08-31 09:10:41,477 - WARNING -  * Debugger is active!
 2025-08-31 09:10:41,483 - INFO -  * Debugger PIN: 466-869-846
+2025-09-01 10:35:52,713 - INFO - Dazzlo Email Mailer started on port 8000
+2025-09-01 10:35:52,771 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.5:8000
+2025-09-01 10:35:52,771 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-01 10:35:52,774 - INFO -  * Restarting with stat
+2025-09-01 10:35:53,365 - INFO - Dazzlo Email Mailer started on port 8000
+2025-09-01 10:35:53,392 - WARNING -  * Debugger is active!
+2025-09-01 10:35:53,402 - INFO -  * Debugger PIN: 466-869-846
+2025-09-01 10:35:58,880 - INFO - 127.0.0.1 - - [01/Sep/2025 10:35:58] "GET / HTTP/1.1" 200 -
+2025-09-01 10:35:59,071 - INFO - 127.0.0.1 - - [01/Sep/2025 10:35:59] "[36mGET /static/css/index_styles.css HTTP/1.1[0m" 304 -
+2025-09-01 10:35:59,133 - INFO - 127.0.0.1 - - [01/Sep/2025 10:35:59] "[36mGET /static/js/index_script.js HTTP/1.1[0m" 304 -
+2025-09-01 10:35:59,730 - INFO - 127.0.0.1 - - [01/Sep/2025 10:35:59] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-09-01 10:35:59,976 - INFO - 127.0.0.1 - - [01/Sep/2025 10:35:59] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-09-01 10:36:00,071 - INFO - 127.0.0.1 - - [01/Sep/2025 10:36:00] "[36mGET /static/images/Primary.png HTTP/1.1[0m" 304 -
+2025-09-01 10:36:00,308 - INFO - 127.0.0.1 - - [01/Sep/2025 10:36:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-01 10:36:16,155 - INFO - 127.0.0.1 - - [01/Sep/2025 10:36:16] "GET /preview/ambivare_template HTTP/1.1" 200 -
+2025-09-01 10:36:16,405 - INFO - 127.0.0.1 - - [01/Sep/2025 10:36:16] "[36mGET /static/images/ambivare.png HTTP/1.1[0m" 304 -
+2025-09-01 10:36:18,032 - INFO - 127.0.0.1 - - [01/Sep/2025 10:36:18] "GET /preview/ambivare_dark HTTP/1.1" 200 -
+2025-09-01 10:36:18,354 - INFO - 127.0.0.1 - - [01/Sep/2025 10:36:18] "[36mGET /static/images/ambivare.png HTTP/1.1[0m" 304 -
+2025-09-01 10:36:22,273 - INFO - 127.0.0.1 - - [01/Sep/2025 10:36:22] "GET /preview/ambivare_green HTTP/1.1" 200 -
+2025-09-01 10:36:22,523 - INFO - 127.0.0.1 - - [01/Sep/2025 10:36:22] "[36mGET /static/images/ambivare.png HTTP/1.1[0m" 304 -
+2025-09-01 10:36:28,409 - INFO - 127.0.0.1 - - [01/Sep/2025 10:36:28] "GET /preview/ambivare_blue HTTP/1.1" 200 -
+2025-09-01 10:36:28,738 - INFO - 127.0.0.1 - - [01/Sep/2025 10:36:28] "[36mGET /static/images/ambivare.png HTTP/1.1[0m" 304 -
+2025-09-01 10:37:34,973 - INFO - 127.0.0.1 - - [01/Sep/2025 10:37:34] "GET / HTTP/1.1" 200 -
+2025-09-01 10:37:35,029 - INFO - 127.0.0.1 - - [01/Sep/2025 10:37:35] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-09-01 10:37:35,070 - INFO - 127.0.0.1 - - [01/Sep/2025 10:37:35] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-09-01 10:37:35,449 - INFO - 127.0.0.1 - - [01/Sep/2025 10:37:35] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-09-01 10:37:35,668 - INFO - 127.0.0.1 - - [01/Sep/2025 10:37:35] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-09-01 10:37:35,804 - INFO - 127.0.0.1 - - [01/Sep/2025 10:37:35] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-01 10:39:29,587 - INFO - 127.0.0.1 - - [01/Sep/2025 10:39:29] "POST /validate_credentials HTTP/1.1" 200 -
+2025-09-01 10:40:46,098 - INFO - 127.0.0.1 - - [01/Sep/2025 10:40:46] "POST /validate_credentials HTTP/1.1" 200 -
+2025-09-01 10:41:07,660 - ERROR - Error processing CSV file 'notepad_data_1756703467.csv': 'NoneType' object has no attribute 'strip'
+2025-09-01 10:41:07,676 - INFO - 127.0.0.1 - - [01/Sep/2025 10:41:07] "[32mPOST /send_emails HTTP/1.1[0m" 302 -
+2025-09-01 10:41:07,697 - INFO - 127.0.0.1 - - [01/Sep/2025 10:41:07] "GET / HTTP/1.1" 200 -
+2025-09-01 10:41:07,843 - INFO - 127.0.0.1 - - [01/Sep/2025 10:41:07] "[36mGET /static/css/index_styles.css HTTP/1.1[0m" 304 -
+2025-09-01 10:41:08,061 - INFO - 127.0.0.1 - - [01/Sep/2025 10:41:08] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-09-01 10:41:08,175 - INFO - 127.0.0.1 - - [01/Sep/2025 10:41:08] "[36mGET /static/js/index_script.js HTTP/1.1[0m" 304 -
+2025-09-01 10:41:08,391 - INFO - 127.0.0.1 - - [01/Sep/2025 10:41:08] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-09-01 10:41:08,509 - INFO - 127.0.0.1 - - [01/Sep/2025 10:41:08] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-09-01 10:42:23,176 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\zoho.py', reloading
+2025-09-01 10:42:23,528 - INFO -  * Restarting with stat
+2025-09-01 10:42:24,827 - INFO - Dazzlo Email Mailer started on port 8000
+2025-09-01 10:42:24,881 - WARNING -  * Debugger is active!
+2025-09-01 10:42:24,892 - INFO -  * Debugger PIN: 466-869-846
+2025-09-01 10:42:33,994 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\zoho.py', reloading
+2025-09-01 10:42:34,142 - INFO -  * Restarting with stat
+2025-09-01 10:42:34,947 - INFO - Dazzlo Email Mailer started on port 8000
+2025-09-01 10:42:34,976 - WARNING -  * Debugger is active!
+2025-09-01 10:42:34,982 - INFO -  * Debugger PIN: 466-869-846
+2025-09-01 10:42:49,159 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\interviews.py', reloading
+2025-09-01 10:42:49,383 - INFO -  * Restarting with stat
+2025-09-01 10:42:50,116 - INFO - Dazzlo Email Mailer started on port 8000
+2025-09-01 10:42:50,144 - WARNING -  * Debugger is active!
+2025-09-01 10:42:50,148 - INFO -  * Debugger PIN: 466-869-846
+2025-09-01 10:43:16,342 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\zoho.py', reloading
+2025-09-01 10:43:16,483 - INFO -  * Restarting with stat
+2025-09-01 10:43:17,179 - INFO - Dazzlo Email Mailer started on port 8000
+2025-09-01 10:43:17,205 - WARNING -  * Debugger is active!
+2025-09-01 10:43:17,209 - INFO -  * Debugger PIN: 466-869-846
+2025-09-01 10:43:44,464 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\zoho.py', reloading
+2025-09-01 10:43:44,591 - INFO -  * Restarting with stat
+2025-09-01 10:43:45,239 - INFO - Dazzlo Email Mailer started on port 8000
+2025-09-01 10:43:45,258 - WARNING -  * Debugger is active!
+2025-09-01 10:43:45,263 - INFO -  * Debugger PIN: 466-869-846
+2025-09-01 10:44:03,428 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\zoho.py', reloading
+2025-09-01 10:44:03,584 - INFO -  * Restarting with stat
+2025-09-01 10:44:04,277 - INFO - Dazzlo Email Mailer started on port 8000
+2025-09-01 10:44:04,299 - WARNING -  * Debugger is active!
+2025-09-01 10:44:04,302 - INFO -  * Debugger PIN: 466-869-846
+2025-09-01 10:44:18,437 - INFO -  * Detected change in 'C:\\Users\\sidsu\\OneDrive\\Desktop\\Assets\\Zoho Mailing\\Emailer\\zoho.py', reloading
+2025-09-01 10:44:18,569 - INFO -  * Restarting with stat
+2025-09-01 10:44:19,753 - INFO - Dazzlo Email Mailer started on port 8000
+2025-09-01 10:44:19,786 - WARNING -  * Debugger is active!
+2025-09-01 10:44:19,792 - INFO -  * Debugger PIN: 466-869-846
+2025-09-01 11:40:20,593 - INFO - 127.0.0.1 - - [01/Sep/2025 11:40:20] "GET / HTTP/1.1" 200 -
+2025-09-01 11:40:20,996 - INFO - 127.0.0.1 - - [01/Sep/2025 11:40:20] "GET /static/css/index_styles.css HTTP/1.1" 200 -
+2025-09-01 11:40:20,998 - INFO - 127.0.0.1 - - [01/Sep/2025 11:40:20] "GET /static/js/index_script.js HTTP/1.1" 200 -
+2025-09-01 11:40:22,017 - INFO - 127.0.0.1 - - [01/Sep/2025 11:40:22] "GET /preview/enterprises_intro HTTP/1.1" 200 -
+2025-09-01 11:40:22,222 - INFO - 127.0.0.1 - - [01/Sep/2025 11:40:22] "GET /static/images/Primary.png HTTP/1.1" 200 -
+2025-09-01 11:40:22,453 - INFO - 127.0.0.1 - - [01/Sep/2025 11:40:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-01 11:40:38,110 - INFO - 127.0.0.1 - - [01/Sep/2025 11:40:38] "POST /validate_credentials HTTP/1.1" 200 -

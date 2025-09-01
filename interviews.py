@@ -369,10 +369,10 @@ def main():
 
         print(f"\n--- Starting bulk email sending from {CSV_FILE} ---")
         for row in reader:
-            recipient_email = row['email'].strip()
-            name = row['name'].strip()
-            role = row['role'].strip()
-            slot = row['slot'].strip()
+            recipient_email = row['email'].strip() if row['email'] else ''
+            name = row['name'].strip() if row['name'] else ''
+            role = row['role'].strip() if row['role'] else ''
+            slot = row['slot'].strip() if row['slot'] else ''
 
             print(f"Preparing email for {name} ({recipient_email})...")
 

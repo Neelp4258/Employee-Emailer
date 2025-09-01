@@ -59,7 +59,11 @@ class ZohoBulkMailer:
                 file.seek(0)
                 
                 # Check if first line looks like headers
-                first_line = file.readline().strip().lower()
+                first_line = file.readline()
+                if first_line is None:
+                    print("Error: CSV file appears to be empty")
+                    return []
+                first_line = first_line.strip().lower()
                 file.seek(0)
                 
                 has_headers = 'email' in first_line or 'mail' in first_line
@@ -84,10 +88,14 @@ class ZohoBulkMailer:
                                     company = row[key]
                                     break
                             
+                            # Skip rows with no data
+                            if not row or all(not value for value in row.values()):
+                                continue
+                            
                             # Clean and validate email
                             if email:
-                                email = str(email).strip() if email else ''
-                                company = str(company).strip() if company else ''
+                                email = str(email).strip() if email and email is not None else ''
+                                company = str(company).strip() if company and company is not None else ''
                                 
                                 if email and '@' in email:  # Basic email validation
                                     recipients.append({
@@ -107,9 +115,13 @@ class ZohoBulkMailer:
                     reader = csv.reader(file)
                     for row_num, row in enumerate(reader, start=1):
                         try:
+                            # Skip empty rows
+                            if not row or all(not cell for cell in row):
+                                continue
+                                
                             if len(row) >= 1:
-                                email = str(row[0]).strip() if row[0] else ''
-                                company = str(row[1]).strip() if len(row) > 1 and row[1] else ''
+                                email = str(row[0]).strip() if row[0] and row[0] is not None else ''
+                                company = str(row[1]).strip() if len(row) > 1 and row[1] and row[1] is not None else ''
                                 
                                 if email and '@' in email:  # Basic email validation
                                     recipients.append({
